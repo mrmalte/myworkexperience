@@ -1,0 +1,4 @@
+
+Title: On assignment at Meta
+
+I am by contract not allowed to write much about this. The programming language used here is Hack which is a typed and compiled version of PHP. Also asynchronous programming with async and await is added to PHP. 

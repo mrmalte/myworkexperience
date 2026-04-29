@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: MultiQ Media Solutions
+Client: MultiQ Media Solutions
+Period: 200908-201009
+Role: Software Architect
+Location: Malmö
+LocationType: Onsite
+Technologies: C++, Xorg, Linux, VAAPI, mplayer, OpenGL, SVN, Make

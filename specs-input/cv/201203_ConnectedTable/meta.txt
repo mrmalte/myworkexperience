@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Connected Table
+Client: Connected Table
+Period: 2012
+Role: Fullstack Developer
+Location: Malmö
+LocationType: Hybrid
+Technologies: C++, QT4, SVN

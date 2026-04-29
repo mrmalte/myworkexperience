@@ -1,0 +1,10 @@
+
+Title: SFMC Journey Builder Message Activity
+
+Prototype of a Salesforce AppExchange application enabling SFMC Journey Builder to send business messages via Sinch Conversation API, which transcodes messages to each network's native format and routes across SMS, WhatsApp, Messenger and other channels with automatic channel fallback.
+
+Working as a fullstack developer I implemented SFMC's OAuth-based authentication, built the JB activity frontend UI with Salesforce Lightning Design System for React, and developed backend message routing logic.
+
+The system comprised three TypeScript microservices — a JB activity frontend, a BFF (Apollo GraphQL), and a message dispatcher communicating via GRPC — running locally on Node.js and deployed to Kubernetes on AWS via Docker and GitLab CI/CD, with services monitored through Grafana (metrics) and Graylog (logs).
+
+Development followed Sinch's one-week Kanban cycle with tasks in Jira/Confluence and source managed in GitLab with GitFlow-style branching.

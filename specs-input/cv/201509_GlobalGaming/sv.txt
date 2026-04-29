@@ -1,0 +1,10 @@
+
+Title: Kasinowebbapplikation
+
+Fullstack-design och -utveckling av en kasinowebbplats på Global Gaming, byggd ovanpå interna API:er för användarhantering, betalningar och spel, med flerspråksstöd och SEO-optimering (title, description, canonical, alternate-taggar) och ett GA/GTM-datalager för analys och spårning.
+
+Jag började som fullstack-utvecklare och växte in i rollen som Team Lead för ett team som expanderade till över 10 medlemmar, och tog till slut även på mig ledarskaps- och delvis produktägaransvar.
+
+Frontend var en MarionetteJS/BackboneJS SPA med Bootstrap, bundlad med Webpack. Backend var en ExpressJS BFF med MongoDB/Mongoose. Systemet driftsattes manuellt från Subversion till egen infrastruktur.
+
+Planering skedde enligt Scrum.

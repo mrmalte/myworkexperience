@@ -1,0 +1,4 @@
+
+Title: NodeJS/ExpressJS-prototyp
+
+En enkel filuppladdningstjänst byggd för att utvärdera NodeJS/ExpressJS för användning på Skatteverket. Systemet bestod av tre delar: ett ReactJS-UI, en TypeScript/NodeJS BFF och en Java-backend. Enhetstester implementerades med Jasmine. Källkod lagrad i GitHub Enterprise, driftsatt på OpenShift via Jenkins CI/CD-pipelines.

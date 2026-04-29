@@ -1,0 +1,3 @@
+Title: ReactJS-prototyp
+
+En enkel filuppladdningstjänst byggdes för att utvärdera ReactJS, separering av affärslogik och tillståndshantering med React hooks och Context API. Enhetstester implementerades med Jest/Enzyme. Källkod lagrad i GitHub Enterprise, driftsatt på OpenShift via Jenkins CI/CD-pipelines.

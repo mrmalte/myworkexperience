@@ -1,0 +1,4 @@
+
+Title: MMS
+
+Module architect for SonyEricsson's MMS module, responsible for design, implementation and maintenance.

@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Cybercom
+Client: Skatteverket
+Period: 201909-201911
+Role: Fullstack Developer
+Location: Malmö
+LocationType: Onsite
+Technologies: TypeScript, ReactJS, NodeJS, ExpressJS, Jasmine, Git, Jenkins, Java, OpenShift, GitHub Enterprise

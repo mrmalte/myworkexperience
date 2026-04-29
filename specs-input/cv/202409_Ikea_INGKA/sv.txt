@@ -1,0 +1,10 @@
+
+Title: Fixa
+
+Fixa är Ikeas interna system för butiksoperationer — en samling funktioner i en applikation för att hantera dagliga arbetsuppgifter i Ikeas varuhus, som att fylla på artiklar och återställa utställningsrum.
+
+Som mjukvaruutvecklare levererade jag två större funktioner: ett enhetligt filterkomponentsystem som ersatte upp till fem separata filterlösningar i applikationen (återanvändbara komponenter för olika filtertyper och tillståndshantering), samt en notifikationsinbox som pushar meddelanden till frontend via Server-Sent Events triggererade av databasändringar — senare extraherad till en fristående Cloud Run-tjänst beskriven i Terraform. Jag hanterade också mindre funktioner och buggfixar löpande.
+
+Systemet är implementerat i TypeScript med React/Styled Components/CSS Modules-frontends som använder TanStack Query för datahämtning, och Fastify/Knex-backends (PostgreSQL). Från början hade varje funktion sitt eget frontend- och backend-repository med egna CI/CD-pipelines; backend-repositories slogs senare ihop till ett Nx-monorepo. Alla tjänster deployas till GCP. När Ikea migrerade från Akamai till Cloudflare löstes interna HTTP 429-fel genom att lägga till VPC Connectors, Cloud Router och Cloud NAT i Cloud Run-konfigurationen för privat service-till-service-routing.
+
+Utvecklingen följde en Kanban/Scrum-mix med veckoplanering och fokus på korta, effektiva möten.

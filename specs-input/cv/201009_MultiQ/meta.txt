@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: MultiQ Media Solutions
+Client: MultiQ Media Solutions
+Period: 200908-201101
+Role: Software Architect
+Location: Malmö
+LocationType: Onsite
+Technologies: PHP, SQL, HTML, Javascript, Java, SVN

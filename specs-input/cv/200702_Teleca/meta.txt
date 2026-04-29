@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Teleca Sweden South AB
+Client: Teleca Sweden South AB
+Period: 200702-200704
+Role: Software Developer
+Location: Lund
+LocationType: Onsite
+Technologies: C, SVN

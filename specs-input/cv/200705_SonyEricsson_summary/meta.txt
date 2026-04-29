@@ -1,0 +1,7 @@
+Type: Employee
+Organization: SonyEricsson Communications AB
+Period: 200705-200808
+Role: Senior Staff Engineer
+Location: Lund
+LocationType: Onsite
+Technologies: 

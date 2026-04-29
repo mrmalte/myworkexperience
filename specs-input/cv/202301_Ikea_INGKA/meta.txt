@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: B3Skilled
+Client: Ikea INGKA
+Period: 202301-202306
+Role: Fullstack Developer
+Location: Malmö
+LocationType: Hybrid
+Technologies: Javascript, TypeScript, ReactJS, SingleSPA, NodeJS, ExpressJS, Git, GitHub, REST, PostgreSQL, GCP, Redux

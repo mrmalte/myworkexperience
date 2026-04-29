@@ -1,0 +1,7 @@
+Type: Employee
+Organization: Global Gaming
+Period: 201509-201706
+Role: Team Leader
+Location: Malmö
+LocationType: Hybrid
+Technologies: 

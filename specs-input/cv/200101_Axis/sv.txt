@@ -1,0 +1,5 @@
+Title: Canon BMLinkS-prototyp
+
+Prototyp-utskriftsapplikation för Canons skrivare som implementerar BMLinkS — en japansk industrikonsortie-nätverksstandard för kontorsutrustning liknande UPnP. Jag designade och utvecklade utskriftsapplikationen med XML, SOAP, SSDP och GENA.
+
+Utvecklingen följde en iterativ process inspirerad av Extreme Programming (XP), liknande det som idag kallas Kanban.

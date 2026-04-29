@@ -1,0 +1,4 @@
+
+Title: Egen Linux-distribution
+
+Byggde MultiQs egna Intel Atom Linux-distribution från källkod — ett hybridupplägg som kombinerar tekniker från "Linux From Scratch"-projektet och BSD ports-systemet.

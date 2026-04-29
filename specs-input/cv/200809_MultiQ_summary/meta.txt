@@ -1,0 +1,7 @@
+Type: Employee
+Organization: MultiQ Media Solutions
+Period: 200809-201101
+Role: Software Architect
+Location: Malmö
+LocationType: Onsite
+Technologies: 

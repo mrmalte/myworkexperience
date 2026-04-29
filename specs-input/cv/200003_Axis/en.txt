@@ -1,0 +1,4 @@
+
+Title: vProperty Low-Level Parser
+
+Designed and implemented a low-level vProperty parser — parsing the smallest structural unit of vObjects — used as the foundation of the vObject formatting framework from the preceding project.

@@ -1,0 +1,7 @@
+Type: Employee
+Organization: Sinch
+Period: 202110-202208
+Role: Technical lead
+Location: Malmö
+LocationType: Hybrid
+Technologies: 

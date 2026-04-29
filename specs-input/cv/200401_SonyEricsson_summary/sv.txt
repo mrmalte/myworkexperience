@@ -1,0 +1,3 @@
+Title: Module arkitekt
+
+Senior staff ingenjör och module arkitekt för MMS messaging funktionalitet i SonyEricsson telefoner.

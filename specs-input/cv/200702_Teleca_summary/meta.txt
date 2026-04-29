@@ -1,0 +1,7 @@
+Type: Employee
+Organization: Teleca Sweden South AB
+Period: 200702-200704
+Role: Software Developer
+Location: Malmö
+LocationType: Onsite
+Technologies: 

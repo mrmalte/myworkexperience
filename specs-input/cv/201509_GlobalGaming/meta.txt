@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Global Gaming
+Client: Global Gaming
+Period: 201509-201808
+Role: Team Leader
+Location: Malmö
+LocationType: Hybrid
+Technologies: Javascript, MarionetteJS, BackboneJS, Bootstrap, SVN, ExpressJS, NodeJS, MongoDB, Mongoose, Google Analytics, Google Tag Manager, Datalayer, Webpack

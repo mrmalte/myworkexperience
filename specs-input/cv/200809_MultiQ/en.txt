@@ -1,0 +1,4 @@
+
+Title: Custom Linux Distribution
+
+Built MultiQ's custom Intel Atom Linux distribution from source — a hybrid approach combining techniques from the "Linux From Scratch" project and the BSD ports system.

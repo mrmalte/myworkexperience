@@ -1,0 +1,5 @@
+
+Title: Messaging
+
+Jag arbetade med underhåll av Telecas epost klient, integration av Telecas paket med applikationer till mobiltelefoner till Windows Mobile, funktionalitet för SMS push i Telecas testverktyg Proteller och implementation av en SDP codec för ett IMS system.
+Tekniker som användes var C, C#, MIME, SMS, SDP.

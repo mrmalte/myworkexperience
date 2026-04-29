@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Visionite
+Client: Ikea INGKA
+Period: 202409-
+Role: Software Developer
+Location: Malmö
+LocationType: Hybrid
+Technologies: TypeScript, React, Styled Components, CSS Modules, REST, React Query (TanStack Query), Fastify, NodeJS, TypeBox, Knex, PostgreSQL, Git, GitHub, GCP, CI/CD, Copilot, Server Sent Events, WebSockets, Kanban, Scrum, Terraform, Nx

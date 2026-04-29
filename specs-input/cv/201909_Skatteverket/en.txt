@@ -1,0 +1,4 @@
+
+Title: NodeJS/ExpressJS Prototype
+
+Prototype file upload service built to evaluate NodeJS/ExpressJS for use at Skatteverket. The system comprised three parts: a ReactJS UI, a TypeScript/NodeJS BFF, and a Java backend. Unit tests implemented with Jasmine. Source code stored in GitHub Enterprise, deployed to OpenShift via Jenkins CI/CD pipelines.

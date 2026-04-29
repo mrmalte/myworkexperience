@@ -1,0 +1,4 @@
+
+Title: Poker Proxy
+
+Design and implementation of a C++/Qt4 proxy for communication between a poker client and multiple poker servers/networks.

@@ -1,0 +1,10 @@
+
+Title: Sinch Chat Messaging (SCM) for Salesforce Marketing Cloud (SFMC)
+
+Joint Sinch–Salesforce project enabling SFMC to send WhatsApp business messages via Sinch Conversation API, which transcodes messages to each network's native format with multi-channel fallback. Sinch's responsibility was the provisioning and configuration UI; Salesforce handled the sending side.
+
+Working primarily as a backend developer on the provisioning UI system, I introduced Kafka to consume change events from internal services, added Bull (Redis) queuing for reliable outgoing REST calls to SFMC, and led the rewrite of the BFF from ExpressJS to NestJS. I also contributed to frontend work and made changes across most parts of the codebase.
+
+The system comprised four TypeScript/NestJS microservices — a ReactJS frontend (Salesforce Lightning Design System, Styled Components) served by Nginx, a BFF (Apollo GraphQL with Redis sessions), a PostgreSQL database service (TypeORM), and a Salesforce callback handler — communicating internally via GRPC. E2E tests were implemented with Cypress and unit tests with Jest. Services were deployed to Kubernetes on AWS via Docker and GitLab CI/CD, monitored through Grafana and Graylog.
+
+Development followed Sinch's one-week Kanban cycle with tasks in Jira/Confluence and source managed in GitLab with GitFlow-style branching.

@@ -1,0 +1,7 @@
+Type: Employee
+Organization: Connected Table
+Period: 201202-201508
+Role: Software Engineer
+Location: Malmö
+LocationType: Hybrid
+Technologies:

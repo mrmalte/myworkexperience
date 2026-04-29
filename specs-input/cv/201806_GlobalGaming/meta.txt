@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Global Gaming
+Client: Global Gaming
+Period: 201808-201904
+Role: Team Lead
+Location: Malmö
+LocationType: Hybrid
+Technologies: TypeScript, ReactJS, Redux, ContentfulCMS, ExpressJS, NodeJS, Jest, Enzyme, Webdriver.io, Docker, AWS, PostgreSQL, Webpack, CDN, npm, Git, GitHub

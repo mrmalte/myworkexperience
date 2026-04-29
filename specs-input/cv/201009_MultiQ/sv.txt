@@ -1,0 +1,4 @@
+
+Title: Digital skyltning CMS
+
+Underhåll, refaktorering och utveckling av MultiQs centrala innehållshanteringssystem för digital skyltning, implementerat i PHP, SQL, HTML, JavaScript och Java.

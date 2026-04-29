@@ -1,0 +1,4 @@
+
+Title: VideoShare Prototype
+
+Design and implementation of a SonyEricsson VideoShare prototype — an IMS service enabling video sharing during a phone call. Work included the application, H.263 RTP data handling and SIP session setup.

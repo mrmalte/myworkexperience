@@ -1,0 +1,8 @@
+Type: Assignment
+Client: Axis Communications AB
+Organization: Axis Communications AB
+Period: 200004-200005
+Role: Software Developer
+Location: Lund
+LocationType: Onsite
+Technologies: C, ASCII, UNICODE, CVS

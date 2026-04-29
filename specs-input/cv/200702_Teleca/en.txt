@@ -1,0 +1,4 @@
+
+Title: Email Client
+
+Module owner for the email client developed at Teleca, responsible for design, implementation and maintenance.

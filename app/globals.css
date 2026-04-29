@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Screen-reader only — visually hidden but present in DOM for SEO & accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:root {
+  --white: #ffffff;
+  --off: #f8f7f5;
+  --line: #e5e2dc;
+  --text: #1a1816;
+  --mid: #7a756d;
+  --accent: #1a6b4a;
+  --accent-light: #e8f3ee;
+  --warm: #c8601a;
+}
+
+body {
+  color: var(--text);
+  background: var(--white);
+  font-family: "Instrument Sans", sans-serif;
+}

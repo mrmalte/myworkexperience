@@ -1,0 +1,4 @@
+
+Title: vObjekt-formateringsramverk
+
+Portade och anpassade ett vObjekt-formateringsramverk som översätter vCalendar, vNotes och vMessages till PostScript eller PCL, vilket möjliggör utskrift från Ericsson-mobiltelefoner.

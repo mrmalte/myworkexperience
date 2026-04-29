@@ -1,0 +1,356 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://malte.sarner.se/schemas/site-content/v1.json",
+  "title": "SiteContent v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "person",
+    "about",
+    "notFound",
+    "technologies",
+    "cv",
+    "ui"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "person": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "role"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "about": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "text": {
+          "$ref": "#/$defs/LocalizedText"
+        }
+      }
+    },
+    "notFound": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "text"],
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/LocalizedText"
+        },
+        "text": {
+          "$ref": "#/$defs/LocalizedText"
+        }
+      }
+    },
+    "technologies": {
+      "description": "Technologies used across all CV entries, grouped by category. Each technology has a name and computed years of experience. Only categories with at least one used technology are present. Technologies not found in tech-categories.json appear under 'Other'.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "years"],
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "years": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "minItems": 1
+      }
+    },
+    "cv": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "education", "roles", "assignments"],
+      "properties": {
+        "summary": {
+          "$ref": "#/$defs/LocalizedText"
+        },
+        "education": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CVEntry"
+          }
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CVEntry"
+          }
+        },
+        "assignments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CVEntry"
+          }
+        }
+      }
+    },
+    "ui": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nav", "cv", "contact", "meta", "notFound", "technologies"],
+      "properties": {
+        "nav": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["cv", "technologies", "about", "contact"],
+          "properties": {
+            "cv": { "$ref": "#/$defs/LocalizedText" },
+            "technologies": { "$ref": "#/$defs/LocalizedText" },
+            "about": { "$ref": "#/$defs/LocalizedText" },
+            "contact": { "$ref": "#/$defs/LocalizedText" }
+          }
+        },
+        "cv": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sections",
+            "searchPlaceholder",
+            "clearSearch",
+            "showAll",
+            "showMoreSummary",
+            "noResults",
+            "present"
+          ],
+          "properties": {
+            "sections": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["education", "roles", "assignments"],
+              "properties": {
+                "education": { "$ref": "#/$defs/LocalizedText" },
+                "roles": { "$ref": "#/$defs/LocalizedText" },
+                "assignments": { "$ref": "#/$defs/LocalizedText" }
+              }
+            },
+            "searchPlaceholder": { "$ref": "#/$defs/LocalizedText" },
+            "clearSearch": { "$ref": "#/$defs/LocalizedText" },
+            "showAll": { "$ref": "#/$defs/LocalizedText" },
+            "showMoreSummary": { "$ref": "#/$defs/LocalizedText" },
+            "noResults": { "$ref": "#/$defs/LocalizedText" },
+            "present": { "$ref": "#/$defs/LocalizedText" }
+          }
+        },
+        "contact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "intro",
+            "fields",
+            "submit",
+            "success",
+            "error",
+            "sending",
+            "validation"
+          ],
+          "properties": {
+            "intro": { "$ref": "#/$defs/LocalizedText" },
+            "fields": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["name", "email", "subject", "message"],
+              "properties": {
+                "name": { "$ref": "#/$defs/LocalizedText" },
+                "email": { "$ref": "#/$defs/LocalizedText" },
+                "subject": { "$ref": "#/$defs/LocalizedText" },
+                "message": { "$ref": "#/$defs/LocalizedText" }
+              }
+            },
+            "submit": { "$ref": "#/$defs/LocalizedText" },
+            "success": { "$ref": "#/$defs/LocalizedText" },
+            "error": { "$ref": "#/$defs/LocalizedText" },
+            "sending": { "$ref": "#/$defs/LocalizedText" },
+            "validation": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["required", "email"],
+              "properties": {
+                "required": { "$ref": "#/$defs/LocalizedText" },
+                "email": { "$ref": "#/$defs/LocalizedText" }
+              }
+            }
+          }
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "description"],
+          "properties": {
+            "title": { "$ref": "#/$defs/LocalizedText" },
+            "description": { "$ref": "#/$defs/LocalizedText" }
+          }
+        },
+        "notFound": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["homeLink"],
+          "properties": {
+            "homeLink": { "$ref": "#/$defs/LocalizedText" }
+          }
+        },
+        "technologies": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "allCategory",
+            "sortTime",
+            "sortAlpha",
+            "yearsLessThanOne",
+            "yearsOne",
+            "yearsSuffix"
+          ],
+          "properties": {
+            "allCategory": { "$ref": "#/$defs/LocalizedText" },
+            "sortTime": { "$ref": "#/$defs/LocalizedText" },
+            "sortAlpha": { "$ref": "#/$defs/LocalizedText" },
+            "yearsLessThanOne": { "$ref": "#/$defs/LocalizedText" },
+            "yearsOne": { "$ref": "#/$defs/LocalizedText" },
+            "yearsSuffix": { "$ref": "#/$defs/LocalizedText" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "LocalizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en", "sv"],
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "sv": {
+          "type": "string"
+        }
+      }
+    },
+    "CVEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "period",
+        "sortKey",
+        "organization",
+        "client",
+        "role",
+        "location",
+        "locationType",
+        "title",
+        "description",
+        "technologies"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "education",
+            "employee",
+            "consultant",
+            "voluntary",
+            "national",
+            "assignment"
+          ]
+        },
+        "period": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["raw", "start", "end"],
+          "properties": {
+            "raw": {
+              "type": "string",
+              "minLength": 1
+            },
+            "start": {
+              "type": "string",
+              "pattern": "^(\\d{4}|\\d{6})$"
+            },
+            "end": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^(\\d{4}|\\d{6})$"
+                }
+              ]
+            }
+          }
+        },
+        "sortKey": {
+          "type": "string",
+          "minLength": 1
+        },
+        "organization": {
+          "type": "string",
+          "minLength": 1
+        },
+        "client": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locationType": {
+          "type": "string",
+          "enum": ["onsite", "hybrid", "remote"]
+        },
+        "title": {
+          "$ref": "#/$defs/LocalizedText"
+        },
+        "description": {
+          "$ref": "#/$defs/LocalizedText"
+        },
+        "technologies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

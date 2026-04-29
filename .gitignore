@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+dist
+build
+*.log
+.env*.local
+.DS_Store
+Thumbs.db
+
+# Generated content (build artifact)
+public/content/site-content.json
+
+# TypeScript build cache
+*.tsbuildinfo
+.tmp

@@ -1,0 +1,4 @@
+
+Title: MMS
+
+Modularkitekt för SonyEricssons MMS-modul, ansvarig för design, implementation och underhåll.

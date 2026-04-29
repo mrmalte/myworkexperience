@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Connected Table
+Client: Connected Table
+Period: 201204-201509
+Role: Fullstack Developer
+Location: Malmö
+LocationType: Hybrid
+Technologies: Javascript, BackboneJS, RequireJS, MVC, jQuery Mobile, KineticJS, Jed, Soundmanager2, Web Audio API, HTML5 Canvas, XMLHttpRequest, SVN

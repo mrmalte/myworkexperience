@@ -1,0 +1,4 @@
+
+Title: GPS-stöd i Symbian
+
+Technical lead för GPS-positioneringsutveckling på SonyEricsson, där teamet och all mjukvara byggdes från grunden. Ansvarig för design, implementation och underhåll av GPS-hårdvaruintegration och en GPS-statusapplikation på Symbian.

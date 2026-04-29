@@ -1,0 +1,8 @@
+
+Title: ReactJS Casino Site
+
+Frontend and testing work on a casino site at Global Gaming, where I also held the Team Lead role.
+
+Working as a developer I built UI features for the ReactJS/Redux frontend and implemented automated e2e tests with Webdriver.io. The system is unit tested with Jest/Enzyme across all parts.
+
+The frontend is deployed to CDN and backed by a DDD-layered ExpressJS caching/proxy service deployed via Docker. Content and translations are managed in Contentful headless CMS. The system is structured as small npm modules.

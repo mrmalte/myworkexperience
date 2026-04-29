@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Visionite
+Client: Sigma
+Period: 202403-202406
+Role: Software Developer Hack
+Location: Lund
+LocationType: Onsite
+Technologies: Hack, PHP, Mercurial

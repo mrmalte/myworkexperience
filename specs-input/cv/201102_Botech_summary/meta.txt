@@ -1,0 +1,7 @@
+Type: Employee
+Organization: Botech AB
+Period: 201102-201112
+Role: Software Developer
+Location: Malmö
+LocationType: Onsite
+Technologies:

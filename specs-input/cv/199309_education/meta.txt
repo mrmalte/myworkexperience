@@ -1,0 +1,7 @@
+Type: Education
+Organization: LTU (LuTH)
+Period: 199309-199912
+Role: Student
+Location: Luleå
+LocationType: Onsite
+Technologies: 

@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Axis Communications AB
+Client: Axis Communications AB
+Period: 200002-200003
+Role: Software Developer
+Location: Lund
+LocationType: Onsite
+Technologies: C, vCalendar, vNotes, vMessages, Postscript, PCL, CVS

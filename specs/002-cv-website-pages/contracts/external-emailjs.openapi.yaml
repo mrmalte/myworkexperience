@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: External EmailJS API (Reference)
+  version: 1.0.0
+  description: |
+    Reference contract for the external EmailJS send endpoint used by the Contact page.
+    This is an external service; the project does not implement a backend.
+servers:
+  - url: https://api.emailjs.com
+paths:
+  /api/v1.0/email/send:
+    post:
+      summary: Send an email using EmailJS
+      description: |
+        Called from the browser using the EmailJS SDK. The site uses a public key,
+        service ID, and template ID.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              required:
+                - service_id
+                - template_id
+                - user_id
+                - template_params
+              properties:
+                service_id:
+                  type: string
+                template_id:
+                  type: string
+                user_id:
+                  type: string
+                template_params:
+                  type: object
+                  additionalProperties: true
+      responses:
+        '200':
+          description: Email accepted
+        '400':
+          description: Invalid request
+        '429':
+          description: Rate limited
+        '500':
+          description: Provider error

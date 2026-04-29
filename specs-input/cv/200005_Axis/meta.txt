@@ -1,0 +1,8 @@
+Type: Assignment
+Client: Axis Communications AB
+Organization: Axis Communications AB
+Period: 200005-200201
+Role: Software Developer
+Location: Lund
+LocationType: Onsite
+Technologies: C, Bluetooth, OBEX, SDP, RFCOMM, CVS

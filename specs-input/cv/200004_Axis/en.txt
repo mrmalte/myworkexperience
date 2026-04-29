@@ -1,0 +1,4 @@
+
+Title: Unicode Translation Tool
+
+Designed and implemented a code generation tool that produces a C translation module mapping Unicode character codes to single-byte encodings such as ASCII.

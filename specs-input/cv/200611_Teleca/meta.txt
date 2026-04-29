@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Teleca Sweden South AB
+Client: Teleca Sweden South AB
+Period: 200611-200702
+Role: Software Developer
+Location: Malmö
+LocationType: Onsite
+Technologies: C#, Visual Studio, .NET, Windows Mobile, SVN

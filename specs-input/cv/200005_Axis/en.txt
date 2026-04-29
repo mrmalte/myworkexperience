@@ -1,0 +1,4 @@
+
+Title: Bluetooth Wireless Printing
+
+Developed a wireless Bluetooth print solution. I wrote the protocol specification and implemented an embedded print application that receives print data and forwards it to a printer, using C, OBEX, SDP and RFCOMM.

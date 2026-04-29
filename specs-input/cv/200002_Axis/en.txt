@@ -1,0 +1,4 @@
+
+Title: vObject Formatting Framework
+
+Ported and adapted a vObject formatting framework that translates vCalendar, vNotes and vMessages to PostScript or PCL, enabling printing from Ericsson mobile phones.

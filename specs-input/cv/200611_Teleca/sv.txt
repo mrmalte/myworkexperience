@@ -1,0 +1,4 @@
+
+Title: Windows Mobile Messaging
+
+Integration av Telecas applikationssvit på Windows Mobile, i release management-teamet nära projektledningen. Ansvarig för releasekoordinering mellan bidragande team och uppföljning av projektplan.

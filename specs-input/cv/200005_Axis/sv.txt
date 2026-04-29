@@ -1,0 +1,4 @@
+
+Title: Bluetooth trådlös utskrift
+
+Utvecklade en trådlös Bluetooth-utskriftslösning. Jag skrev protokollspecifikationen och implementerade en inbyggd utskriftsapplikation som tar emot utskriftsdata och vidarebefordrar den till en skrivare, med C, OBEX, SDP och RFCOMM.

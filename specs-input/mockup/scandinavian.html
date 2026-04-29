@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malte Särner — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --white: #ffffff; --off: #f8f7f5; --line: #e5e2dc;
+    --text: #1a1816; --mid: #7a756d; --accent: #1a6b4a;
+    --accent-light: #e8f3ee; --warm: #c8601a;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--white); color: var(--text); font-family: 'Instrument Sans', sans-serif; font-size: 15px; line-height: 1.6; }
+
+  nav { position: sticky; top: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 100; position: relative; }
+  .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; gap: 0.75rem; height: 72px; }
+  .nav-name-block { margin-right: auto; display: flex; flex-direction: column; justify-content: center; gap: 0.1rem; }
+  .nav-eyebrow { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .nav-logo { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.02em; line-height: 1; }
+  .nav-links { display: flex; gap: 0.15rem; }
+  .nav-links a, .nav-btn { font-size: 0.78rem; font-weight: 500; text-decoration: none; color: var(--mid); padding: 0.35rem 0.7rem; border-radius: 4px; transition: all 0.15s; cursor: pointer; background: none; border: none; font-family: 'Instrument Sans', sans-serif; }
+  .nav-links a:hover, .nav-btn:hover { color: var(--text); background: var(--off); }
+  .nav-links a.active, .nav-btn.active { color: var(--accent); background: var(--accent-light); }
+
+
+  .lang-toggle { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn { font-size: 0.7rem; font-weight: 600; padding: 0.28rem 0.6rem; cursor: pointer; border: none; background: transparent; color: var(--mid); transition: all 0.15s; font-family: 'Instrument Sans', sans-serif; letter-spacing: 0.04em; }
+  .lang-btn.active { background: var(--text); color: white; }
+  .lang-btn:hover:not(.active) { background: var(--off); }
+
+  .hero { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 3rem; }
+  .hero h1 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 600; letter-spacing: -0.03em; margin-bottom: 1.25rem; }
+  .hero-summary { font-size: 1rem; color: var(--mid); line-height: 1.75; max-width: 60ch; margin-bottom: 0; }
+  .search-box { display: flex; align-items: center; gap: 0.6rem; background: var(--off); border: 1.5px solid var(--line); border-radius: 8px; padding: 0.6rem 1rem; transition: all 0.2s; max-width: 60ch; margin-top: 1rem; }
+  .search-box:focus-within { border-color: var(--accent); background: white; box-shadow: 0 0 0 3px var(--accent-light); }
+  .search-icon { color: var(--mid); flex-shrink: 0; display: flex; }
+  .search-input { border: none; background: transparent; outline: none; font-family: 'Instrument Sans', sans-serif; font-size: 0.88rem; color: var(--text); width: 100%; }
+  .search-input::placeholder { color: #b0a89e; }
+  .search-count { font-size: 0.7rem; color: var(--mid); white-space: nowrap; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .clear-btn { background: none; border: none; cursor: pointer; color: var(--mid); font-size: 1rem; line-height: 1; padding: 0; display: none; }
+  .clear-btn.visible { display: block; }
+  .clear-btn:hover { color: var(--text); }
+
+  .content { max-width: 900px; margin: 0 auto; padding: 0 2rem 6rem; }
+  .section { margin-top: 3.5rem; margin-bottom: 0; }
+  .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+  h2 { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; }
+  .see-all { font-size: 0.72rem; color: var(--accent); text-decoration: none; font-weight: 600; cursor: pointer; }
+
+  .role-card { padding: 1.25rem 0; border-top: 1px solid var(--line); cursor: pointer; transition: opacity 0.2s; }
+  .role-card:last-of-type { border-bottom: 1px solid var(--line); }
+  .role-card.hidden { display: none; }
+  .role-card-main { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .role-card-title { font-weight: 600; font-size: 0.95rem; }
+  .role-card-period { font-size: 0.72rem; color: var(--mid); white-space: nowrap; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .role-card-sub { font-size: 0.78rem; color: var(--mid); margin-top: 0.2rem; }
+  .role-card-body { margin-top: 0.8rem; font-size: 0.85rem; color: #4a4640; line-height: 1.75; display: none; }
+  .role-card.open .role-card-body { display: block; }
+  .chevron { display: inline-block; width: 8px; height: 8px; border-right: 1.5px solid var(--mid); border-bottom: 1.5px solid var(--mid); transform: rotate(45deg) translateY(-2px); margin-left: 0.5rem; transition: transform 0.2s, border-color 0.2s; vertical-align: middle; }
+  .role-card.open .chevron, .assign-row.open .chevron { transform: rotate(225deg) translateY(-2px); border-color: var(--accent); }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.75rem; }
+  .tag { font-size: 0.67rem; font-weight: 500; background: var(--off); color: var(--mid); padding: 0.2rem 0.55rem; border-radius: 3px; border: 1px solid var(--line); }
+  mark { background: #fef3c7; color: inherit; border-radius: 2px; padding: 0 1px; }
+
+  .assign-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; border-top: 1px solid var(--line); cursor: pointer; }
+  .assign-row.hidden { display: none; }
+  .assign-name { font-weight: 600; font-size: 0.9rem; }
+  .assign-client { font-size: 0.75rem; color: var(--mid); margin-top: 0.15rem; }
+  .assign-period-r { font-size: 0.72rem; color: var(--mid); white-space: nowrap; flex-shrink: 0; }
+  .assign-desc-row { font-size: 0.83rem; color: #4a4640; line-height: 1.75; padding: 0.6rem 0 1rem; display: none; }
+  .assign-row.open + .assign-desc-row { display: block; }
+  .assign-desc-row.hidden { display: none !important; }
+
+  .no-results { text-align: center; padding: 3rem 0; color: var(--mid); font-size: 0.9rem; display: none; }
+  .no-results-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+
+
+
+
+
+  .contact-form { max-width: 540px; display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-field { display: flex; flex-direction: column; gap: 0.45rem; }
+  .contact-label { font-size: 0.85rem; font-weight: 500; color: var(--text); }
+  .contact-required { color: var(--warm); }
+  .contact-input { font-family: 'Instrument Sans', sans-serif; font-size: 0.9rem; color: var(--text); background: var(--white); border: 1.5px solid var(--line); border-radius: 6px; padding: 0.65rem 0.9rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; box-sizing: border-box; }
+  .contact-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+  .contact-textarea { resize: vertical; min-height: 160px; line-height: 1.6; }
+  .contact-submit { font-family: 'Instrument Sans', sans-serif; font-size: 0.78rem; font-weight: 600; color: white; background: var(--text); border: none; border-radius: 6px; padding: 0.65rem 1.5rem; cursor: pointer; transition: background 0.15s, transform 0.1s; align-self: flex-start; letter-spacing: 0.04em; }
+  .contact-submit:hover { background: #3a3530; }
+  .contact-submit:active { transform: scale(0.98); }
+  .contact-success { font-size: 0.85rem; color: var(--accent); display: none; }
+  .contact-error { font-size: 0.85rem; color: var(--warm); display: none; }
+
+  .tech-filters { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-bottom: 2rem; }  .tech-filter-btn { font-size: 0.78rem; font-weight: 500; color: var(--mid); padding: 0.35rem 0.7rem; border-radius: 4px; border: none; background: none; cursor: pointer; font-family: 'Instrument Sans', sans-serif; transition: all 0.15s; }
+  .tech-filter-btn:hover { color: var(--text); background: var(--off); }
+  .tech-filter-btn.active { color: var(--accent); background: var(--accent-light); }
+  .tech-filter-desktop { align-items: center; }
+  .tech-filter-desktop .tech-sort { margin-left: auto; }
+  .tech-chart { display: flex; flex-direction: column; }
+  .tech-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.38rem 0; border-bottom: 1px solid var(--off); }
+  .tech-row:last-child { border-bottom: none; }
+  .tech-row-name { font-size: 0.85rem; color: var(--text); width: 170px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tech-row-track { flex: 1; height: 6px; background: var(--off); border-radius: 3px; overflow: hidden; }
+  .tech-row-fill { height: 100%; border-radius: 3px; transition: width 0.5s cubic-bezier(.4,0,.2,1); }
+  .tech-row-yrs { font-size: 0.72rem; color: var(--mid); width: 38px; text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .hero { animation: fadeIn 0.5s ease backwards; }
+  .role-card:nth-child(1){animation:fadeIn .4s .05s ease backwards}
+  .role-card:nth-child(2){animation:fadeIn .4s .10s ease backwards}
+  .role-card:nth-child(3){animation:fadeIn .4s .15s ease backwards}
+  .role-card:nth-child(4){animation:fadeIn .4s .20s ease backwards}
+  .role-card:nth-child(5){animation:fadeIn .4s .25s ease backwards}
+  .role-card:nth-child(6){animation:fadeIn .4s .30s ease backwards}
+
+  /* visually hidden but present for SEO & screen readers */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+  /* hamburger */
+  .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; background: none; border: none; cursor: pointer; padding: 8px; flex-shrink: 0; }
+  .nav-hamburger span { display: block; height: 1.5px; background: var(--text); border-radius: 2px; transition: all 0.2s; }
+  .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+  .nav-active-label { display: none; font-size: 0.78rem; font-weight: 500; color: var(--accent); }
+
+  /* mobile nav drawer — overlays content */
+  .nav-drawer { display: none; position: relative; }
+
+  @media(max-width:720px){
+    .nav-inner { height: 56px; padding: 0 1rem; gap: 0.5rem; }
+    .nav-links { display: none; }
+    .lang-toggle { display: none; }
+    .nav-hamburger { display: flex; margin-left: 0; }
+    .nav-active-label { display: block; margin-left: auto; }
+
+    /* drawer overlays content */
+    .nav-drawer { display: block; position: absolute; left: 0; right: 0; top: 100%; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: var(--white); border-bottom: 1px solid var(--line); z-index: 99; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .nav-drawer.open { max-height: 70vh; overflow-y: auto; }
+    .nav-drawer-inner { padding: 0.75rem 1rem 1rem; display: flex; flex-direction: column; gap: 0.15rem; }
+    .nav-drawer-inner .lang-toggle { display: flex; margin-bottom: 0.5rem; align-self: flex-start; }
+    .nav-drawer-inner .lang-btn { font-size: 0.78rem; padding: 0.4rem 0.8rem; min-height: 36px; }
+    .nav-drawer-inner .nav-btn, .nav-drawer-inner .tech-filter-btn { font-size: 0.9rem; padding: 0.65rem 0.75rem; border-radius: 6px; text-align: left; min-height: 44px; }
+
+    /* hero */
+    .hero { padding: 1.75rem 1rem 2rem; }
+    .hero h1 { font-size: 1.75rem; margin-bottom: 1rem; }
+    .hero-summary { font-size: 0.9rem; margin-bottom: 1.25rem; }
+    .search-box { max-width: 100%; }
+    .search-input { font-size: 16px; }
+
+    /* content */
+    .content { padding: 0 1rem 4rem; }
+    .section { margin-top: 2.5rem; }
+
+    /* role cards — stack title and period */
+    .role-card-main { flex-wrap: wrap; gap: 0.25rem; }
+    .role-card-period { flex-basis: 100%; order: -1; font-size: 0.68rem; }
+
+    /* assign rows — stack name and period */
+    .assign-row { flex-wrap: wrap; gap: 0.2rem; }
+    .assign-period-r { flex-basis: 100%; order: -1; font-size: 0.68rem; }
+
+    /* tech chart — narrower name label */
+    .tech-row-name { width: 110px; font-size: 0.78rem; }
+    .tech-row-yrs { width: 30px; font-size: 0.68rem; }
+
+    /* tech filters hamburger — mirrors main nav */
+    .tech-filter-desktop { display: none !important; }
+    .tech-desktop-bar { display: none !important; }
+    .tech-mobile-nav { display: block; position: relative; background: var(--white); border-bottom: 1px solid var(--line); margin-bottom: 0; }
+
+    /* contact */
+    .contact-input { font-size: 16px; }
+    .contact-submit { width: 100%; text-align: center; padding: 0.8rem; }
+  }
+
+  @media(min-width:721px){
+    .tech-filter-mobile { display: none; }
+    .tech-mobile-nav { display: none !important; }
+    .tech-desktop-bar { display: block !important; }
+    .tech-filter-desktop { display: flex !important; flex-wrap: wrap; gap: 0.25rem; margin-bottom: 2rem; align-items: flex-start; max-width: 900px; margin-left: auto; margin-right: auto; padding: 2.5rem 2rem 0; }
+  }
+
+  /* hero summary truncation — mobile only */
+  .hero-summary.truncated { }
+  .show-more-btn { display: none; }
+  @media(max-width:720px){
+    .hero-summary.truncated { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .show-more-btn.visible { display: block; background: none; border: none; cursor: pointer; font-family: 'Instrument Sans', sans-serif; font-size: 0.8rem; font-weight: 600; color: var(--accent); padding: 0.25rem 0; margin-top: 0.25rem; }
+  }
+
+  /* show more for lists */
+  .nav-drawer-inner .tech-sort { margin-bottom: 0.4rem; }
+  .tech-sort { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; flex-shrink: 0; }
+  .tech-sort-btn { font-size: 0.7rem; font-weight: 600; padding: 0.28rem 0.6rem; cursor: pointer; border: none; background: transparent; color: var(--mid); transition: all 0.15s; font-family: 'Instrument Sans', sans-serif; letter-spacing: 0.04em; white-space: nowrap; text-align: center; }
+  .nav-drawer-inner .tech-sort { align-self: flex-start; }
+  .nav-drawer-inner .tech-sort-btn { font-size: 0.78rem; padding: 0.4rem 0.8rem; min-height: 36px; }
+  .tech-sort-btn:hover:not(.active) { background: var(--off); }
+  .tech-sort-btn.active { background: var(--text); color: white; }
+
+  .show-more-row { padding: 0.6rem 0 0; border-bottom: none; }
+  .show-more-link { background: none; border: none; cursor: pointer; font-family: 'Instrument Sans', sans-serif; font-size: 0.78rem; font-weight: 600; color: var(--accent); padding: 0; }
+  .show-more-link:hover { text-decoration: underline; }
+  .list-item-hidden { display: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-name-block">
+      <div class="nav-eyebrow" data-key="hero_eyebrow"></div>
+      <a class="nav-logo" href="#">Malte Särner</a>
+    </div>
+    <div class="nav-links">
+      <button class="nav-btn active" data-key="nav_cv" onclick="setPage('cv')"></button>
+      <button class="nav-btn" data-key="nav_technology" onclick="setPage('technology')"></button>
+      <button class="nav-btn" data-key="nav_about" onclick="setPage('about')"></button>
+      <button class="nav-btn" data-key="nav_contact" onclick="setPage('contact')"></button>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-sv" onclick="setLang('sv')">SV</button>
+    </div>
+    <span class="nav-active-label" id="nav-active-label"></span>
+    <button class="nav-hamburger" id="nav-hamburger" onclick="toggleDrawer()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-drawer" id="nav-drawer">
+    <div class="nav-drawer-inner">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en-m" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-sv-m" onclick="setLang('sv')">SV</button>
+      </div>
+      <button class="nav-btn active" data-key="nav_cv" onclick="setPage('cv');closeDrawer()"></button>
+      <button class="nav-btn" data-key="nav_technology" onclick="setPage('technology');closeDrawer()"></button>
+      <button class="nav-btn" data-key="nav_about" onclick="setPage('about');closeDrawer()"></button>
+      <button class="nav-btn" data-key="nav_contact" onclick="setPage('contact');closeDrawer()"></button>
+    </div>
+  </div>
+</nav>
+
+<div id="page-cv">
+
+<section class="hero">
+  <h1 class="sr-only" data-key="nav_cv"></h1>
+  <p class="hero-summary truncated" id="heroSummary" data-key="hero_summary"></p>
+  <button class="show-more-btn visible" id="summaryToggle" onclick="toggleSummary()"></button>
+  <div class="search-box">
+    <span class="search-icon">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </span>
+    <input class="search-input" id="searchInput" type="text" oninput="onSearch(this.value)" placeholder="Search ...">
+    <span class="search-count" id="searchCount"></span>
+    <button class="clear-btn" id="clearBtn" onclick="clearSearch()" title="Clear">×</button>
+  </div>
+</section>
+
+<div class="content">
+  <div>
+    <div class="no-results" id="noResults">
+      <div class="no-results-icon">🔍</div>
+      <span data-key="no_results"></span>
+    </div>
+
+    <div class="section" id="educationSection">
+      <div class="section-header">
+        <h2 data-key="section_education"></h2>
+      </div>
+
+      <div class="role-card" data-tags="education ltu luth luleå 1993 1999 computer science" onclick="this.classList.toggle('open')">
+        <div class="role-card-main">
+          <div class="role-card-title"><span data-key="edu_title"></span> <span class="chevron"></span></div>
+          <div class="role-card-period">1999</div>
+        </div>
+        <div class="role-card-sub">LTU (LuTH) · Luleå</div>
+        <div class="role-card-body"><span data-key="edu_desc"></span></div>
+      </div>
+    </div>
+
+    <div class="section" id="rolesSection">
+      <div class="section-header">
+        <h2 data-key="section_experience"></h2>
+      </div>
+
+      <div class="role-card open" data-tags="visionite consultant remote 2023" onclick="this.classList.toggle('open')">
+        <div class="role-card-main">
+          <div class="role-card-title"><span data-key="role_visionite_role"></span> <span class="chevron"></span></div>
+          <div class="role-card-period">2023 – present</div>
+        </div>
+        <div class="role-card-sub">Visionite · Malmö</div>
+        <div class="role-card-body"><span data-key="role_visionite_desc"></span></div>
+      </div>
+
+      <div class="role-card" data-tags="b3skilled consultant 2022 2023" onclick="this.classList.toggle('open')">
+        <div class="role-card-main">
+          <div class="role-card-title"><span data-key="role_b3_role"></span> <span class="chevron"></span></div>
+          <div class="role-card-period">2022 – 2023</div>
+        </div>
+        <div class="role-card-sub">B3Skilled · Malmö</div>
+        <div class="role-card-body"><span data-key="role_b3_desc"></span></div>
+      </div>
+
+      <div class="role-card" data-tags="sinch fullstack developer 2020 2022 typescript nodejs nestjs kafka react postgresql kubernetes aws whatsapp salesforce microservices" onclick="this.classList.toggle('open')">
+        <div class="role-card-main">
+          <div class="role-card-title"><span data-key="role_sinch_role"></span> <span class="chevron"></span></div>
+          <div class="role-card-period">2020 – 2022</div>
+        </div>
+        <div class="role-card-sub">Sinch · Malmö</div>
+        <div class="role-card-body">
+          <span data-key="role_sinch_desc"></span>
+          <div class="tags">
+            <span class="tag">TypeScript</span><span class="tag">NestJS</span><span class="tag">KafkaJS</span>
+            <span class="tag">React</span><span class="tag">PostgreSQL</span><span class="tag">Kubernetes</span><span class="tag">AWS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role-card" data-tags="cybercom consultant 2019 2020 skatteverket" onclick="this.classList.toggle('open')">
+        <div class="role-card-main">
+          <div class="role-card-title"><span data-key="role_cybercom_role"></span> <span class="chevron"></span></div>
+          <div class="role-card-period">2019 – 2020</div>
+        </div>
+        <div class="role-card-sub">Cybercom · Malmö</div>
+        <div class="role-card-body"><span data-key="role_cybercom_desc"></span></div>
+      </div>
+
+      <div class="role-card" data-tags="global gaming team leader fullstack developer 2015 2019 react nodejs mongodb docker aws casino scrum" onclick="this.classList.toggle('open')">
+        <div class="role-card-main">
+          <div class="role-card-title"><span data-key="role_gg_role"></span> <span class="chevron"></span></div>
+          <div class="role-card-period">2015 – 2019</div>
+        </div>
+        <div class="role-card-sub">Global Gaming · Malmö</div>
+        <div class="role-card-body">
+          <span data-key="role_gg_desc"></span>
+          <div class="tags">
+            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">Docker</span><span class="tag">AWS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role-card list-item-hidden" id="roleExtra1" data-tags="connected table fullstack developer 2012 2015 javascript canvas poker c++ browser extension backbonejs" onclick="this.classList.toggle('open')">
+        <div class="role-card-main">
+          <div class="role-card-title"><span data-key="role_ct_role"></span> <span class="chevron"></span></div>
+          <div class="role-card-period">2012 – 2015</div>
+        </div>
+        <div class="role-card-sub">Connected Table · Malmö</div>
+        <div class="role-card-body">
+          <span data-key="role_ct_desc"></span>
+          <div class="tags">
+            <span class="tag">JavaScript</span><span class="tag">BackboneJS</span><span class="tag">Canvas 2D</span><span class="tag">C++/QT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="show-more-row" id="rolesShowMoreRow">
+        <button class="show-more-link" id="rolesShowMore" onclick="toggleListMore('roles')">
+          <span data-key="show_more_roles"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="section" id="assignSection">
+      <div class="section-header">
+        <h2 data-key="section_assignments"></h2>
+      </div>
+      <div id="assignList">
+
+        <div class="assign-row" data-tags="ikea ingka fixa visionite 2024 malmö facility" onclick="toggleAssign(this)">
+          <div>
+            <div class="assign-name">Ikea INGKA Fixa <span class="chevron"></span></div>
+            <div class="assign-client">Visionite (Ikea INGKA) · Malmö</div>
+          </div>
+          <div class="assign-period-r">2024–present</div>
+        </div>
+        <div class="assign-desc-row"><span data-key="assign_ikea_desc"></span></div>
+
+        <div class="assign-row" data-tags="meta sigma visionite lund 2024 hack" onclick="toggleAssign(this)">
+          <div>
+            <div class="assign-name"><span data-key="assign_meta_title"></span> <span class="chevron"></span></div>
+            <div class="assign-client">Visionite (Sigma) · Lund</div>
+          </div>
+          <div class="assign-period-r">2024 Q1–Q2</div>
+        </div>
+        <div class="assign-desc-row"><span data-key="assign_meta_desc"></span></div>
+
+        <div class="assign-row" data-tags="errorprediction tetra pak visionite lund c++ machine learning plc 2023 debian" onclick="toggleAssign(this)">
+          <div>
+            <div class="assign-name">ErrorPrediction <span class="chevron"></span></div>
+            <div class="assign-client">Visionite (Tetra Pak) · Lund</div>
+          </div>
+          <div class="assign-period-r">2023 Q4 – 2024 Q1</div>
+        </div>
+        <div class="assign-desc-row"><span data-key="assign_tetra_desc"></span></div>
+
+        <div class="assign-row" data-tags="sälja salja b3skilled ikea ingka malmö 2023 sales" onclick="toggleAssign(this)">
+          <div>
+            <div class="assign-name">Sälja <span class="chevron"></span></div>
+            <div class="assign-client">B3Skilled (Ikea INGKA) · Malmö</div>
+          </div>
+          <div class="assign-period-r">2023 Q1–Q2</div>
+        </div>
+        <div class="assign-desc-row"><span data-key="assign_salja_desc"></span></div>
+
+        <div class="assign-row" data-tags="energyanalytics sensenode b3skilled lund 2022 sensors iot" onclick="toggleAssign(this)">
+          <div>
+            <div class="assign-name">EnergyAnalytics <span class="chevron"></span></div>
+            <div class="assign-client">B3Skilled (SenseNode) · Lund</div>
+          </div>
+          <div class="assign-period-r">2022 Q4</div>
+        </div>
+        <div class="assign-desc-row"><span data-key="assign_energy_desc"></span></div>
+
+        <div class="assign-row list-item-hidden" id="assignExtra1" data-tags="conversation api adapters sinch 2021 2022 sms mms rcs viber whatsapp tech lead" onclick="toggleAssign(this)">
+          <div>
+            <div class="assign-name">Conversation API Adapters <span class="chevron"></span></div>
+            <div class="assign-client">Sinch · Malmö</div>
+          </div>
+          <div class="assign-period-r">2021 Q4 – 2022</div>
+        </div>
+        <div class="assign-desc-row list-item-hidden" id="assignExtra1Desc"><span data-key="assign_convo_desc"></span></div>
+
+        <div class="show-more-row" id="assignShowMoreRow">
+          <button class="show-more-link" id="assignShowMore" onclick="toggleListMore('assign')">
+            <span data-key="show_more_assign"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .content -->
+
+</div><!-- end #page-cv -->
+
+<div id="page-technology" style="display:none">
+  <h1 class="sr-only">Technology</h1>
+  <!-- desktop filters — hidden on mobile via CSS -->
+  <div class="tech-desktop-bar">
+    <div id="tech-filters" class="tech-filter-desktop"></div>
+  </div>
+  <!-- mobile filter bar — same structure as nav -->
+  <div class="tech-mobile-nav" id="tech-mobile-nav">
+    <div class="nav-inner" style="max-width:900px; margin:0 auto;">
+      <span id="tech-active-label" style="margin-left:auto; font-size:0.78rem; font-weight:500; color:var(--accent);"></span>
+      <button class="nav-hamburger" id="tech-hamburger" onclick="toggleTechDrawer()" aria-label="Filter">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-drawer" id="tech-drawer">
+      <div class="nav-drawer-inner" id="tech-drawer-inner"></div>
+    </div>
+  </div>
+  <div class="content" style="padding-top:1.5rem;">
+    <div id="tech-chart" class="tech-chart"></div>
+  </div>
+</div>
+
+<div id="page-contact" style="display:none">
+  <section class="hero">
+    <h1 class="sr-only" data-key="nav_contact"></h1>
+    <p class="hero-summary" data-key="contact_intro"></p>
+  </section>
+  <div class="content">
+    <div class="contact-form">
+      <div class="contact-field">
+        <label class="contact-label"><span data-key="contact_name"></span> <span class="contact-required">*</span></label>
+        <input class="contact-input" type="text" id="contact-name">
+      </div>
+      <div class="contact-field">
+        <label class="contact-label"><span data-key="contact_email"></span> <span class="contact-required">*</span></label>
+        <input class="contact-input" type="email" id="contact-email">
+      </div>
+      <div class="contact-field">
+        <label class="contact-label"><span data-key="contact_subject"></span> <span class="contact-required">*</span></label>
+        <input class="contact-input" type="text" id="contact-subject">
+      </div>
+      <div class="contact-field">
+        <label class="contact-label"><span data-key="contact_message"></span> <span class="contact-required">*</span></label>
+        <textarea class="contact-input contact-textarea" id="contact-message"></textarea>
+      </div>
+      <button class="contact-submit" onclick="submitContact()" data-key="contact_send"></button>
+      <p class="contact-success" id="contact-success" data-key="contact_success"></p>
+      <p class="contact-error" id="contact-error" data-key="contact_error"></p>
+    </div>
+  </div>
+</div>
+
+<div id="page-about" style="display:none">
+  <section class="hero">
+    <h1 class="sr-only" id="about-title">About</h1>
+    <p class="hero-summary" id="about-body">This site was created with Spec Kit from cv text files.</p>
+  </section>
+</div>
+
+
+
+<script>
+const T = {
+  en: {
+    nav_cv:"CV", nav_technology:"Technology", nav_about:"About", nav_contact:"Contact",
+    about_text:"This site was created with Spec Kit from cv text files.",
+    contact_intro:"Send me a message using the form below.",
+    contact_name:"Name", contact_email:"Email", contact_subject:"Subject", contact_message:"Message",
+    contact_send:"Send Message",
+    contact_success:"Thank you — your message has been sent.",
+    contact_error:"Please fill in all required fields.",
+    hero_eyebrow:"Software Engineer · Malmö, Sweden",
+    hero_summary:"Full-stack engineer with 20+ years spanning embedded C/C++, web frontends, and cloud-native backends. Currently consulting via Visionite with assignments at Ikea INGKA and Meta.",
+    stat_years:"Years", stat_roles:"Roles", stat_remote:"Remote",
+    section_education:"Educations",
+    edu_title:"Master of Science in Computer Science and Engineering",
+    edu_desc:"LTU (LuTH), Luleå — Master of Science in Computer Science and Engineering.",
+    section_experience:"Positions", show_all:"Show all 14 →",
+    section_assignments:"Assignments",
+    show_more_roles:"Show all (1)",
+    show_less_roles:"Show fewer",
+    show_more_assign:"Show all (1)",
+    show_less_assign:"Show fewer",
+    show_more_summary:"Show all",
+    show_less_summary:"Show less",
+    role_visionite_role:"Consultant",
+    role_visionite_desc:"Consultant at Visionite (formerly Onegroup). Working on client assignments including Ikea INGKA and previously Meta.",
+    role_b3_role:"Consultant",
+    role_b3_desc:"Consultant at B3Skilled delivering software engineering to clients including Ikea INGKA.",
+    role_sinch_role:"Fullstack Developer",
+    role_sinch_desc:"Built a WhatsApp→Salesforce configuration UI as four microservices. Later served as tech lead on a Conversation API Java team using Reactive Java & Spring WebFlux.",
+    role_cybercom_role:"Consultant",
+    role_cybercom_desc:"Consulting engagement delivering ReactJS and NodeJS prototype projects for Skatteverket.",
+    role_gg_role:"Team Leader & Fullstack Developer",
+    role_gg_desc:"Built casino web applications — games, auth, payments. Grew from developer to team lead (10+ people) to manager and part-time product owner.",
+    role_ct_role:"Fullstack Developer",
+    role_ct_desc:"Designed two web poker clients and a C++ poker proxy. Also built Chrome/Safari extensions for window management.",
+    assign_ikea_desc:"Working on Ikea's internal 'Fixa' system — a suite of applications supporting INGKA's facility management workflows.",
+    assign_meta_title:"On assignment at Meta",
+    assign_meta_desc:"Programming in Hack at Meta through Visionite/Sigma.",
+    assign_tetra_desc:"Created a multithreaded C++ application running ML algorithms on data from Allen-Bradley PLCs. Built to C++20 standard and packaged as a Debian system service.",
+    assign_salja_desc:"Worked on Ikea's internal 'Sälja' (Sales) system used by staff across stores.",
+    assign_energy_desc:"SenseNode helps companies collect measurement data from sensors. Contributed to the analytics platform.",
+    assign_convo_desc:"Tech Lead for an adapter team handling SMS, MMS, RCS, Viber, WhatsApp and other messaging channels.",
+    sidebar_contact:"Contact", label_location:"Location",
+    label_availability:"Availability", label_workmode:"Work mode",
+    val_workmode:"Remote / Hybrid",
+    sidebar_stack:"Core Stack", sidebar_approach:"Approach",
+    approach_1:"Iterative process (Kanban, Scrum)",
+    approach_2:"Remote-first for 10+ years",
+    approach_3:"Full-stack & backend focus",
+    approach_4:"Team lead experience (10+)",
+    approach_5:"CI/CD & cloud native",
+    footer_years:"20+ years of software development",
+    search_placeholder:"Search roles, assignments, technologies…",
+    no_results:"No results found.",
+  },
+  sv: {
+    nav_cv:"CV", nav_technology:"Teknologi", nav_about:"Om", nav_contact:"Kontakt",
+    about_text:"Denna sida skapades från text-filer med cv-texter med hjälp av Spec Kit.",
+    contact_intro:"Skicka ett meddelande via formuläret nedan.",
+    contact_name:"Namn", contact_email:"E-post", contact_subject:"Ämne", contact_message:"Meddelande",
+    contact_send:"Skicka meddelande",
+    contact_success:"Tack — ditt meddelande har skickats.",
+    contact_error:"Vänligen fyll i alla obligatoriska fält.",
+    hero_eyebrow:"Mjukvaruingenjör · Malmö, Sverige",
+    hero_summary:"Fullstack-ingenjör med 20+ års erfarenhet — från inbyggda system i C/C++ till moderna TypeScript-backends och React-frontends. Konsultar via Visionite med uppdrag hos bl.a. Ikea INGKA.",
+    stat_years:"År", stat_roles:"Roller", stat_remote:"Distans",
+    section_education:"Utbildningar",
+    edu_title:"Civilingenjör i datateknik",
+    edu_desc:"LTU (LuTH), Luleå — Civilingenjör i datateknik.",
+    section_experience:"Positioner", show_all:"Visa alla 14 →",
+    section_assignments:"Uppdrag",
+    show_more_roles:"Visa alla (1)",
+    show_less_roles:"Visa färre",
+    show_more_assign:"Visa alla (1)",
+    show_less_assign:"Visa färre",
+    show_more_summary:"Visa mer",
+    show_less_summary:"Visa mindre",
+    role_visionite_role:"Konsult",
+    role_visionite_desc:"Konsult på Visionite (tidigare Onegroup). Arbetar med kunduppdrag inklusive Ikea INGKA och tidigare Meta.",
+    role_b3_role:"Konsult",
+    role_b3_desc:"Konsult på B3Skilled med uppdrag hos bl.a. Ikea INGKA.",
+    role_sinch_role:"Fullstack-utvecklare",
+    role_sinch_desc:"Byggde ett konfigurerings-UI för WhatsApp via Salesforce som fyra mikrotjänster. Senare tech lead för ett Conversation API Java-team i Reactive Java & Spring WebFlux.",
+    role_cybercom_role:"Konsult",
+    role_cybercom_desc:"Konsultuppdrag med ReactJS- och NodeJS-prototyper åt Skatteverket.",
+    role_gg_role:"Teamledare & Fullstack-utvecklare",
+    role_gg_desc:"Byggde kasino-webbapplikationer — spel, inloggning, betalningar. Växte från utvecklare till teamledare (10+ pers.) och chef samt del-produktägare.",
+    role_ct_role:"Fullstack-utvecklare",
+    role_ct_desc:"Designade två webbpokerklienter och en C++ pokerproxy. Byggde även Chrome/Safari-extensions för fönsterhantering.",
+    assign_ikea_desc:"Arbetar med Ikeas interna 'Fixa'-system — applikationer för INGKA:s fastighetsförvaltning.",
+    assign_meta_title:"Uppdrag åt Meta",
+    assign_meta_desc:"Programmering i Hack hos Meta via Visionite/Sigma.",
+    assign_tetra_desc:"Skapade en flertrådad C++-applikation som kör maskininlärningsalgoritmer på data från Allen-Bradley PLC:er. C++20 standard, paketerad som Debian-systemtjänst.",
+    assign_salja_desc:"Arbete med Ikeas interna 'Sälja'-system som används av butikspersonal.",
+    assign_energy_desc:"SenseNode hjälper företag samla mätdata från sensorer. Bidrog till analysplattformen.",
+    assign_convo_desc:"Tech Lead för adapterteam som hanterade SMS, MMS, RCS, Viber, WhatsApp och fler meddelandekanaler.",
+    sidebar_contact:"Kontakt", label_location:"Plats",
+    label_availability:"Tillgänglighet", label_workmode:"Arbetsform",
+    val_workmode:"Distans / Hybrid",
+    sidebar_stack:"Teknikstack", sidebar_approach:"Arbetssätt",
+    approach_1:"Iterativa processer (Kanban, Scrum)",
+    approach_2:"Distansarbete sedan 10+ år",
+    approach_3:"Fullstack med backend-fokus",
+    approach_4:"Teamledarerfarenhet (10+)",
+    approach_5:"CI/CD och molnbaserade system",
+    footer_years:"20+ år inom mjukvaruutveckling",
+    search_placeholder:"Sök roller, uppdrag, tekniker…",
+    no_results:"Inga resultat hittades.",
+  }
+};
+
+let lang = 'en';
+
+function setLang(l) {
+  lang = l;
+  ['btn-en','btn-sv','btn-en-m','btn-sv-m'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', (l === 'en') ? id.endsWith('-en') || id.endsWith('-en-m') : id.endsWith('-sv') || id.endsWith('-sv-m'));
+  });
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const v = T[l][el.dataset.key];
+    if (v !== undefined) el.textContent = v;
+  });
+  document.getElementById('about-title').textContent = T[l].nav_about;
+  document.getElementById('about-body').textContent = T[l].about_text;
+  const labelEl = document.getElementById('nav-active-label');
+  if (labelEl) labelEl.textContent = T[l]['nav_' + (currentPage || 'cv')] || '';
+  const summaryBtn = document.getElementById('summaryToggle');
+  if (summaryBtn && !summaryExpanded) summaryBtn.textContent = T[l].show_more_summary;
+  // refresh show-more count buttons
+  ['roles', 'assign'].forEach(type => {
+    const id = type === 'roles' ? '#rolesShowMore span' : '#assignShowMore span';
+    const el = document.querySelector(id);
+    if (el) el.textContent = getShowAllText(type, listState[type]);
+  });
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.placeholder = T[l].search_placeholder || 'Search ...';
+    onSearch(searchInput.value);
+  }
+}
+
+let currentPage = 'cv';
+
+function toggleDrawer() {
+  const drawer = document.getElementById('nav-drawer');
+  const btn = document.getElementById('nav-hamburger');
+  const open = drawer.classList.toggle('open');
+  btn.classList.toggle('open', open);
+}
+
+function closeDrawer() {
+  document.getElementById('nav-drawer').classList.remove('open');
+  document.getElementById('nav-hamburger').classList.remove('open');
+}
+
+let summaryExpanded = false;
+function toggleSummary() {
+  if (summaryExpanded) return;
+  summaryExpanded = true;
+  const p = document.getElementById('heroSummary');
+  const btn = document.getElementById('summaryToggle');
+  p.classList.remove('truncated');
+  btn.style.display = 'none';
+}
+
+const HIDDEN_COUNTS = { roles: 1, assign: 1 };
+
+function getShowAllText(type, expanded) {
+  const en = expanded
+    ? (type === 'roles' ? 'Show fewer' : 'Show fewer')
+    : `Show all (${HIDDEN_COUNTS[type]})`;
+  const sv = expanded
+    ? 'Visa färre'
+    : `Visa alla (${HIDDEN_COUNTS[type]})`;
+  return lang === 'sv' ? sv : en;
+}
+
+const listState = { roles: false, assign: false };
+function toggleListMore(type) {
+  listState[type] = !listState[type];
+  const expanded = listState[type];
+  if (type === 'roles') {
+    document.getElementById('roleExtra1').classList.toggle('list-item-hidden', !expanded);
+  } else {
+    document.getElementById('assignExtra1').classList.toggle('list-item-hidden', !expanded);
+    document.getElementById('assignExtra1Desc').classList.toggle('list-item-hidden', !expanded);
+  }
+  const btn = document.querySelector(type === 'roles' ? '#rolesShowMore span' : '#assignShowMore span');
+  if (btn) btn.textContent = getShowAllText(type, expanded);
+}
+
+function toggleTechDrawer() {
+  const drawer = document.getElementById('tech-drawer');
+  const btn = document.getElementById('tech-hamburger');
+  if (!drawer || !btn) return;
+  const open = drawer.classList.toggle('open');
+  btn.classList.toggle('open', open);
+}
+
+function closeTechDrawer() {
+  const drawer = document.getElementById('tech-drawer');
+  const btn = document.getElementById('tech-hamburger');
+  if (drawer) drawer.classList.remove('open');
+  if (btn) btn.classList.remove('open');
+}
+
+function makeSortToggle(onSelect) {
+  const wrap = document.createElement('div');
+  wrap.className = 'tech-sort';
+  ['Time', 'A–Z'].forEach((label, i) => {
+    const val = i === 0 ? 'duration' : 'alpha';
+    const btn = document.createElement('button');
+    btn.className = 'tech-sort-btn' + (techSort === val ? ' active' : '');
+    btn.textContent = label;
+    btn.onclick = () => { techSort = val; onSelect(); };
+    wrap.appendChild(btn);
+  });
+  return wrap;
+}
+
+function renderTechChart() {
+  const desktopEl = document.getElementById('tech-filters');
+  const drawerEl = document.getElementById('tech-drawer-inner');
+  const chartEl = document.getElementById('tech-chart');
+  if (!chartEl) return;
+
+  // Desktop: sort at end, pill filters
+  if (desktopEl) {
+    desktopEl.innerHTML = '';
+    const allBtn = document.createElement('button');
+    allBtn.className = 'tech-filter-btn' + (activeCat === null ? ' active' : '');
+    allBtn.textContent = 'All';
+    allBtn.onclick = () => { activeCat = null; renderTechChart(); };
+    desktopEl.appendChild(allBtn);
+    ALL_CATS.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'tech-filter-btn' + (activeCat === cat ? ' active' : '');
+      btn.textContent = cat;
+      btn.onclick = () => { activeCat = activeCat === cat ? null : cat; renderTechChart(); };
+      desktopEl.appendChild(btn);
+    });
+    desktopEl.appendChild(makeSortToggle(() => renderTechChart()));
+  }
+
+  // Mobile drawer: sort FIRST, then categories
+  if (drawerEl) {
+    drawerEl.innerHTML = '';
+    drawerEl.appendChild(makeSortToggle(() => { renderTechChart(); closeTechDrawer(); }));
+    const allBtn = document.createElement('button');
+    allBtn.className = 'tech-filter-btn' + (activeCat === null ? ' active' : '');
+    allBtn.textContent = 'All';
+    allBtn.style.textAlign = 'left';
+    allBtn.onclick = () => { activeCat = null; renderTechChart(); closeTechDrawer(); };
+    drawerEl.appendChild(allBtn);
+    ALL_CATS.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'tech-filter-btn' + (activeCat === cat ? ' active' : '');
+      btn.textContent = cat;
+      btn.style.textAlign = 'left';
+      btn.onclick = () => { activeCat = activeCat === cat ? null : cat; renderTechChart(); closeTechDrawer(); };
+      drawerEl.appendChild(btn);
+    });
+  }
+
+  // update active label
+  const labelEl = document.getElementById('tech-active-label');
+  if (labelEl) labelEl.textContent = activeCat || 'All';
+
+  let rows = [];
+  const catsToShow = activeCat ? [activeCat] : ALL_CATS;
+  catsToShow.forEach(cat => {
+    TECH_DATA[cat].items.forEach(([name, yrs]) => rows.push({ name, yrs }));
+  });
+
+  if (techSort === 'alpha') {
+    rows.sort((a, b) => a.name.localeCompare(b.name));
+  } else {
+    rows.sort((a, b) => b.yrs - a.yrs || a.name.localeCompare(b.name));
+  }
+
+  chartEl.innerHTML = '';
+  rows.forEach(({ name, yrs }) => {
+    const row = document.createElement('div');
+    row.className = 'tech-row';
+    const lbl = document.createElement('div');
+    lbl.className = 'tech-row-name';
+    lbl.textContent = name;
+    lbl.title = name;
+    const track = document.createElement('div');
+    track.className = 'tech-row-track';
+    const fill = document.createElement('div');
+    fill.className = 'tech-row-fill';
+    fill.style.width = '0%';
+    fill.style.background = barColor(yrs);
+    track.appendChild(fill);
+    setTimeout(() => { fill.style.width = Math.round((yrs / MAX_YRS) * 100) + '%'; }, 30);
+    const yrsEl = document.createElement('div');
+    yrsEl.className = 'tech-row-yrs';
+    yrsEl.textContent = yrs + ' yr' + (yrs !== 1 ? 's' : '');
+    row.appendChild(lbl);
+    row.appendChild(track);
+    row.appendChild(yrsEl);
+    chartEl.appendChild(row);
+  });
+}
+
+
+function setPage(page) {
+  currentPage = page;
+  ['cv', 'technology', 'about', 'contact'].forEach(p => {
+    const el = document.getElementById('page-' + p);
+    if (el) el.style.display = p === page ? '' : 'none';
+  });
+  // sync all nav-btn elements (desktop + drawer)
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.key === 'nav_' + page);
+  });
+  // update active label shown next to hamburger
+  const labelEl = document.getElementById('nav-active-label');
+  if (labelEl) labelEl.textContent = T[lang]['nav_' + page] || '';
+  if (page === 'technology') renderTechChart();
+}
+
+
+function toggleAssign(row) {
+  const wasOpen = row.classList.contains('open');
+  document.querySelectorAll('.assign-row.open').forEach(r => r.classList.remove('open'));
+  if (!wasOpen) row.classList.add('open');
+}
+
+function onSearch(q) {
+  const term = q.trim().toLowerCase();
+  const clearBtn = document.getElementById('clearBtn');
+  if (clearBtn) clearBtn.classList.toggle('visible', term.length > 0);
+
+  let total = 0, visible = 0;
+
+  document.querySelectorAll('.role-card').forEach(card => {
+    total++;
+    const haystack = (card.dataset.tags + ' ' + card.textContent).toLowerCase();
+    const match = !term || haystack.includes(term);
+    card.classList.toggle('hidden', !match);
+    if (match) visible++;
+  });
+
+  document.querySelectorAll('.assign-row').forEach(row => {
+    total++;
+    const haystack = (row.dataset.tags + ' ' + row.textContent).toLowerCase();
+    const match = !term || haystack.includes(term);
+    row.classList.toggle('hidden', !match);
+    const desc = row.nextElementSibling;
+    if (desc && desc.classList.contains('assign-desc-row')) {
+      desc.classList.toggle('hidden', !match);
+    }
+    if (match) visible++;
+  });
+
+  const noRes = document.getElementById('noResults');
+  const countEl = document.getElementById('searchCount');
+  if (noRes) noRes.style.display = (term && visible === 0) ? 'block' : 'none';
+  if (countEl) countEl.textContent = term ? `${visible} result${visible !== 1 ? 's' : ''}` : '';
+}
+
+function clearSearch() {
+  const inp = document.getElementById('searchInput');
+  inp.value = '';
+  onSearch('');
+  inp.focus();
+}
+
+function submitContact() {
+  const name = document.getElementById('contact-name').value.trim();
+  const email = document.getElementById('contact-email').value.trim();
+  const subject = document.getElementById('contact-subject').value.trim();
+  const msg = document.getElementById('contact-message').value.trim();
+  const success = document.getElementById('contact-success');
+  const error = document.getElementById('contact-error');
+  error.style.display = 'none';
+  success.style.display = 'none';
+  if (!name || !email || !subject || !msg) {
+    error.style.display = 'block';
+    return;
+  }
+  success.style.display = 'block';
+  document.getElementById('contact-name').value = '';
+  document.getElementById('contact-email').value = '';
+  document.getElementById('contact-subject').value = '';
+  document.getElementById('contact-message').value = '';
+}
+
+setLang('en');
+
+const TECH_DATA = {
+  "Languages":       { items: [["C",20],["C++",18],["JavaScript",14],["TypeScript",8],["SQL",8],["PHP",3],["Java",2],["C#",2],["C++20",1],["Hack",1]] },
+  "Frontend":        { items: [["HTML",14],["CSS",14],["React",9],["React Hooks",5],["Redux",4],["Context API",3],["CSS Modules",3],["HTML5 Canvas",3],["SVG",3],["Styled Components",3],["BackboneJS",3],["Bootstrap",2],["Contentful CMS",2],["Jed",2],["MarionetteJS",2],["NextJS",2],["React Query",2],["RequireJS",2],["Soundmanager2",2],["TailwindUI",2],["Web Audio API",2],["jQuery Mobile",2],["Chrome Extension",1],["KineticJS",1],["SingleSPA",1]] },
+  "Backend":         { items: [["NodeJS",10],["ExpressJS",7],["QT / QT4",5],["Mongoose",4],["NestJS",4],["Bull",3],["TypeORM",3],["Knex",2],[".NET",2],["Fastify",1],["Spring WebFlux",1],["TypeBox",1],["XState",1]] },
+  "Databases":       { items: [["PostgreSQL",5],["MongoDB",5],["Redis",4],["MySQL",4],["InfluxDB",1]] },
+  "Cloud & DevOps":  { items: [["Linux",15],["CI/CD",8],["Make",8],["AWS",7],["Docker",7],["npm",10],["Kubernetes",5],["Webpack",5],["CMake",3],["Debian",2],["GCP",1]] },
+  "Testing":         { items: [["Jest",6],["Cypress",3],["Enzyme",3],["Jasmine",2],["Playwright",2],["Webdriver.io",2]] },
+  "Version Control": { items: [["Git",14],["GitHub",8],["GitLab",6],["SVN",5],["Jenkins",3],["CVS",3],["Bitbucket",2],["ClearCase",2],["Copilot",2],["Mercurial",2]] },
+  "APIs":            { items: [["HTTP",14],["REST",10],["WebSockets",4],["Google Analytics",4],["GraphQL",3],["GRPC",3],["Kafka",3],["GTM",3],["SSE",2],["MQTT",1]] },
+  "Embedded":        { items: [["Multithreading",10],["Symbian",4],["Bluetooth",3],["OpenGL",2],["GPS",2],["Allen-Bradley PLC",1],["Z-Wave",1]] },
+  "Protocols":       { items: [["XML",8],["SMS",4],["IMS",3],["SIP",3],["SOAP",3],["MMS",3],["RCS",2],["RTP",2],["UPnP",2],["WAP",2],["WhatsApp",2]] },
+  "Other":           { items: [["Kanban",12],["Scrum",10],["Microservices",6]] },
+};
+
+const MAX_YRS = 20;
+const ALL_CATS = Object.keys(TECH_DATA);
+let activeCat = null;
+let techSort = 'duration';
+
+function barColor(yrs) {
+  const pct = yrs / MAX_YRS;
+  if (pct >= 0.6) return '#1a6b4a';
+  if (pct >= 0.35) return '#2d9b6f';
+  if (pct >= 0.15) return '#6bbea0';
+  return '#a8d8c8';
+}
+
+</script>
+</body>
+</html>

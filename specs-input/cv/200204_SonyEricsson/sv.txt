@@ -1,0 +1,4 @@
+
+Title: SVG/SIS-animationsprototyp
+
+Design och implementation av en Ericsson SVG/SIS-animationsprototypspelare med tredjeparts-codecs och en UI-applikation.

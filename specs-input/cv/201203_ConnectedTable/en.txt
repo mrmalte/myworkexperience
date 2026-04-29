@@ -1,0 +1,4 @@
+
+Title: Poker Replay Client
+
+Development of replay functionality for an existing Qt/C++ poker client, enabling players to view and step through old hands from hand history with pause and per-change navigation.

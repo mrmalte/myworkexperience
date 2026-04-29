@@ -1,0 +1,8 @@
+
+Title: Water/Power Cost Distribution System
+
+Design, development and maintenance of a system for distributing cold water, hot water and electricity costs across apartments and shared washrooms in a housing association, based on individual meter readings. I also added encrypted communication support for integration with Bewator's access control system managing the shared washrooms.
+
+The system integrates with water, power and access control meters and is implemented in C++/PHP on a Linux/Apache/MySQL stack, with source in Subversion deployed manually to the Linux server.
+
+Planning followed Kanban.

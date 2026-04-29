@@ -1,0 +1,7 @@
+Type: Employee
+Organization: B3Skilled
+Period: 202208-202308
+Role: Consultant
+Location: Malmö
+LocationType: Onsite
+Technologies: 

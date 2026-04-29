@@ -1,0 +1,4 @@
+
+Title: Digital Signage CMS
+
+Maintenance, refactoring and development of MultiQ's central digital signage content management system, implemented in PHP, SQL, HTML, JavaScript and Java.

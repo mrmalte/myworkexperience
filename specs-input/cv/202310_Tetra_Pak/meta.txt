@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Visionite
+Client: Tetra Pak
+Period: 202310-202402
+Role: Software Developer C++
+Location: Lund
+LocationType: Hybrid
+Technologies: C++, C++20, CMake, Git, Bitbucket, Machine Learning, Allen-Bradley PLC, Nlohmann/json, Debian, Multithreading

@@ -1,0 +1,4 @@
+
+Title: Thinclient HTML5-pokerklient
+
+Utveckling och underhåll av en HTML5-pokerklient som fungerar liknande Remote Desktop — all grafik utom knappar genereras på serversidan och strömmas som ritkommandon till en HTML5-canvas på klientsidan. Servern är implementerad i Qt/C++ och klienten i HTML/CSS/JavaScript, med ljud spelat från ljud-sprites via HTML5 Audio API. Kommunikation sker med XMLHttpRequest.

@@ -1,0 +1,4 @@
+
+Title: Poker-replayklient
+
+Utveckling av replayfunktionalitet för en befintlig Qt/C++-pokerklient som gör det möjligt för spelare att se och stega sig igenom gamla händer från hand-historik med paus och navigering per ändring.

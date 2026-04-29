@@ -1,0 +1,4 @@
+
+Title: VideoShare-prototyp
+
+Design och implementation av en SonyEricsson VideoShare-prototyp — en IMS-tjänst som möjliggör videodelning under ett telefonsamtal. Arbetet inkluderade applikationen, H.263 RTP-datahantering och SIP-sessionsuppsättning.

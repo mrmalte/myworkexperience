@@ -1,0 +1,5 @@
+
+Title: Uppdrag åt Meta
+
+På begäran får jag inte nämna mer än att det handlar om programmering i Hack. Hack är en typad och kompilerad version av PHP som även har stöd för hantering av asynkrona funktioner.
+

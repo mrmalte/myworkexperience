@@ -1,0 +1,10 @@
+
+Title: Casino Site Web Application
+
+Fullstack design and development of a casino site at Global Gaming, built on top of internal APIs for user management, payments and games, with multi-language support and SEO optimisation (title, description, canonical, alternate tags) and a GA/GTM data layer for analytics tracking.
+
+I started as a fullstack developer and grew into Team Lead for a team that expanded to over 10 members, eventually also taking on management and part-time product owner responsibilities.
+
+The frontend was a MarionetteJS/BackboneJS SPA with Bootstrap, bundled with Webpack. The backend was an ExpressJS BFF with MongoDB/Mongoose. The system was deployed manually from Subversion to company-owned infrastructure.
+
+Planning followed Scrum.

@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Connected Table
+Client: Connected Table
+Period: 201202-201206
+Role: Software Developer
+Location: Malmö
+LocationType: Hybrid
+Technologies: Javascript, HTML, CSS, HTML5 Canvas, Qt, C++, XMLHttpRequest, SVN

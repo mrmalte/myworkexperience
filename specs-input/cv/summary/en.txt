@@ -1,0 +1,5 @@
+Title: Summary
+
+I have worked with software development for over 25 years. The first half of my career was in embedded systems with C and C++; the second half in web systems — initially frontend-focused, later shifting toward backends. I typically work with TypeScript, Node.js and React, with source in GitLab or GitHub and CI/CD pipelines for build, test and deployment. More recently I have returned to C++ and embedded through embedded application projects. Work processes are usually iterative — Kanban or Scrum — and I have worked partly remote for the past 10 years.
+
+I work well independently but thrive in small teams with skilled colleagues. Outside work I run a home automation system that schedules energy consumption based on live electricity spot prices. I am also actively exploring AI-assisted development — this CV itself is generated from structured data, with content authored and refined using Copilot and Speckit.

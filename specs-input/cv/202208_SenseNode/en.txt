@@ -1,0 +1,7 @@
+Title: EnergyAnalytics
+
+SenseNode's EnergyAnalytics platform helps companies and factories gather sensor data to track and analyse energy consumption. Measurement data is collected by on-premise gateways and sent to a cloud service for storage and visualisation.
+
+Working as a fullstack developer I maintained and added new features to the cloud service and developed new software for the gateway.
+
+The cloud service is built in TypeScript with a NestJS/TypeORM backend (PostgreSQL) and a NextJS/React frontend using TailwindUI, communicating via REST. The gateway is an embedded TypeScript application using XState to collect readings from Z-Wave sensors and forward them via MQTT to InfluxDB. Services are hosted on GCP with source in GitHub.

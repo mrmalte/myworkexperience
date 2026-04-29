@@ -1,0 +1,36 @@
+{
+  "chat.promptFilesRecommendations": {
+    "speckit.constitution": true,
+    "speckit.specify": true,
+    "speckit.plan": true,
+    "speckit.tasks": true,
+    "speckit.implement": true
+  },
+  "chat.tools.terminal.autoApprove": {
+    ".specify/scripts/bash/": true,
+    ".specify/scripts/powershell/": true,
+    "git rev-parse": true,
+    "npm install": true,
+    "npx tsx": true,
+    "/^bash \\.specify/scripts/bash/setup-plan\\.sh --json > \\.tmp/setup-plan\\.txt 2>&1; echo \"EXIT:\\$\\?\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^bash \\.specify/scripts/bash/update-agent-context\\.sh copilot > \\.tmp/agent-context\\.txt 2>&1; echo \"EXIT:\\$\\?\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^bash \\.specify/scripts/bash/check-prerequisites\\.sh --json > \\.tmp/prereqs\\.txt 2>&1; echo \"EXIT:\\$\\?\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^bash \\.specify/scripts/bash/check-prerequisites\\.sh --json --require-tasks --include-tasks > \\.tmp/prereqs-analyze\\.txt 2>&1; echo \"EXIT:\\$\\?\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^bash \\.specify/scripts/bash/check-prerequisites\\.sh --json --require-tasks --include-tasks > \\.tmp/prereqs-impl\\.txt 2>&1; echo \"EXIT:\\$\\?\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}

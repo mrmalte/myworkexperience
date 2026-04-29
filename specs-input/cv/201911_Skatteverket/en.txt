@@ -1,0 +1,4 @@
+
+Title: ReactJS Prototype
+
+Prototype file upload service built to evaluate ReactJS, business logic separation, and state management using React hooks and Context API. Unit tests implemented with Jest/Enzyme. Source code stored in GitHub Enterprise, deployed to OpenShift via Jenkins CI/CD pipelines.

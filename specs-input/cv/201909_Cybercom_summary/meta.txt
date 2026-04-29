@@ -1,0 +1,7 @@
+Type: Employee
+Organization: Cybercom
+Period: 201909-202004
+Role: Consultant
+Location: Malmö
+LocationType: Onsite
+Technologies: 

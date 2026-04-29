@@ -1,0 +1,7 @@
+Type: Employee
+Organization: Axis Communications AB
+Period: 200002-200204
+Role: Software Developer
+Location: Lund
+LocationType: Onsite
+Technologies: 

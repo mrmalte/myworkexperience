@@ -1,0 +1,3 @@
+Title: Unicode-översättningsverktyg
+
+Designade och implementerade ett kodgenereringsverktyg som producerar en C-översättningsmodul som mappar Unicode-teckenkoder till enkelbytes-kodningar som ASCII.

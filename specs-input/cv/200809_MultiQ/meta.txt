@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: MultiQ Media Solutions
+Client: MultiQ Media Solutions
+Period: 200809-200908
+Role: Software Architect
+Location: Malmö
+LocationType: Onsite
+Technologies: C, C++, Linux, Make, Automake, SVN, Intel Atom

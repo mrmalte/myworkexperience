@@ -1,0 +1,6 @@
+
+Title: HTML5 Poker Client
+
+Design and implementation of a full HTML5 poker client rendering the table on canvas. The client is built on Backbone, RequireJS and a custom MVC framework, with models and controllers shared across multiple UIs and views implemented in both HTML/CSS and jQuery Mobile.
+
+The poker table is rendered with KineticJS using cached, prescaled vector graphics, text and images. Audio uses the Web Audio API with Soundmanager2 fallback. Translations are handled with Jed. Server communication uses two XMLHttpRequest channels for duplex messaging with long-polling for server-to-client events.

@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: B3Skilled
+Client: SenseNode
+Period: 202208-202212
+Role: Fullstack Developer
+Location: Lund
+LocationType: Hybrid
+Technologies: TypeScript, ReactJS, TailwindUI, NextJS, NestJS, TypeORM, PostgreSQL, REST, XState, MQTT, Z-Wave, InfluxDB, Git, GitHub

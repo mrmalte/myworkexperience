@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Sinch
+Client: Sinch
+Period: 202005-202006
+Role: Fullstack Developer
+Location: Malmö
+LocationType: Hybrid
+Technologies: TypeScript, NodeJS, ReactJS, Git, GitLab, AWS, Apollo GraphQL, GRPC, Docker, Kubernetes

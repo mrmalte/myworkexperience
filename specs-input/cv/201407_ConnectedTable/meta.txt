@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Connected Table
+Client: Connected Table
+Period: 201407-201407
+Role: Fullstack Developer
+Location: Malmö
+LocationType: Hybrid
+Technologies: Javascript, SVN, Chrome, Safari

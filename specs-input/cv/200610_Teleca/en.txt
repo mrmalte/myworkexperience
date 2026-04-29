@@ -1,0 +1,4 @@
+
+Title: SMS Push
+
+Integrated Teleca's Proteller test tool with a radio network simulator via SMS Push. Work included implementing a small HTTP server, recoding SMS messages from text to binary format, and communicating with the simulator via the Windows COM interface.

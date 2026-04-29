@@ -1,0 +1,4 @@
+
+Title: vProperty lågnivåparser
+
+Designade och implementerade en lågnivå-vProperty-parser — som tolkar den minsta strukturella enheten i vObjekt — använd som grund i vObjekt-formateringsramverket från föregående projekt.

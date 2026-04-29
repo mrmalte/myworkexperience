@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: SonyEricsson Communications AB
+Client: SonyEricsson Communications AB
+Period: 200705-200808
+Role: Senior Staff Engineer
+Location: Lund
+LocationType: Onsite
+Technologies: C++, Symbian, GPS, ClearCase

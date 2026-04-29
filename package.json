@@ -1,0 +1,40 @@
+{
+  "name": "myworkexperience",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "npm run content:build && next build",
+    "content:build": "tsx tools/build-content.ts",
+    "content:validate": "tsx tools/validate-content.ts",
+    "content:check": "npm run content:build && npm run content:validate",
+    "deploy": "tsx tools/deploy-ftp.ts",
+    "deploy:full": "npm run export && npm run deploy",
+    "export:github": "bash tools/export-github.sh"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "next": "^15.1.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "autoprefixer": "^10.4.23",
+    "basic-ftp": "^5.3.0",
+    "dotenv": "^17.4.2",
+    "eslint": "^9",
+    "eslint-config-next": "^15.1.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
+  }
+}

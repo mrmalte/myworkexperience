@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Sinch
+Client: Sinch
+Period: 202110-202208
+Role: Tech lead
+Location: Malmö
+LocationType: Hybrid
+Technologies: Java, Spring WebFlux, GitLab, Git, Docker, Kubernetes, AWS, Microservices, CI/CD, SMS, MMS, RCS, Viber, WhatsApp, KakaoTalk

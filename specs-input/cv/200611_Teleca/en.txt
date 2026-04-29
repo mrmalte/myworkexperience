@@ -1,0 +1,4 @@
+
+Title: Windows Mobile Messaging
+
+Integration of Teleca's application suite on Windows Mobile, working within the release management team. Responsibilities included release coordination across contributing teams and project plan follow-up.

@@ -1,0 +1,8 @@
+
+Title: ReactJS Kasinowebbplats
+
+Frontend- och testarbete på en kasinowebbplats på Global Gaming, där jag även hade rollen som Team Lead.
+
+Som utvecklare byggde jag UI-features för ReactJS/Redux-frontend och implementerade automatiserade e2e-tester med Webdriver.io. Systemet är enhetstestat med Jest/Enzyme i alla delar.
+
+Frontend deployas till CDN och backend av en DDD-skiktad ExpressJS-cache/proxy-tjänst driftsatt via Docker. Innehåll och översättningar hanteras i Contentful headless CMS. Systemet är strukturerat i små npm-paket.

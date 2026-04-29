@@ -1,0 +1,10 @@
+
+Title: Conversation API Adapters
+
+Sinch Conversation API enables businesses to send messages across SMS, MMS, RCS, WhatsApp, Messenger, Viber, KakaoTalk and more from a single API, transcoding each message from an internal format to the network's native format and falling back across channels when a recipient can't be reached on the primary one.
+
+As Tech Lead for the adapter team I was primarily responsible for planning, coordination and prioritisation across the team's channels. I also contributed smaller programming tasks and developed a broad understanding of the overall system architecture.
+
+Adapters are implemented in Java 17 with Spring WebFlux as individual reactive microservices, deployed to Kubernetes on AWS via Docker and GitLab CI/CD, monitored through Grafana and Graylog.
+
+Development followed Sinch's one-week Kanban cycle with tasks in Jira/Confluence and source managed in GitLab with GitFlow-style branching.

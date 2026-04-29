@@ -1,0 +1,4 @@
+
+Title: Chrome- och Safari-tillägg
+
+Prototyp av webbläsartillägg för Chrome och Safari för att hantera fönsterstorlek och positionering för en pokerklient.

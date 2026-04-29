@@ -1,0 +1,7 @@
+Title: Sälja
+
+Sälja is Ikea's internal web application used by in-store sellers to browse product information and manage receipts, orders, deliveries, and planner projects such as kitchen configurations.
+
+Working as a fullstack developer I focused on maintenance — investigating and resolving bugs in both application code and data issues originating from upstream internal systems.
+
+The system is implemented primarily in JavaScript/TypeScript with NodeJS/ExpressJS backends and a SingleSPA/React frontend with Redux for state management. Services are deployed to GCP with source in GitHub.

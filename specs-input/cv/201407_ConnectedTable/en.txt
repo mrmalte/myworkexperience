@@ -1,0 +1,4 @@
+
+Title: Chrome and Safari Extensions
+
+Prototype browser extensions for Chrome and Safari to manage window size and positioning for a poker client.

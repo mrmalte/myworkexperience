@@ -1,0 +1,4 @@
+
+Title: E-postklient
+
+Modulansvarig för e-postklienten utvecklad på Teleca, med ansvar för design, implementation och underhåll.

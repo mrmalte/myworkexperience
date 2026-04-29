@@ -1,0 +1,4 @@
+
+Title: SMS Push
+
+Integrering av Telecas Proteller-testverktyg med en radionätverkssimulator via SMS Push. Arbetet inkluderade implementation av en liten HTTP-server, omkodning av SMS från text till binärt format och kommunikation med simulatorn via Windows COM-gränssnitt.

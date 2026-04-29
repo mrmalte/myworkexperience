@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Connected Table
+Client: Connected Table
+Period: 201409-201508
+Role: Software Developer
+Location: Malmö
+LocationType: Hybrid
+Technologies: C++, QT4, SVN

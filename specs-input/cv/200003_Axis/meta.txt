@@ -1,0 +1,8 @@
+Type: Assignment
+Client: Axis Communications AB
+Organization: Axis Communications AB
+Period: 200003-200004
+Role: Software Developer
+Location: Lund
+LocationType: Onsite
+Technology: C, vProperty, vObject, CVS

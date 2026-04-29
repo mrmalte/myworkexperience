@@ -1,0 +1,7 @@
+Type: Employee
+Organization: Maltetech
+Period: 200104-200401
+Role: Consultant
+Location: Lund
+LocationType: Onsite
+Technologies: 
