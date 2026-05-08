@@ -11,6 +11,9 @@ Thumbs.db
 # Generated content (build artifact)
 public/content/site-content.json
 
+# Generated PDFs (build artifact)
+public/cv-*.pdf
+
 # TypeScript build cache
 *.tsbuildinfo
 .tmp

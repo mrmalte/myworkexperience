@@ -121,6 +121,46 @@ async function uploadSite(client: Client, remoteDir: string): Promise<number> {
   return fileCount;
 }
 
+// --- PDF cleanup: remove stale cv-*.pdf from server ---
+
+async function cleanupOldPdfs(
+  client: Client,
+  remoteDir: string,
+): Promise<void> {
+  console.log("\nCleaning up old PDF files...");
+
+  // Determine current build's PDF filenames from local public/ dir
+  const localPublic = resolve(process.cwd(), "public");
+  const currentPdfs = readdirSync(localPublic).filter(
+    (f) => f.startsWith("cv-") && f.endsWith(".pdf"),
+  );
+
+  // List remote files
+  const remoteFiles = await client.list(remoteDir);
+  const remotePdfs = remoteFiles
+    .filter((f) => f.name.startsWith("cv-") && f.name.endsWith(".pdf"))
+    .map((f) => f.name);
+
+  // Find stale PDFs (on server but not in current build)
+  const stale = remotePdfs.filter((f) => !currentPdfs.includes(f));
+
+  if (stale.length === 0) {
+    console.log("  No stale PDF files found.");
+  } else {
+    for (const f of stale) {
+      const remotePath = remoteDir.endsWith("/")
+        ? `${remoteDir}${f}`
+        : `${remoteDir}/${f}`;
+      await client.remove(remotePath);
+      console.log(`  Deleted remote: ${f}`);
+    }
+    const kept = remotePdfs.filter((f) => currentPdfs.includes(f));
+    if (kept.length > 0) {
+      console.log(`  Kept: ${kept.join(", ")}`);
+    }
+  }
+}
+
 // --- T010: main() ---
 
 async function main(): Promise<void> {
@@ -150,7 +190,15 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // 5. Summary
+  // 5. Clean up stale PDFs on server
+  try {
+    await cleanupOldPdfs(client, cfg.remoteDir);
+  } catch (err) {
+    console.error("\nWarning: PDF cleanup failed");
+    console.error(err instanceof Error ? err.message : String(err));
+  }
+
+  // 6. Summary
   client.close();
   const duration = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log(`\n✓ Deploy complete!`);

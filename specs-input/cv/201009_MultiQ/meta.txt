@@ -5,4 +5,4 @@ Period: 200908-201101
 Role: Software Architect
 Location: Malmö
 LocationType: Onsite
-Technologies: PHP, SQL, HTML, Javascript, Java, SVN
+Technologies: PHP, SQL, HTML, Javascript, Java, Linux, SVN

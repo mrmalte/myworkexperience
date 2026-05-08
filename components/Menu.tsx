@@ -16,10 +16,18 @@ interface MenuProps {
     technologies: LocalizedText;
     about: LocalizedText;
     contact: LocalizedText;
+    pdf: LocalizedText;
   };
+  pdfDate: string;
 }
 
-export function Menu({ lang, personName, personRole, navLabels }: MenuProps) {
+export function Menu({
+  lang,
+  personName,
+  personRole,
+  navLabels,
+  pdfDate,
+}: MenuProps) {
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -121,6 +129,13 @@ export function Menu({ lang, personName, personRole, navLabels }: MenuProps) {
                 {label}
               </Link>
             ))}
+            <a
+              href={`/cv-${lang}-${pdfDate}.pdf`}
+              download
+              className="text-[0.78rem] font-medium font-instrument-sans px-[0.7rem] py-[0.35rem] rounded-[4px] text-mid hover:text-cv-text hover:bg-off transition-all duration-150"
+            >
+              {navLabels.pdf[lang]}
+            </a>
           </nav>
 
           {langToggle()}
@@ -152,6 +167,14 @@ export function Menu({ lang, personName, personRole, navLabels }: MenuProps) {
                 {label}
               </Link>
             ))}
+            <a
+              href={`/cv-${lang}-${pdfDate}.pdf`}
+              download
+              onClick={closeDrawer}
+              className="text-[0.9rem] font-medium font-instrument-sans min-h-[44px] flex items-center px-[0.75rem] py-[0.65rem] rounded-[4px] text-mid hover:text-cv-text hover:bg-off transition-all duration-150"
+            >
+              {navLabels.pdf[lang]}
+            </a>
           </nav>
         </HamburgerDrawer>
       </div>

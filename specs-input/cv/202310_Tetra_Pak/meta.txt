@@ -5,4 +5,4 @@ Period: 202310-202402
 Role: Software Developer C++
 Location: Lund
 LocationType: Hybrid
-Technologies: C++, C++20, CMake, Git, Bitbucket, Machine Learning, Allen-Bradley PLC, Nlohmann/json, Debian, Multithreading
+Technologies: C++, C++20, CMake, Linux, Git, Bitbucket, Machine Learning, Allen-Bradley PLC, Nlohmann/json, Debian, Multithreading

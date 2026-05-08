@@ -220,6 +220,7 @@
       <button class="nav-btn" data-key="nav_technology" onclick="setPage('technology')"></button>
       <button class="nav-btn" data-key="nav_about" onclick="setPage('about')"></button>
       <button class="nav-btn" data-key="nav_contact" onclick="setPage('contact')"></button>
+      <a class="nav-btn pdf-link" href="/cv-en.pdf" download>↓ PDF</a>
     </div>
     <div class="lang-toggle">
       <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
@@ -240,6 +241,7 @@
       <button class="nav-btn" data-key="nav_technology" onclick="setPage('technology');closeDrawer()"></button>
       <button class="nav-btn" data-key="nav_about" onclick="setPage('about');closeDrawer()"></button>
       <button class="nav-btn" data-key="nav_contact" onclick="setPage('contact');closeDrawer()"></button>
+      <a class="nav-btn pdf-link" href="/cv-en.pdf" download>↓ PDF</a>
     </div>
   </div>
 </nav>
@@ -641,6 +643,7 @@ function setLang(l) {
     searchInput.placeholder = T[l].search_placeholder || 'Search ...';
     onSearch(searchInput.value);
   }
+  document.querySelectorAll('.pdf-link').forEach(a => { a.href = '/cv-' + l + '.pdf'; });
 }
 
 let currentPage = 'cv';

@@ -15,6 +15,7 @@ export function Header({ lang }: HeaderProps) {
       personName={content.person.name}
       personRole={content.person.role}
       navLabels={content.ui.nav}
+      pdfDate={content.ui.pdf?.date ?? ""}
     />
   );
 }

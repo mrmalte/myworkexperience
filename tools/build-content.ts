@@ -33,6 +33,10 @@ interface UIStrings {
     technologies: LocalizedText;
     about: LocalizedText;
     contact: LocalizedText;
+    pdf: LocalizedText;
+  };
+  pdf: {
+    date: string;
   };
   cv: {
     sections: {
@@ -297,6 +301,10 @@ function main() {
         technologies: { en: "Technologies", sv: "Teknologier" },
         about: { en: "About", sv: "Om" },
         contact: { en: "Contact", sv: "Kontakt" },
+        pdf: { en: "Download PDF", sv: "Ladda ner PDF" },
+      },
+      pdf: {
+        date: new Date().toISOString().slice(0, 10),
       },
       cv: {
         sections: {

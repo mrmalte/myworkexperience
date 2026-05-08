@@ -56,6 +56,10 @@ export interface SiteContent {
       technologies: LocalizedText;
       about: LocalizedText;
       contact: LocalizedText;
+      pdf: LocalizedText;
+    };
+    pdf: {
+      date: string;
     };
     cv: {
       sections: {

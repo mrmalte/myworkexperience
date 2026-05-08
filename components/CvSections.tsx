@@ -189,8 +189,7 @@ function CvList({
                     </span>
                   </div>
                   <div className="text-[0.78rem] text-mid mt-[0.2rem] font-instrument-sans">
-                    {item.organization}
-                    {item.client && ` · ${item.client}`}
+                    {item.client ?? item.organization}
                     {` · ${item.location}`}
                   </div>
                   {isExpanded && (

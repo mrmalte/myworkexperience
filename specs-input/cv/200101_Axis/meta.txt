@@ -5,4 +5,4 @@ Period: 200101-200204
 Role: Software Developer
 Location: Lund
 LocationType: Onsite
-Technologies: C, XML, SOAP, SSDP, GENA, UPnP, CVS
+Technologies: C, Linux, XML, SOAP, SSDP, GENA, UPnP, CVS

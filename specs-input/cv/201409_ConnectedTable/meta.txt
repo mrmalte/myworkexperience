@@ -5,4 +5,4 @@ Period: 201409-201508
 Role: Software Developer
 Location: Malmö
 LocationType: Hybrid
-Technologies: C++, QT4, SVN
+Technologies: C++, QT4, Linux, SVN

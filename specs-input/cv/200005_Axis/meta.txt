@@ -5,4 +5,4 @@ Period: 200005-200201
 Role: Software Developer
 Location: Lund
 LocationType: Onsite
-Technologies: C, Bluetooth, OBEX, SDP, RFCOMM, CVS
+Technologies: C, Linux, Bluetooth, OBEX, SDP, RFCOMM, CVS

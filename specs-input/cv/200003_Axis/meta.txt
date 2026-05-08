@@ -5,4 +5,4 @@ Period: 200003-200004
 Role: Software Developer
 Location: Lund
 LocationType: Onsite
-Technology: C, vProperty, vObject, CVS
+Technology: C, Linux, vProperty, vObject, CVS

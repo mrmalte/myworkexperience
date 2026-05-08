@@ -11,8 +11,10 @@
     "content:build": "tsx tools/build-content.ts",
     "content:validate": "tsx tools/validate-content.ts",
     "content:check": "npm run content:build && npm run content:validate",
+    "pdf:build": "tsx tools/build-pdf.ts",
     "deploy": "tsx tools/deploy-ftp.ts",
-    "deploy:full": "npm run export && npm run deploy",
+    "deploy:full": "npm run content:build && npm run pdf:build && next build && npm run deploy",
+    "clean": "rm -rf out .next public/content/site-content.json public/cv-*.pdf",
     "export:github": "bash tools/export-github.sh"
   },
   "dependencies": {
@@ -33,6 +35,7 @@
     "eslint": "^9",
     "eslint-config-next": "^15.1.5",
     "postcss": "^8",
+    "puppeteer": "^24.43.0",
     "tailwindcss": "^3.4.1",
     "tsx": "^4.19.2",
     "typescript": "^5"
