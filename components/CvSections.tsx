@@ -200,6 +200,18 @@ function CvList({
                         .map((line, i) => (
                           <p key={i}>{line}</p>
                         ))}
+                      {item.technologies.length > 0 && (
+                        <div className="flex flex-wrap gap-[0.35rem] mt-3">
+                          {item.technologies.map((tech) => (
+                            <span
+                              key={tech}
+                              className="text-[0.67rem] font-medium bg-off text-mid px-[0.55rem] py-[0.2rem] rounded-[3px] border border-line font-instrument-sans"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>

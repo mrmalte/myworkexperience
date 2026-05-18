@@ -21,6 +21,10 @@
 
 - Mockup update 2026-04-29: `specs-input/mockup/scandinavian.html` updated with responsive mobile layout. Breakpoint at 720 px. Desktop layout remains largely unchanged. Mobile layout adds: hamburger menu, summary truncation, stacked card fields, and mobile-specific technology filter navigation. FR-040 through FR-052 added. Existing FR numbers unchanged.
 
+### Session 2026-05-13
+
+- Mockup update 2026-05-13: `specs-input/mockup/scandinavian.html` updated with technology tags on role cards and assignment description rows. Tags display as inline pills below description text. FR-053 and FR-054 added.
+
 ## User Scenarios & Testing _(mandatory)_
 
 <!--
@@ -309,6 +313,8 @@ _FR-032: reserved._
 - **FR-050**: On mobile, tech chart name column MUST be narrower (`width: 110px; font-size: 0.78rem`) and years column smaller (`width: 30px; font-size: 0.68rem`).
 - **FR-051**: On mobile, the contact form submit button MUST be full-width (`width: 100%`) with centered text and increased padding (`0.8rem`). Input fields MUST use `font-size: 16px` to prevent iOS auto-zoom.
 - **FR-052**: The nav drawer MUST overlay page content (not push it down). It uses `position: absolute; left: 0; right: 0; top: 100%` relative to the nav, with `box-shadow: 0 8px 24px rgba(0,0,0,0.08)` and `z-index: 99`. The `max-height` transitions from `0` to `70vh` with `overflow-y: auto` when open.
+- **FR-053**: Each expanded role card and assignment card MUST display its associated technologies as inline tag pills below the description text, sourced from the `technologies[]` field in site content data. Tags MUST NOT be rendered when the card is collapsed. When `technologies[]` is empty, no tags container or extra spacing SHALL be rendered.
+- **FR-054**: Technology tags MUST wrap to multiple lines when container width is insufficient. The visual design MUST match the mockup tag styling: small font (`0.67rem`), muted text color, light background, subtle border, rounded corners. Tag text is language-neutral (same in EN and SV).
 
 ### Key Entities _(include if feature involves data)_
 
@@ -337,3 +343,4 @@ _FR-032: reserved._
 - **SC-012**: At ≤720 px on the Technologies page, the desktop filter bar is replaced by a mobile hamburger menu containing sort toggle and category filters.
 - **SC-013**: At ≤720 px, role card and assignment row periods are stacked above the title, not inline right.
 - **SC-014**: All page `h1` elements remain in the DOM (for SEO) but are visually hidden via sr-only styling.
+- **SC-015**: 100% of role and assignment cards with non-empty `technologies[]` display visible tag pills when expanded; cards with empty `technologies[]` display no tags container or extra spacing.

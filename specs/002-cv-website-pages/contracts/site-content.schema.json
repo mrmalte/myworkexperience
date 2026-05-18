@@ -109,17 +109,26 @@
     "ui": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["nav", "cv", "contact", "meta", "notFound", "technologies"],
+      "required": [
+        "nav",
+        "cv",
+        "contact",
+        "meta",
+        "notFound",
+        "technologies",
+        "pdf"
+      ],
       "properties": {
         "nav": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["cv", "technologies", "about", "contact"],
+          "required": ["cv", "technologies", "about", "contact", "pdf"],
           "properties": {
             "cv": { "$ref": "#/$defs/LocalizedText" },
             "technologies": { "$ref": "#/$defs/LocalizedText" },
             "about": { "$ref": "#/$defs/LocalizedText" },
-            "contact": { "$ref": "#/$defs/LocalizedText" }
+            "contact": { "$ref": "#/$defs/LocalizedText" },
+            "pdf": { "$ref": "#/$defs/LocalizedText" }
           }
         },
         "cv": {
@@ -228,6 +237,14 @@
             "yearsLessThanOne": { "$ref": "#/$defs/LocalizedText" },
             "yearsOne": { "$ref": "#/$defs/LocalizedText" },
             "yearsSuffix": { "$ref": "#/$defs/LocalizedText" }
+          }
+        },
+        "pdf": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["date"],
+          "properties": {
+            "date": { "type": "string" }
           }
         }
       }

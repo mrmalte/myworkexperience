@@ -1,16 +1,17 @@
-# Implementation Plan: CV Website Pages — Phase 11
+# Implementation Plan: CV Website Pages — Phase 12
 
-**Branch**: `002-cv-website-pages` | **Date**: 2026-04-29 | **Spec**: [spec.md](spec.md)
+**Branch**: `002-cv-website-pages` | **Date**: 2026-05-13 | **Spec**: [spec.md](spec.md)
 **Input**: Feature specification from `/specs/002-cv-website-pages/spec.md`
 
 ## Summary
 
-Four incremental improvements to the existing CV website (items 1–3 completed in Phase 10; item 4 is the current Phase 11 work):
+Five incremental improvements to the existing CV website (items 1–3 completed in Phase 10; items 4–5 are current work):
 
 1. ~~**Search includes technologies** (User Story 2b)~~: ✅ Completed — `technologies` field added to CVEntry JSON output.
 2. ~~**Description paragraph rendering** (FR-024 update)~~: ✅ Completed — descriptions render as separate paragraphs.
 3. ~~**About page HTML rendering**~~: ✅ Completed — about text renders embedded HTML links.
 4. **Responsive mobile layout** (User Story 5 / FR-040–FR-052): Add mobile-first responsive breakpoint at ≤720 px with hamburger menu, summary truncation, stacked card layouts, mobile tech filter nav, and sr-only H1 titles.
+5. **Technology tags on CV cards** (FR-053–FR-054 / SC-015): Render `CVEntry.technologies[]` as inline tag pills below description text in expanded role and assignment cards. Data already exists — pure rendering addition in `CvSections.tsx`.
 
 ## Technical Context
 
@@ -26,11 +27,11 @@ Four incremental improvements to the existing CV website (items 1–3 completed 
 
 _GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
-| Gate                          | Status | Notes                                                                                                                                                           |
-| ----------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| I. Static Output First        | PASS   | All changes are build-time or client-side; no server runtime required. Phase 11 responsive changes are CSS/Tailwind utilities and React client components only. |
-| II. Build Tools in TypeScript | PASS   | `build-content.ts` changes are TypeScript; output remains HTML/CSS/JS. Phase 11 adds one i18n key to build tool.                                                |
-| III. Data Is Source of Truth  | PASS   | `technologies` field comes from existing `meta.txt` source; no new manual data. Phase 11 adds no new data sources — mockup is visual reference only.            |
+| Gate                          | Status | Notes                                                                                                                                              |
+| ----------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| I. Static Output First        | PASS   | All changes are build-time or client-side; no server runtime required. Phase 12 adds client-side JSX rendering only — no new runtime dependencies. |
+| II. Build Tools in TypeScript | PASS   | No build tool changes needed. Phase 12 is a React component edit only.                                                                             |
+| III. Data Is Source of Truth  | PASS   | `technologies` field comes from existing `meta.txt` source; no new manual data. Phase 12 renders existing data — no new data sources.              |
 
 ## Project Structure
 
@@ -61,6 +62,7 @@ components/Menu.tsx              # Refactor to support responsive hamburger menu
 components/CvSections.tsx        # 1) Include technologies in search haystack
                                  #    2) Render description as paragraphs
                                  #    3) Mobile stacked period layout (CSS)
+                                 #    4) Render technologies[] as tag pills (Phase 12)
 components/CvPageClient.tsx      # Add summary truncation with "Show all" on mobile
                                  # Add sr-only H1
 components/TechChart.tsx         # Add mobile filter hamburger nav using HamburgerDrawer

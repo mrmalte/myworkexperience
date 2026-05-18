@@ -89,7 +89,9 @@ function renderEntries(
   entries: CVEntry[],
   lang: Lang,
   presentLabel: string,
+  showTech = false,
 ): string {
+  const techLabel = lang === "en" ? "Technologies" : "Teknologier";
   return entries
     .map((entry) => {
       const period = formatPeriod(entry, lang, presentLabel);
@@ -102,6 +104,10 @@ function renderEntries(
         .filter((line) => line.trim())
         .map((line) => `<p>${line}</p>`)
         .join("\n");
+      const techHtml =
+        showTech && entry.technologies.length > 0
+          ? `<div class="tech-row" style="margin-top:4pt"><span class="tech-cat">${techLabel}:</span> ${escapeHtml(entry.technologies.join(", "))}</div>`
+          : "";
       return `
       <div class="entry">
         <div class="entry-header">
@@ -110,6 +116,7 @@ function renderEntries(
         </div>
         <div class="entry-title">${title}</div>
         <div class="entry-desc">${desc}</div>
+        ${techHtml}
       </div>`;
     })
     .join("\n");
@@ -264,7 +271,7 @@ ${renderEntries(content.cv.education, lang, presentLabel)}
 ${renderEntries(content.cv.roles, lang, presentLabel)}
 
 <h2>${sections.assignments[lang]}</h2>
-${renderEntries(content.cv.assignments, lang, presentLabel)}
+${renderEntries(content.cv.assignments, lang, presentLabel, true)}
 
 <h2>${techLabel}</h2>
 ${renderTechnologies(content.technologies)}

@@ -375,3 +375,57 @@ Phase 11g:  T084 | T085 | T086  (all parallel, after above)
 - **Phase 11e (Mobile Spacing)**: 2 tasks (parallel)
 - **Phase 11f (Tech Page Mobile)**: 2 tasks (parallel)
 - **Phase 11g (Validation)**: 3 tasks (parallel)
+
+---
+
+## Phase 12: Technology Tags on CV Cards (FR-053, FR-054)
+
+**Purpose**: Render `CVEntry.technologies[]` as inline tag pills below description text in expanded role and assignment cards.  
+**Depends on**: Phase 10 (technologies[] field in CVEntry JSON — already completed)
+
+- [x] T087 Render technology tags in expanded cards in components/CvSections.tsx
+- [x] T088 Validate build and visual output
+
+### T087 Details
+
+**File**: `components/CvSections.tsx`  
+**FR**: FR-053, FR-054  
+**Depends on**: None (data already available via `item.technologies`)
+
+Inside the `isExpanded` block of the `CvList` component (after the description paragraphs), conditionally render a tags container when `item.technologies.length > 0`:
+
+- Container: `flex flex-wrap gap-[0.35rem] mt-3`
+- Each tag: `text-[0.67rem] font-medium bg-off text-mid px-[0.55rem] py-[0.2rem] rounded-[3px] border border-line font-instrument-sans`
+- Map `item.technologies` to `<span>` elements with the tag styling
+- Do NOT render the container div when the array is empty
+
+**Acceptance**:
+
+- Expand a role with technologies (e.g. Sinch) → tags visible below description
+- Expand a role with empty technologies (e.g. education) → no tags container rendered
+- Collapse the card → tags hidden
+- Tags wrap to multiple lines on narrow viewports
+- Visual matches mockup `.tag` styling
+
+### T088 Details
+
+**Depends on**: T087
+
+1. `npm run build` — no compile errors
+2. `npm run content:check` — schema still valid
+3. Manual check: expand roles and assignments, verify tags appear
+4. Check mobile (≤720 px) — tags wrap correctly
+
+### Dependencies
+
+```text
+Phase 12:  T087 → T088  (sequential)
+```
+
+### Phase 12 Summary
+
+- **Total new tasks**: 2 (T087–T088)
+- **Phase 12**: 1 implementation task + 1 validation task (sequential)
+- **Parallel opportunities**: None (only 2 tasks, sequential)
+- **Independent test**: Expand any role/assignment card with technologies → tags visible
+- **MVP scope**: T087 alone delivers the full user-facing value

@@ -35,8 +35,8 @@ npm test && npm run lint
 TypeScript + Node.js LTS (for tooling and Next.js build): Follow standard conventions
 
 ## Recent Changes
-- 004-pdf-download: Added TypeScript (ES2020 target), Node.js, Next.js 15, React 19 + `puppeteer` (devDependency for headless Chrome PDF rendering), `tsx` (runner)
 - 002-cv-website-pages: Added TypeScript 5.x, Next.js 15 (App Router, `output: "export"`) + React 19, Tailwind CSS, @emailjs/browser
+- 004-pdf-download: Added TypeScript (ES2020 target), Node.js, Next.js 15, React 19 + `puppeteer` (devDependency for headless Chrome PDF rendering), `tsx` (runner)
 - 002-cv-website-pages: Added TypeScript 5.x, Next.js 15 (App Router, `output: "export"`) + React 19, Tailwind CSS, @emailjs/browser
 
 

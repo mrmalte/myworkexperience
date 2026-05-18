@@ -169,3 +169,24 @@
 
 **Decision**: On mobile, the desktop tech filter bar (category buttons + sort toggle) is hidden via CSS. A separate mobile filter bar appears using the `HamburgerDrawer` component, with sort toggle and category buttons inside the drawer.
 **Rationale**: The desktop filter bar with many category buttons wraps poorly on narrow screens. The mockup solves this with a hamburger drawer pattern identical to the main nav. Reusing `HamburgerDrawer` keeps both consistent.
+
+---
+
+## Phase 12 Research: Technology Tags on CV Cards
+
+### R13a: Rendering technology tags in expanded cards
+
+**Decision**: Render `item.technologies` as inline tag pills inside the existing `isExpanded` block in `CvSections.tsx`, after the description paragraphs. Use Tailwind utility classes matching the mockup's `.tag` styling. Only render when `item.technologies.length > 0`.
+**Rationale**: The data is already available on every `CVEntry` object (populated by the build pipeline from `meta.txt` source files). The search haystack already indexes `technologies[]`. This is purely a visual addition — no data pipeline, schema, or build changes needed.
+**Alternatives considered**:
+
+- Separate `TechTags` component: Unnecessary — the rendering is ~5 lines of JSX with no reuse outside this context.
+- Rendering tags when collapsed (as preview): Rejected — mockup shows tags only in expanded state, consistent with description visibility.
+
+### R13b: Tag visual design tokens
+
+**Decision**: Tags use the following Tailwind classes derived from the mockup's CSS:
+
+- Container: `flex flex-wrap gap-[0.35rem] mt-3`
+- Tag pill: `text-[0.67rem] font-medium bg-off text-mid px-[0.55rem] py-[0.2rem] rounded-[3px] border border-line font-instrument-sans`
+  **Rationale**: Direct translation of the mockup's `.tag` CSS rule into Tailwind utilities. Uses existing design tokens (`bg-off`, `text-mid`, `border-line`) already defined in the project's Tailwind config.

@@ -103,6 +103,7 @@ As a site maintainer, I want the deploy process to remove outdated PDF files fro
 - **FR-017**: The deployment tool MUST remove PDF files from the server that do not match the current build's filenames (files matching the `cv-*.pdf` pattern).
 - **FR-018**: The build environment MUST have a headless browser available for PDF rendering.
 - **FR-019**: The content build tool (`build-content.ts`) MUST write a `ui.pdf.date` field (formatted `YYYY-MM-DD`, derived from the build date) into `site-content.json`. Both the PDF build tool and the website navigation component MUST read the date from this field — neither may derive it independently from `new Date()` at runtime.
+- **FR-020**: Each assignment entry in the PDF MUST display its technologies beneath the description, formatted as "Technologies: tech1, tech2, tech3" using the same `.tech-row`/`.tech-cat` styling as the global technologies section. Entries with no technologies MUST omit the line. Education and role entries MUST NOT display per-entry technologies.
 
 ### Key Entities
 
