@@ -1,4 +1,7 @@
-
 Title: Chrome and Safari Extensions
 
-Prototype browser extensions for Chrome and Safari to manage window size and positioning for a poker client.
+A serious player runs several tables at once, and arranging those windows by hand every session is tedious.
+
+I built prototype browser extensions for Chrome and Safari that manage the poker client's window size and positioning.
+
+Implemented in JavaScript, with source in SVN.

@@ -5,4 +5,4 @@ Period: 2012
 Role: Fullstack Developer
 Location: Malmö
 LocationType: Hybrid
-Technologies: C++, QT4, Linux, SVN
+Technologies: C++, Qt, Linux, SVN

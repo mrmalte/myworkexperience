@@ -1,4 +1,7 @@
+Title: CMS för digital skyltning
 
-Title: Digital skyltning CMS
+Det centrala innehållshanteringssystemet är där kunderna bygger spellistor och scheman och skickar ut dem till sina skärmar.
 
-Underhåll, refaktorering och utveckling av MultiQs centrala innehållshanteringssystem för digital skyltning, implementerat i PHP, SQL, HTML, JavaScript och Java.
+Jag underhöll, refaktorerade och vidareutvecklade det.
+
+Implementerat i PHP, SQL, HTML, JavaScript och Java på Linux, med källkod i SVN.

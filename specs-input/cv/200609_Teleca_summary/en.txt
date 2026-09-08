@@ -1,3 +1,5 @@
-Title: Software developer
+Title: Consultant
 
-I worked as software developer at Teleca.
+Teleca built software for mobile phone manufacturers — messaging clients, application suites and the frameworks under them.
+
+I worked as a consultant on individual assignments across that portfolio: an SDP coder/parser for the IMS framework, an SMS Push integration for the in-house test tool, and release coordination for the application suite on Windows Mobile.

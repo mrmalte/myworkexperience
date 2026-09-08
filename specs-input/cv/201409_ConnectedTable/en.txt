@@ -1,4 +1,7 @@
-
 Title: Poker Proxy
 
-Design and implementation of a C++/Qt4 proxy for communication between a poker client and multiple poker servers/networks.
+A poker client talks to one server, but the company's players needed access to tables across several poker networks at once.
+
+I designed and implemented the proxy that sits between the client and those networks and multiplexes the communication.
+
+Implemented in C++/Qt on Linux, with source in SVN.

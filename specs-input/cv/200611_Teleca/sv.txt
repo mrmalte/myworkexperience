@@ -1,4 +1,7 @@
-
 Title: Windows Mobile Messaging
 
-Integration av Telecas applikationssvit på Windows Mobile, i release management-teamet nära projektledningen. Ansvarig för releasekoordinering mellan bidragande team och uppföljning av projektplan.
+Telecas applikationssvit skulle köras på Windows Mobile, med flera team som bidrog med delar till varje release.
+
+Jag arbetade i release management-teamet med integrationen, koordinerade releaser mellan de bidragande teamen och följde upp projektplanen.
+
+Sviten byggdes i C och C# på .NET med Visual Studio, med källkod i SVN.

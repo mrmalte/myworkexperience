@@ -1,4 +1,7 @@
+Title: Node.js/Express-prototyp
 
-Title: NodeJS/ExpressJS-prototyp
+Innan en teknik får användas inom Skatteverket ska den utvärderas och godkännas. Den här prototypen var en filuppladdningstjänst byggd för att utvärdera Node.js och Express som BFF-lager — uppladdningsfunktionen implementerades senare på riktigt i DAC-6-rapporteringen.
 
-En enkel filuppladdningstjänst byggd för att utvärdera NodeJS/ExpressJS för användning på Skatteverket. Systemet bestod av tre delar: ett ReactJS-UI, en TypeScript/NodeJS BFF och en Java-backend. Enhetstester implementerades med Jasmine. Källkod lagrad i GitHub Enterprise, driftsatt på OpenShift via Jenkins CI/CD-pipelines.
+Jag byggde tjänsten som fullstackutvecklare: ett React-gränssnitt, en BFF i TypeScript/Node.js och en Java-backend bakom den.
+
+Enhetstestad med Jasmine, källkod i GitHub Enterprise, driftsatt på OpenShift via Jenkins CI/CD-pipelines.

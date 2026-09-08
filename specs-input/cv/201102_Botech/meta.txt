@@ -5,4 +5,4 @@ Period: 201102-201112
 Role: Software Developer
 Location: Malmö
 LocationType: Onsite
-Technologies: C++, PHP, MySQL, HTML, Javascript, Subversion, Linux, Kanban
+Technologies: C++, PHP, MySQL, HTML, JavaScript, SVN, Linux, Kanban

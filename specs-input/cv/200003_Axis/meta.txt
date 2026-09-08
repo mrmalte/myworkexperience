@@ -6,3 +6,4 @@ Role: Software Developer
 Location: Lund
 LocationType: Onsite
 Technology: C, Linux, vProperty, vObject, CVS
+Technologies: C, Linux, vProperty, vObject, CVS

@@ -4,4 +4,4 @@ Period: 202208-202308
 Role: Consultant
 Location: Malmö
 LocationType: Onsite
-Technologies: 
+Technologies:

@@ -1,4 +1,7 @@
+Title: Handreplay i pokerklienten
 
-Title: Poker-replayklient
+Spelare vill gå tillbaka genom en hand efteråt och se hur den spelades ut, steg för steg snarare än som en logg.
 
-Utveckling av replayfunktionalitet för en befintlig Qt/C++-pokerklient som gör det möjligt för spelare att se och stega sig igenom gamla händer från hand-historik med paus och navigering per ändring.
+Jag utvecklade replayfunktionen i den befintliga Qt/C++-pokerklienten, som låter spelare läsa in gamla händer ur handhistoriken och stega genom dem med paus och navigering per ändring.
+
+Implementerad i C++/Qt på Linux, med källkod i SVN.

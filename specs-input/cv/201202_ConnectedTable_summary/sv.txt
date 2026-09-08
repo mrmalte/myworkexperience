@@ -1,4 +1,5 @@
-
 Title: Mjukvaruingenjör
 
-Arbetar som fullstack utvecklare åt Connected table
+Connected Table drev onlinepoker och bytte efter några år namn till Global Gaming. Klienterna var där spelarna faktiskt satte sig vid bordet.
+
+Jag arbetade som fullstackutvecklare med de klienterna — två generationer webbklient, en replayfunktion, en proxy mellan klient och pokernätverk, och webbläsartillägg för spelare med flera bord igång samtidigt.

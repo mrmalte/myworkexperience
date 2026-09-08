@@ -1,4 +1,7 @@
-
 Title: Unicode Translation Tool
 
-Designed and implemented a code generation tool that produces a C translation module mapping Unicode character codes to single-byte encodings such as ASCII.
+A print server receives text in one character encoding and has to hand the printer text in another, and the mapping tables between them are large and tedious to maintain by hand.
+
+I designed and implemented a code generation tool that produces a C translation module mapping Unicode character codes to single-byte encodings such as ASCII.
+
+Both the generator and the generated module are C, built for the print server's embedded Linux, with source in CVS.

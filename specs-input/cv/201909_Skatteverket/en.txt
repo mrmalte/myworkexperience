@@ -1,4 +1,7 @@
+Title: Node.js/Express Prototype
 
-Title: NodeJS/ExpressJS Prototype
+Before a technology may be used inside the Swedish Tax Agency it has to be evaluated and approved. This prototype was a file upload service built to evaluate Node.js and Express as a backend-for-frontend layer — the upload functionality was later implemented for real in the DAC-6 reporting.
 
-Prototype file upload service built to evaluate NodeJS/ExpressJS for use at Skatteverket. The system comprised three parts: a ReactJS UI, a TypeScript/NodeJS BFF, and a Java backend. Unit tests implemented with Jasmine. Source code stored in GitHub Enterprise, deployed to OpenShift via Jenkins CI/CD pipelines.
+I built the service as a fullstack developer: a React user interface, a TypeScript/Node.js BFF and a Java backend behind it.
+
+Unit tested with Jasmine, source in GitHub Enterprise, deployed to OpenShift through Jenkins CI/CD pipelines.

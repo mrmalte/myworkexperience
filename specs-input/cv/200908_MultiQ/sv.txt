@@ -1,4 +1,7 @@
-
 Title: Linux/Xorg/OpenGL-spelare för digital skyltning
 
-Utveckling av MultiQs spelare för digital skyltning, körandes på en egen Linux-distribution. Spelaren använder Xorg och OpenGL för bildvisning och VAAPI för hårdvaruaccelererad videouppspelning, implementerad i C++.
+Spelaren är mjukvaran som kör på varje skyltningsskärm: den hämtar det schemalagda innehållet och renderar bilder och video, kontinuerligt och utan tillsyn.
+
+Jag utvecklade spelaren ovanpå MultiQs egen Linuxdistribution, med Xorg och OpenGL för bildvisning och VAAPI för hårdvaruaccelererad videouppspelning.
+
+Implementerad i C++, med mplayer som uppspelningsstöd och källkod i SVN.

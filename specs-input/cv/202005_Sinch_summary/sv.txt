@@ -1,3 +1,5 @@
 Title: Mjukvaruingenjör
 
-Arbetar som fullstack utvecklare på Sinch
+Sinch är en kommunikationsplattform: företag når sina kunder genom den över SMS, WhatsApp, RCS och ett dussin andra kanaler från ett och samma API.
+
+Jag arbetade som fullstackutvecklare med de gemensamma Sinch–Salesforce-produkterna som låter Salesforce Marketing Cloud skicka affärsmeddelanden genom det API:et.

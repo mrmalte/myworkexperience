@@ -1,4 +1,7 @@
-
 Title: E-postklient
 
-Modulansvarig för e-postklienten utvecklad på Teleca, med ansvar för design, implementation och underhåll.
+Telecas e-postklient för mobiltelefoner, som hanterade meddelandeformaten och brevlådan på en enhet med lite minne och sporadisk uppkoppling.
+
+Jag var modulansvarig för den, med ansvar för design, implementation och underhåll.
+
+Implementerad i C med MIME-hantering, med källkod i SVN.

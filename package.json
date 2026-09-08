@@ -12,9 +12,11 @@
     "content:validate": "tsx tools/validate-content.ts",
     "content:check": "npm run content:build && npm run content:validate",
     "pdf:build": "tsx tools/build-pdf.ts",
+    "docx:build": "tsx tools/build-docx.ts",
+    "linkedin:build": "tsx tools/build-linkedin.ts",
     "deploy": "tsx tools/deploy-ftp.ts",
-    "deploy:full": "npm run content:build && npm run pdf:build && next build && npm run deploy",
-    "clean": "rm -rf out .next public/content/site-content.json public/cv-*.pdf",
+    "deploy:full": "npm run content:build && npm run pdf:build && npm run docx:build && next build && npm run deploy",
+    "clean": "rm -rf out .next linkedin public/content/site-content.json public/cv-*.pdf public/cv-*.docx",
     "export:github": "bash tools/export-github.sh"
   },
   "dependencies": {
@@ -31,6 +33,7 @@
     "ajv-formats": "^3.0.1",
     "autoprefixer": "^10.4.23",
     "basic-ftp": "^5.3.0",
+    "docx": "^9.7.1",
     "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "^15.1.5",

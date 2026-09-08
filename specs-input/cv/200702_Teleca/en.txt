@@ -1,4 +1,7 @@
-
 Title: Email Client
 
-Module owner for the email client developed at Teleca, responsible for design, implementation and maintenance.
+Teleca's email client for mobile phones, handling the message formats and the mailbox on a device with little memory and an intermittent connection.
+
+I was module owner for it, responsible for design, implementation and maintenance.
+
+Implemented in C with MIME handling, with source in SVN.

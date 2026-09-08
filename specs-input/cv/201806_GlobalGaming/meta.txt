@@ -5,4 +5,4 @@ Period: 201808-201904
 Role: Team Lead
 Location: Malmö
 LocationType: Hybrid
-Technologies: TypeScript, ReactJS, Redux, ContentfulCMS, ExpressJS, NodeJS, Jest, Enzyme, Webdriver.io, Docker, Linux, AWS, PostgreSQL, Webpack, CDN, npm, Git, GitHub
+Technologies: TypeScript, React, Redux, Contentful, Express, Node.js, Jest, Enzyme, Webdriver.io, Docker, Linux, AWS, PostgreSQL, Webpack, CDN, npm, Git, GitHub

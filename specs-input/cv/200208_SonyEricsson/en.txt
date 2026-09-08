@@ -1,4 +1,7 @@
-
 Title: MMS
 
-Module architect for SonyEricsson's MMS module, responsible for design, implementation and maintenance.
+MMS is how Sony Ericsson's feature phones sent and received picture and multimedia messages, carried over WAP.
+
+I was module architect for the MMS module, responsible for its design, implementation and maintenance. I stayed on the same module when Sony Ericsson took me on as an employee in January 2004.
+
+Implemented in C on the phone platform, with source in ClearCase. Planning followed a waterfall process.

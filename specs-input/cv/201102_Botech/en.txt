@@ -1,8 +1,7 @@
+Title: Water and Electricity Cost Distribution
 
-Title: Water/Power Cost Distribution System
+In a housing association everyone pays for cold water, hot water and electricity through the monthly fee, which means careful households subsidise wasteful ones. Individual metering lets the cost follow actual consumption, including in the shared washrooms.
 
-Design, development and maintenance of a system for distributing cold water, hot water and electricity costs across apartments and shared washrooms in a housing association, based on individual meter readings. I also added encrypted communication support for integration with Bewator's access control system managing the shared washrooms.
+I designed, developed and maintained the system that reads the meters and distributes the costs across apartments and washrooms. I also added encrypted communication for the integration with Bewator's access control system, which governs who may use the washrooms and when.
 
-The system integrates with water, power and access control meters and is implemented in C++/PHP on a Linux/Apache/MySQL stack, with source in Subversion deployed manually to the Linux server.
-
-Planning followed Kanban.
+Implemented in C++ and PHP on a Linux/Apache/MySQL stack, with source in SVN deployed manually to the Linux server. Planning followed Kanban.

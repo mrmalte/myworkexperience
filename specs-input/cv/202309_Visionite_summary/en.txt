@@ -1,3 +1,5 @@
 Title: Consultant
 
-Working as consultant at Visionite (formerly Onegroup)
+Visionite (formerly Onegroup) is a consultancy in Malmö.
+
+I worked there as a consultant, and the assignments spanned industrial C++ against PLCs at Tetra Pak, Hack at Meta through Sigma, and TypeScript, React and Google Cloud at Ikea.

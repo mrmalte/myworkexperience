@@ -1,3 +1,5 @@
-Title: Mjukvaruingenjör
+Title: Mjukvaruutvecklare
 
-Jag jobbade som mjukvaruingenjör på Axis. 
+Axis Communications bygger nätverksutrustning. Skrivarservrarna kopplade skrivare till kontorsnät och, mot slutet av min tid där, till mobiltelefoner över Bluetooth.
+
+Jag arbetade som mjukvaruutvecklare med den inbyggda mjukvaran i skrivarservrarna, från protokollspecifikation till implementation och underhåll. Arbetet följde en vattenfallsprocess, iterativ och XP-inspirerad i det sista projektet.

@@ -1,4 +1,5 @@
+Title: Mjukvaruarkitekt
 
-Title: Mjukvaruutvecklare
+MultiQ bygger digital skyltning — skärmarna i butiker, på flygplatser och i entréer, och systemen som avgör vad de visar.
 
-Jag arbetade som fullstack utvecklare åt MultiQ
+Jag arbetade som arkitekt och fullstackutvecklare genom hela kedjan: Linuxdistributionen som spelarna kör på, själva spelarapplikationen, och det centrala CMS:et som schemalägger innehållet ut till dem.

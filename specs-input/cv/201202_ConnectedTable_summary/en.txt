@@ -1,3 +1,5 @@
-Title: Software engineer
+Title: Software Engineer
 
-Working as a fullstack developer at Connected Table.
+Connected Table ran online poker, and changed its name to Global Gaming a few years in. Its clients were where players actually sat down at a table.
+
+I worked as a fullstack developer on those clients — two generations of web client, a replay feature, a proxy between client and poker networks, and browser extensions for players running several tables at once.

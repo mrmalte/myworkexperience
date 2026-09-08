@@ -1,3 +1,5 @@
-Title: Software developer
+Title: Software Architect
 
-I worked as fullstack developer for MultiQ.
+MultiQ builds digital signage — the screens in shops, airports and lobbies, and the systems that decide what they show.
+
+I worked as architect and fullstack developer across the whole chain: the Linux distribution the players run on, the player application itself, and the central CMS that schedules content out to them.

@@ -429,3 +429,47 @@ Phase 12:  T087 → T088  (sequential)
 - **Parallel opportunities**: None (only 2 tasks, sequential)
 - **Independent test**: Expand any role/assignment card with technologies → tags visible
 - **MVP scope**: T087 alone delivers the full user-facing value
+
+---
+
+## Phase 13: Remove the About Page (R14)
+
+**Purpose**: Retire the About page end-to-end — route, redirect, nav entries, source content, generated content field, schema definition, TypeScript types, and mockup. The site drops from four pages to three. Added 2026-08-11 per updated spec (FR-001/FR-003/FR-011b/FR-025/FR-043, SC-016) and research R14a–R14e.
+
+**Ordering constraint**: T091 and T092 must land together before T096 runs — the schema's top-level `required` array and `additionalProperties: false` mean the builder and the schema fail validation if only one side changes (R14c).
+
+- [x] T089 [P] Delete the About page and its redirect stub: remove `app/[lang]/about/page.tsx` and `app/about/page.tsx` (delete the now-empty `app/[lang]/about/` and `app/about/` directories) per FR-025/SC-016. No redirect replacement is added — the routes fall through to not-found per R14b.
+- [x] T090 [P] Delete the About source content: remove `specs-input/about/en.txt`, `specs-input/about/sv.txt`, and the `specs-input/about/` directory per FR-025/R14a.
+- [x] T091 Remove About from the content pipeline: in `tools/content/parseSource.ts` drop `about` from the `ParsedSource` type, drop the `aboutDir` constant and both `readFileSync` calls, and drop `about` from the returned object; in `tools/build-content.ts` drop `about` from the `SiteContent` type, drop the `about` block from the output object, and drop the `about: { en: "About", sv: "Om" }` entry from `ui.nav` per FR-025/FR-038.
+- [x] T092 Remove About from the content contract: in `specs/002-cv-website-pages/contracts/site-content.schema.json` drop `"about"` from the top-level `required` array, delete the `about` property definition, and drop `about` from both the `ui.nav` `required` array and its `properties` per R14c.
+- [x] T093 [P] Remove About from the runtime types: in `lib/content/loadContent.ts` drop `about` from the `SiteContent` interface and drop `about` from the `ui.nav` type per FR-025.
+- [x] T094 Remove the About nav entry: in `components/Menu.tsx` drop `about` from the `navLabels` prop type, remove the `about` entry from the nav item array (desktop nav and mobile drawer share this list per FR-044), and remove the `pathname.includes("/about")` branch from the active-key derivation per FR-003/FR-043.
+- [x] T095 [P] Remove About from the mockup: in `specs-input/mockup/scandinavian.html` delete the desktop nav button (`data-key="nav_about"`), the mobile drawer nav button, the `#page-about` section, the `nav_about` and `about_text` keys from both the `en` and `sv` translation tables, the two `document.getElementById('about-…')` assignments in the language switcher, and `'about'` from the page-switching array per FR-004b/R14e.
+- [x] T096 Regenerate and validate content: run `npm run content:check` — `site-content.json` is rebuilt without `about` / `ui.nav.about` and passes schema validation. The file is never hand-edited (constitution III / R14d).
+- [x] T097 Validate the build: run `npx tsc --noEmit` (no dangling `about` references) and `npm run build`, then confirm `out/` contains no `en/about/` or `sv/about/` directory per SC-016.
+
+- [x] T098 Fix pre-existing schema drift blocking T096: `ui.nav.download` and `ui.nav.word` were added to `tools/build-content.ts` by feature 005 (DOCX download) but never added to `contracts/site-content.schema.json`, so `npm run content:validate` failed on `main` before Phase 13 began (`must NOT have additional properties: download, word`). Add both to the `ui.nav` `properties` and `required` arrays per FR-038. Not caused by the About removal — surfaced by it.
+
+**Checkpoint**: The nav shows three links (CV, Technologies, Contact) on desktop and in the mobile drawer, in both languages. `/en/about` and `/sv/about` are absent from the static export. A repo-wide search for `about` returns no hits in `app/`, `components/`, `lib/`, `tools/`, `specs-input/`, or the generated `site-content.json`.
+
+### Dependencies
+
+```text
+Phase 13:  T089 [P] ─┐
+           T090 [P] ─┤
+           T091 ─────┼─→ T096 → T097
+           T092 ─────┤
+           T093 [P] ─┤
+           T094 ─────┤
+           T095 [P] ─┘
+
+T091 + T092 must both land before T096 (schema/builder lockstep, R14c).
+```
+
+### Phase 13 Summary
+
+- **Total new tasks**: 10 (T089–T098)
+- **Phase 13**: 7 removal tasks + 2 validation tasks + 1 pre-existing-drift fix (T098)
+- **Parallel opportunities**: T089, T090, T093, T095 touch disjoint files and can run together
+- **Independent test**: Load the site in both languages — nav shows three links; visiting `/en/about` yields the not-found page
+- **Scope note**: This is a pure subtraction — no new UI, data, or dependencies

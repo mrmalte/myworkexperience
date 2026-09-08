@@ -1,3 +1,5 @@
-Title: Software developer
+Title: Software Developer
 
-Working as fullstack developer at Botech.
+Botech's Greyhound system automates buildings — reading meters and controlling shared facilities in housing associations.
+
+I worked as a fullstack developer on it, from the meter integrations up through the cost distribution logic to the web interface residents and boards use.

@@ -1,4 +1,7 @@
-
 Title: SVG/SIS-animationsprototyp
 
-Design och implementation av en Ericsson SVG/SIS-animationsprototypspelare med tredjeparts-codecs och en UI-applikation.
+Ericsson ville att telefonerna skulle kunna spela upp animationer skapade som SVG och SIS. Prototypen var en spelare som kunde köra dem i telefonen, med en applikation runt omkring.
+
+Jag designade och implementerade spelaren, inklusive integrationen av tredjepartskodekar, och applikationen ovanpå den.
+
+Implementerad i C för telefonplattformen, med källkod i ClearCase.

@@ -97,6 +97,7 @@ As a site maintainer, I want the deploy process to remove outdated PDF files fro
 - **FR-011**: The website navigation MUST include a PDF download link visible on both desktop and mobile layouts.
 - **FR-012**: The PDF download link MUST appear after the Contact link in the navigation order.
 - **FR-013**: The PDF download link MUST use a standard anchor element with a `download` attribute, not a client-side navigation component.
+- **FR-013a**: Because FR-013 mandates a raw anchor, the link href MUST include the deployment base path explicitly. Framework base-path handling applies only to client-side navigation components, so without an explicit prefix this link resolves against the domain root and 404s while the rest of the site works. See [006 FR-003](../006-base-path-deploy/spec.md).
 - **FR-014**: The PDF download link MUST point to the PDF file matching the current language.
 - **FR-015**: When the visitor switches language, the PDF download link MUST update to reference the correct language's PDF file.
 - **FR-016**: The UI label for the PDF download link MUST be included in the site's content/localization data.

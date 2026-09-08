@@ -1,3 +1,5 @@
-Title: Software engineer
+Title: Software Engineer
 
-Working as fullstack developer at Sinch.
+Sinch is a communications platform: businesses reach their customers through it over SMS, WhatsApp, RCS and a dozen other channels from a single API.
+
+I worked as a fullstack developer on the joint Sinch–Salesforce products that let Salesforce Marketing Cloud send business messages through that API.

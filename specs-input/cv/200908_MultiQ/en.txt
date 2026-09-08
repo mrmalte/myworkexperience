@@ -1,3 +1,7 @@
 Title: Linux/Xorg/OpenGL Digital Signage Player
 
-Development of MultiQ's digital signage player application, running on a custom Linux distribution. The player uses Xorg and OpenGL for image display and VAAPI for hardware-accelerated video playback, implemented in C++.
+The player is the software running on each signage screen: it fetches the scheduled content and renders images and video, continuously and unattended.
+
+I developed the player on top of MultiQ's own Linux distribution, using Xorg and OpenGL for image display and VAAPI for hardware-accelerated video playback.
+
+Implemented in C++, with mplayer for playback support and source in SVN.

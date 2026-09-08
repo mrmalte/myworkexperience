@@ -1,4 +1,5 @@
+Title: Teamchef
 
-Title: Team-chef
+I takt med att kasinoprodukten växte, växte teamet runt den — till sju utvecklare och tre testare.
 
-Jag arbetade 1/3 av tiden som team ledare och chef för ett team med 7 utvecklare och 3 testare, 1/3 som produktägare och 1/3 som utvecklare. Arbetar för Global Gaming (tidigare Connected Table)
+Jag delade tiden i tre delar: en tredjedel som teamledare och chef för det teamet, en tredjedel som produktägare och en tredjedel med kod. Chefsrollen var ny för mig; koden var det jag hela tiden sökte mig tillbaka till.

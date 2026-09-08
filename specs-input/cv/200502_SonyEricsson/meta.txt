@@ -1,8 +1,8 @@
 Type: Assignment
 Client: SonyEricsson Communications AB
 Organization: SonyEricsson Communications AB
-Period: 200204-200208
+Period: 200502-200609
 Role: Senior Staff Engineer
 Location: Lund
 LocationType: Onsite
-Technologies: C, IMS, SIP, VideoShare, H263, RTP, ClearCase
+Technologies: C, IMS, SIP, VideoShare, H.263, RTP, ClearCase

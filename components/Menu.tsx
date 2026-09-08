@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Language } from "@/lib/i18n/lang";
@@ -14,9 +14,10 @@ interface MenuProps {
   navLabels: {
     cv: LocalizedText;
     technologies: LocalizedText;
-    about: LocalizedText;
     contact: LocalizedText;
     pdf: LocalizedText;
+    download: LocalizedText;
+    word: LocalizedText;
   };
   pdfDate: string;
 }
@@ -30,14 +31,35 @@ export function Menu({
 }: MenuProps) {
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [downloadOpen, setDownloadOpen] = useState(false);
+  const downloadRef = useRef<HTMLDivElement>(null);
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setDownloadOpen(false);
+  }, [pathname]);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    if (!downloadOpen) return;
+    function handleClick(e: MouseEvent) {
+      if (
+        downloadRef.current &&
+        !downloadRef.current.contains(e.target as Node)
+      ) {
+        setDownloadOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [downloadOpen]);
 
   const currentPage = pathname.includes("/technologies")
     ? "technologies"
-    : pathname.includes("/about")
-      ? "about"
-      : pathname.includes("/contact")
-        ? "contact"
-        : "cv";
+    : pathname.includes("/contact")
+      ? "contact"
+      : "cv";
 
   const otherLang: Language = lang === "en" ? "sv" : "en";
 
@@ -48,7 +70,7 @@ export function Menu({
   );
 
   const navLinks: {
-    key: "cv" | "technologies" | "about" | "contact";
+    key: "cv" | "technologies" | "contact";
     label: string;
     href: string;
   }[] = [
@@ -57,11 +79,6 @@ export function Menu({
       key: "technologies",
       label: navLabels.technologies[lang],
       href: `/${lang}/technologies`,
-    },
-    {
-      key: "about",
-      label: navLabels.about[lang],
-      href: `/${lang}/about`,
     },
     {
       key: "contact",
@@ -129,13 +146,34 @@ export function Menu({
                 {label}
               </Link>
             ))}
-            <a
-              href={`/cv-${lang}-${pdfDate}.pdf`}
-              download
-              className="text-[0.78rem] font-medium font-instrument-sans px-[0.7rem] py-[0.35rem] rounded-[4px] text-mid hover:text-cv-text hover:bg-off transition-all duration-150"
-            >
-              {navLabels.pdf[lang]}
-            </a>
+            <div className="relative" ref={downloadRef}>
+              <button
+                onClick={() => setDownloadOpen((o) => !o)}
+                className="text-[0.78rem] font-medium font-instrument-sans px-[0.7rem] py-[0.35rem] rounded-[4px] text-mid hover:text-cv-text hover:bg-off transition-all duration-150"
+              >
+                {navLabels.download[lang]}
+              </button>
+              {downloadOpen && (
+                <div className="absolute top-full right-0 mt-1 bg-white border border-line rounded-[6px] shadow-md py-1 min-w-[140px] z-[200]">
+                  <a
+                    href={`${basePath}/cv-${lang}-${pdfDate}.pdf`}
+                    download
+                    onClick={() => setDownloadOpen(false)}
+                    className="block px-3 py-2 text-[0.78rem] font-medium font-instrument-sans text-mid hover:text-cv-text hover:bg-off transition-all duration-150"
+                  >
+                    PDF
+                  </a>
+                  <a
+                    href={`${basePath}/cv-${lang}-${pdfDate}.docx`}
+                    download
+                    onClick={() => setDownloadOpen(false)}
+                    className="block px-3 py-2 text-[0.78rem] font-medium font-instrument-sans text-mid hover:text-cv-text hover:bg-off transition-all duration-150"
+                  >
+                    {navLabels.word[lang]}
+                  </a>
+                </div>
+              )}
+            </div>
           </nav>
 
           {langToggle()}
@@ -168,12 +206,20 @@ export function Menu({
               </Link>
             ))}
             <a
-              href={`/cv-${lang}-${pdfDate}.pdf`}
+              href={`${basePath}/cv-${lang}-${pdfDate}.pdf`}
               download
               onClick={closeDrawer}
               className="text-[0.9rem] font-medium font-instrument-sans min-h-[44px] flex items-center px-[0.75rem] py-[0.65rem] rounded-[4px] text-mid hover:text-cv-text hover:bg-off transition-all duration-150"
             >
-              {navLabels.pdf[lang]}
+              ↓ PDF
+            </a>
+            <a
+              href={`${basePath}/cv-${lang}-${pdfDate}.docx`}
+              download
+              onClick={closeDrawer}
+              className="text-[0.9rem] font-medium font-instrument-sans min-h-[44px] flex items-center px-[0.75rem] py-[0.65rem] rounded-[4px] text-mid hover:text-cv-text hover:bg-off transition-all duration-150"
+            >
+              ↓ {navLabels.word[lang]}
             </a>
           </nav>
         </HamburgerDrawer>

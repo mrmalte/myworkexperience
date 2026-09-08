@@ -16,6 +16,8 @@ Auto-generated from all feature plans. Last updated: 2026-01-10
 - TypeScript 5.x, Next.js 15 (App Router, `output: "export"`) + React 19, Tailwind CSS, @emailjs/browser (002-cv-website-pages)
 - TypeScript (ES2020 target), Node.js, Next.js 15, React 19 + `puppeteer` (devDependency for headless Chrome PDF rendering), `tsx` (runner) (004-pdf-download)
 - N/A (file-based; reads `public/content/site-content.json`, writes PDFs to `public/`) (004-pdf-download)
+- TypeScript (ES2020 target), Node.js, Next.js 15, React 19 + `docx` (devDependency for programmatic Word document construction), `tsx` (runner) (005-docx-download)
+- N/A (file-based; reads `public/content/site-content.json`, writes DOCX to `public/`) (005-docx-download)
 
 - TypeScript + Node.js LTS (for tooling and Next.js build) + Next.js, React, Tailwind CSS (configured with mockup design tokens), Google Fonts (Fraunces + Instrument Sans), `@emailjs/browser`, AJV (JSON Schema validation) (002-cv-website-pages)
 
@@ -35,9 +37,9 @@ npm test && npm run lint
 TypeScript + Node.js LTS (for tooling and Next.js build): Follow standard conventions
 
 ## Recent Changes
+- 005-docx-download: Added TypeScript (ES2020 target), Node.js, Next.js 15, React 19 + `docx` (devDependency for programmatic Word document construction), `tsx` (runner)
 - 002-cv-website-pages: Added TypeScript 5.x, Next.js 15 (App Router, `output: "export"`) + React 19, Tailwind CSS, @emailjs/browser
 - 004-pdf-download: Added TypeScript (ES2020 target), Node.js, Next.js 15, React 19 + `puppeteer` (devDependency for headless Chrome PDF rendering), `tsx` (runner)
-- 002-cv-website-pages: Added TypeScript 5.x, Next.js 15 (App Router, `output: "export"`) + React 19, Tailwind CSS, @emailjs/browser
 
 
 <!-- MANUAL ADDITIONS START -->

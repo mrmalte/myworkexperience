@@ -1,5 +1,9 @@
 Title: Sammanfattning
 
-Jag har arbetat med mjukvaruutveckling i över 25 år. Den första halvan av karriären var inom inbyggda system med C och C++; den andra halvan inom webbaserade system — till en början mestadels frontend, senare alltmer backend. Jag arbetar vanligtvis med TypeScript, Node.js och React, med källkod i GitLab eller GitHub och CI/CD-pipelines för bygge, test och driftsättning. På senare tid har jag återvänt till C++ och inbuggda syste, i inbyggda applikationsprojekt. Arbetsprocesserna är vanligtvis iterativa — Kanban eller Scrum — och jag har arbetat delvis på distans de senaste 10 åren.
+Jag tycker om att lösa problem och jag tycker om helheten. Jag letar efter uppdrag med både frontend och backend, och gärna någon lågnivådel också.
 
-Jag arbetar bra självständigt men trivs bäst i ett litet team med duktiga kollegor. På fritiden driver jag ett hemautomationssystem som schemalägger energiförbrukning utifrån löpande elspot-priser. Jag utforskar även aktivt AI-assisterad utveckling — detta CV genereras från strukturerad data med innehåll framtaget och förfinat med hjälp av GitHub Copilot och Speckit.
+Jag har arbetat med mjukvaruutveckling sedan år 2000. Från början inbyggda system i C och C++, på senare tid mest TypeScript och webbsystem. Jag rör mig fortfarande i båda ändarna: React och Node i molnet, Terraform och nätverk vid driftsättning, C++ mot PLC:er och sensorer när uppdraget kräver det.
+
+Uppdragen har spänt över skrivarservrar, mobiltelefoni, digital skyltning, spel, offentlig sektor, telekom, energi- och mätsystem, industriell tillverkning och retail. Bredden gör att jag snabbt hittar in i en ny domän. Jag har även arbetat som arkitekt, team lead och tech lead, men det är teknik jag söker mig tillbaka till. Jag arbetar obehindrat på svenska och engelska.
+
+Jag trivs bättre i mindre sammanhang med duktiga kollegor omkring mig och numera med AI som stöd i utvecklingen. På fritiden lägger jag tid på hemautomation och styrning efter energiförbrukning och kostnad.

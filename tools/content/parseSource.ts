@@ -31,10 +31,8 @@ export function parseSource(dataDir: string): {
   summary: ParsedEntry | null;
   experiences: ParsedEntry[];
   experienceSummaries: ParsedEntry[];
-  about: { en: string; sv: string };
 } {
   const cvDir = join(dataDir, "cv");
-  const aboutDir = join(dataDir, "about");
 
   const entries = readdirSync(cvDir).filter((name) => {
     const path = join(cvDir, name);
@@ -78,15 +76,10 @@ export function parseSource(dataDir: string): {
     throw new Error("Missing required summary/ directory in specs-input/cv");
   }
 
-  // Parse about text
-  const aboutEn = readFileSync(join(aboutDir, "en.txt"), "utf-8").trim();
-  const aboutSv = readFileSync(join(aboutDir, "sv.txt"), "utf-8").trim();
-
   return {
     summary,
     experiences,
     experienceSummaries,
-    about: { en: aboutEn, sv: aboutSv },
   };
 }
 

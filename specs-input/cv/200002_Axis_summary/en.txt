@@ -1,3 +1,5 @@
 Title: Software Developer
 
-I worked as software engineer at Axis.
+Axis Communications builds network equipment. Its print servers connected printers to office networks and, towards the end of my time there, to mobile phones over Bluetooth.
+
+I worked as a software developer on the embedded print server software, taking projects from protocol specification through implementation and maintenance. Work followed a waterfall process, iterative and XP-inspired in the last project.

@@ -1,0 +1,4 @@
+Headline: Fullstackutvecklare · TypeScript, React, Node · C++ och molninfrastruktur när uppdraget kräver det · Öppen för nya uppdrag
+
+Stack: TypeScript, JavaScript, React, Node.js, Fastify, NestJS, Next.js, PostgreSQL, REST, GraphQL, C++, C, Java, GCP, AWS, Terraform, Kubernetes, Docker, Linux.
+Hela CV:t med samtliga uppdrag: https://malte.sarner.se/cv/

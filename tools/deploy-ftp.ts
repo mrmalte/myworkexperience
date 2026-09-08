@@ -161,6 +161,43 @@ async function cleanupOldPdfs(
   }
 }
 
+// --- DOCX cleanup: remove stale cv-*.docx from server ---
+
+async function cleanupOldDocx(
+  client: Client,
+  remoteDir: string,
+): Promise<void> {
+  console.log("\nCleaning up old DOCX files...");
+
+  const localPublic = resolve(process.cwd(), "public");
+  const currentDocx = readdirSync(localPublic).filter(
+    (f) => f.startsWith("cv-") && f.endsWith(".docx"),
+  );
+
+  const remoteFiles = await client.list(remoteDir);
+  const remoteDocx = remoteFiles
+    .filter((f) => f.name.startsWith("cv-") && f.name.endsWith(".docx"))
+    .map((f) => f.name);
+
+  const stale = remoteDocx.filter((f) => !currentDocx.includes(f));
+
+  if (stale.length === 0) {
+    console.log("  No stale DOCX files found.");
+  } else {
+    for (const f of stale) {
+      const remotePath = remoteDir.endsWith("/")
+        ? `${remoteDir}${f}`
+        : `${remoteDir}/${f}`;
+      await client.remove(remotePath);
+      console.log(`  Deleted remote: ${f}`);
+    }
+    const kept = remoteDocx.filter((f) => currentDocx.includes(f));
+    if (kept.length > 0) {
+      console.log(`  Kept: ${kept.join(", ")}`);
+    }
+  }
+}
+
 // --- T010: main() ---
 
 async function main(): Promise<void> {
@@ -198,7 +235,15 @@ async function main(): Promise<void> {
     console.error(err instanceof Error ? err.message : String(err));
   }
 
-  // 6. Summary
+  // 6. Clean up stale DOCX on server
+  try {
+    await cleanupOldDocx(client, cfg.remoteDir);
+  } catch (err) {
+    console.error("\nWarning: DOCX cleanup failed");
+    console.error(err instanceof Error ? err.message : String(err));
+  }
+
+  // 7. Summary
   client.close();
   const duration = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log(`\n✓ Deploy complete!`);

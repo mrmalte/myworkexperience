@@ -4,4 +4,4 @@ Period: 202005-202110
 Role: Software Engineer
 Location: Malmö
 LocationType: Hybrid
-Technologies: 
+Technologies:

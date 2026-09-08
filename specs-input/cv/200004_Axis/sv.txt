@@ -1,3 +1,7 @@
 Title: Unicode-översättningsverktyg
 
-Designade och implementerade ett kodgenereringsverktyg som producerar en C-översättningsmodul som mappar Unicode-teckenkoder till enkelbytes-kodningar som ASCII.
+En skrivarserver tar emot text i en teckenkodning och måste lämna över text i en annan, och mappningstabellerna däremellan är stora och tröttsamma att underhålla för hand.
+
+Jag designade och implementerade ett kodgenereringsverktyg som producerar en C-modul för översättning från Unicode-teckenkoder till enbytekodningar som ASCII.
+
+Både generatorn och den genererade modulen är skrivna i C för skrivarserverns inbyggda Linux, med källkod i CVS.

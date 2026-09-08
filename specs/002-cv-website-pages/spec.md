@@ -25,6 +25,14 @@
 
 - Mockup update 2026-05-13: `specs-input/mockup/scandinavian.html` updated with technology tags on role cards and assignment description rows. Tags display as inline pills below description text. FR-053 and FR-054 added.
 
+### Session 2026-08-11
+
+- Q: The About page is being removed — does removal cover only the page and navigation, or the whole about content pipeline? → A: Remove everything. The About page, its nav entry (desktop and mobile drawer), the `/about` redirect route, the `specs-input/about/` source directory, the `about` object in `site-content.json` (and its schema definition), and the `ui.nav.about` strings are all removed. The about text is not reused anywhere else on the site.
+- Mockup update 2026-08-11: `specs-input/mockup/scandinavian.html` MUST also drop the About page — the desktop nav button, the mobile drawer nav button, the `#page-about` section, the `nav_about` / `about_text` translation keys in both languages, and `about` in the page-switching list. The mockup remains the canonical visual reference (FR-004b) and must not show a page the site no longer has.
+- Deployment change 2026-08-14: The site is served from a `/cv/` subdirectory rather than the domain root. **All URL paths in this specification are relative to the deployment base path, not the domain root.** Where this spec writes `/en/` or `/contact`, the deployed URL is `/cv/en/` and `/cv/contact`. FR-007, FR-008, SC-001 and SC-002 are to be read accordingly; no requirement in this spec changes in substance. See [006-base-path-deploy](../006-base-path-deploy/spec.md).
+
+- Scope change 2026-08-11: The site now has **three** pages (CV, Technologies, Contact) instead of four. FR-001, FR-003, FR-011b, FR-043 updated; FR-025 retired. The `/en/about` and `/sv/about` routes cease to exist and resolve to the not-found page (FR-031).
+
 ## User Scenarios & Testing _(mandatory)_
 
 <!--
@@ -42,16 +50,16 @@
 
 ### User Story 1 - Navigate site pages + language (Priority: P1)
 
-As a site visitor, I want to navigate between CV, Technologies, About, and Contact pages and switch between English and Swedish so that I can view the content in my preferred language.
+As a site visitor, I want to navigate between CV, Technologies, and Contact pages and switch between English and Swedish so that I can view the content in my preferred language.
 
 **Why this priority**: Basic navigation and language routing are required for any usable site experience.
 
-**Independent Test**: Open the site at `/` and verify it redirects to the default language CV page; navigate to each page via menu (CV, Technologies, About, Contact); switch language and verify URL updates and content language updates.
+**Independent Test**: Open the site at `/` and verify it redirects to the default language CV page; navigate to each page via menu (CV, Technologies, Contact); switch language and verify URL updates and content language updates.
 
 **Acceptance Scenarios**:
 
 1. **Given** a visitor opens `/`, **When** the site loads, **Then** the visitor is redirected to `/en/` and sees the CV page.
-2. **Given** a visitor is on `/en/about`, **When** they choose Swedish, **Then** they are navigated to `/sv/about` and see Swedish content.
+2. **Given** a visitor is on `/en/technologies`, **When** they choose Swedish, **Then** they are navigated to `/sv/technologies` and see Swedish content.
 3. **Given** a visitor is on `/sv/contact`, **When** they refresh the page, **Then** `/sv/contact` remains selected and Swedish remains active.
 4. **Given** a visitor is on any page, **When** they click the Technologies nav link, **Then** they are navigated to `/[lang]/technologies` and see the technology category page.
 
@@ -123,7 +131,8 @@ As a site visitor, I want to see all technologies I have worked with, visualized
 
 ### Edge Cases
 
-- Visitor opens a URL without a language prefix (e.g., `/about`).
+- Visitor opens a URL without a language prefix (e.g., `/contact`).
+- Visitor opens a removed route (e.g., `/en/about`, `/about`) — resolves to the not-found page (FR-031).
 - Visitor opens an unknown route (e.g., `/en/does-not-exist`).
 - Technologies page: a technology in a `Technologies:` field that is not found in any category in `tech-categories.json` MUST appear in the "Other" category.
 - CV sections contain fewer than 5 items (no “Show all” control).
@@ -144,7 +153,7 @@ As a site visitor on a mobile device, I want the site to adapt to narrow screens
 **Acceptance Scenarios**:
 
 1. **Given** a viewport ≤720 px, **When** the site loads, **Then** the desktop nav links and language toggle are hidden and a hamburger icon appears on the right side of the nav bar, with the current page label shown next to it.
-2. **Given** the hamburger menu is visible, **When** the visitor taps it, **Then** a drawer slides open containing: the language toggle at the top, followed by the four navigation links (CV, Technologies, About, Contact) with active-page styling.
+2. **Given** the hamburger menu is visible, **When** the visitor taps it, **Then** a drawer slides open containing: the language toggle at the top, followed by the three navigation links (CV, Technologies, Contact) with active-page styling.
 3. **Given** the drawer is open, **When** the visitor taps a navigation link, **Then** the drawer closes and the visitor navigates to the selected page.
 4. **Given** a viewport ≤720 px on the CV page, **When** the page loads, **Then** the summary text is truncated to ~3 lines with a "Show all" button visible below it. Tapping "Show all" expands the full summary and hides the button.
 5. **Given** a viewport ≤720 px, **When** viewing role cards or assignment rows, **Then** the period is displayed above the title (stacked layout) instead of inline to the right.
@@ -163,12 +172,12 @@ As a site visitor on a mobile device, I want the site to adapt to narrow screens
 
 #### Site Pages & Layout
 
-- **FR-001**: The site MUST have exactly four pages: **CV**, **Technologies**, **About**, and **Contact**.
+- **FR-001**: The site MUST have exactly three pages: **CV**, **Technologies**, and **Contact**.
 - **FR-002**: The site MUST render a sticky nav bar at the top of every page that serves as both the site header and navigation. The left side of the nav MUST display a name block (`nav-name-block`) containing:
   - The Role value from `specs-input/cv/summary/meta.txt` as a small uppercase eyebrow label above the name, rendered in `var(--accent)` color (the green design token).
   - The name "Malte Särner" below it, rendered in Fraunces serif font at ~1.35rem, weight 600, letter-spacing -0.02em.
     _FR-002a: reserved (visual details now covered by the mockup via FR-004b)._
-- **FR-003**: The same sticky nav bar MUST contain page links (`CV`, `Technologies`, `About`, `Contact`) in that order, and a language selector on the right side. Each link label MUST be sourced from `site-content.json` → `ui.nav.<page>[lang]`.
+- **FR-003**: The same sticky nav bar MUST contain page links (`CV`, `Technologies`, `Contact`) in that order, and a language selector on the right side. Each link label MUST be sourced from `site-content.json` → `ui.nav.<page>[lang]`.
 
 _FR-003b: reserved (visual details now covered by the mockup via FR-004b)._
 
@@ -181,9 +190,9 @@ _FR-003b: reserved (visual details now covered by the mockup via FR-004b)._
 
 - **FR-005**: The site MUST support exactly two languages: English (`en`) and Swedish (`sv`).
 - **FR-006**: English (`en`) MUST be the default language.
-- **FR-007**: The selected language MUST be encoded in the URL path as the first segment: `/en/…` or `/sv/…`.
+- **FR-007**: The selected language MUST be encoded in the URL path as the first segment after the deployment base path: `/en/…` or `/sv/…`.
 - **FR-008**: If a visitor opens a route without a language prefix, the site MUST redirect to the same route under the default language.
-  - Example: `/about` redirects to `/en/about`.
+  - Example: `/contact` redirects to `/en/contact`.
 - **FR-009**: When the visitor switches language, the site MUST navigate to the same page under the selected language.
 - **FR-010**: The language selector MUST be a segmented toggle group with both language options (`EN` and `SV` as uppercase text labels) always visible side by side. Clicking the inactive option navigates to the same page under the selected language.
   _FR-010a: reserved (visual details now covered by the mockup via FR-004b)._
@@ -200,11 +209,10 @@ _FR-003b: reserved (visual details now covered by the mockup via FR-004b)._
   | ------------ | ---------------- | --------------------- |
   | CV           | "CV"             | "CV"                  |
   | Technologies | "Technologies"   | "Teknologier"         |
-  | About        | "About"          | "Om"                  |
   | Contact      | "Contact"        | "Kontakt"             |
   | Not-found    | "Page not found" | "Sidan hittades inte" |
 
-  For the four main pages (`cv`, `technologies`, `about`, `contact`), the title text MUST be sourced from `site-content.json` → `ui.nav.<page>[lang]`. For the not-found page, the title text MUST be sourced from `site-content.json` → `notFound.title[lang]`.
+  For the three main pages (`cv`, `technologies`, `contact`), the title text MUST be sourced from `site-content.json` → `ui.nav.<page>[lang]`. For the not-found page, the title text MUST be sourced from `site-content.json` → `notFound.title[lang]`.
 
 #### Search Bar
 
@@ -258,11 +266,11 @@ _FR-012c: reserved (removed — stats strip design)._
 
 #### About Page
 
-- **FR-025**: The About page MUST render the about text from `specs-input/about/<lang>.txt`. HTML markup in the source text (e.g., `<a>` tags) MUST be rendered as HTML, not escaped as plain text.
+_FR-025: reserved (removed 2026-08-11 — the About page was retired). The page, its route, its nav entry, the `specs-input/about/` source directory, the `about` object in `site-content.json`, and the `ui.nav.about` strings MUST NOT exist._
 
 #### Not-Found Page
 
-- **FR-031**: The not-found (404) page MUST render its description text from `specs-input/not-found/<lang>.txt`, following the same content pipeline as the About page (`parseSource` → `site-content.json` under `notFound.text` → `loadContent()`). Because the not-found page has no language URL segment, it MUST default to the site default language (`en`). This is intentional — no language context is available without a URL prefix. The page MUST render an `h1` title per FR-011b, sourced from `site-content.json` → `notFound.title[lang]`, and the description text below it.
+- **FR-031**: The not-found (404) page MUST render its description text from `specs-input/not-found/<lang>.txt`, following the standard content pipeline (`parseSource` → `site-content.json` under `notFound.text` → `loadContent()`). Because the not-found page has no language URL segment, it MUST default to the site default language (`en`). This is intentional — no language context is available without a URL prefix. The page MUST render an `h1` title per FR-011b, sourced from `site-content.json` → `notFound.title[lang]`, and the description text below it.
 
 _FR-032: reserved._
 
@@ -296,7 +304,7 @@ _FR-032: reserved._
   - The name-block on the left remains visible.
 - **FR-043**: On mobile, tapping the hamburger MUST open a **nav drawer** that slides down from the nav bar (using `max-height` transition). The drawer MUST contain, top to bottom:
   1. The language toggle (same EN/SV segmented control as desktop, with larger touch targets: `min-height: 44px`).
-  2. The four navigation links (CV, Technologies, About, Contact) with the active page highlighted. Each link MUST have touch-friendly sizing (`min-height: 44px`, `font-size: 0.9rem`, `padding: 0.65rem 0.75rem`).
+  2. The three navigation links (CV, Technologies, Contact) with the active page highlighted. Each link MUST have touch-friendly sizing (`min-height: 44px`, `font-size: 0.9rem`, `padding: 0.65rem 0.75rem`).
      Tapping a link MUST close the drawer and navigate to that page.
 - **FR-044**: The hamburger menu component MUST be reusable. The same drawer structure (hamburger button + active label + slide-down drawer) MUST be used for both the main site navigation and the technology page filter navigation on mobile. The component accepts different content (nav links vs. filter buttons) via composition.
 - **FR-045**: On mobile, the nav bar height MUST be `56px` (reduced from `72px` on desktop), with horizontal padding `1rem` (reduced from `2rem`).
@@ -319,7 +327,7 @@ _FR-032: reserved._
 ### Key Entities _(include if feature involves data)_
 
 - **Language**: `en` or `sv`.
-- **Page**: One of `cv`, `technologies`, `contact`, `about`.
+- **Page**: One of `cv`, `technologies`, `contact`.
 - **CVEntry**: A single parsed CV item from `specs-input/cv/` (metadata + language content).
 - **CVSection**: One of `summary`, `education`, `roles`, `assignments`.
 - **ContactMessage**: Submitted contact form content: `name`, `email`, `subject`, `message`.
@@ -329,7 +337,8 @@ _FR-032: reserved._
 
 ### Measurable Outcomes
 
-- **SC-001**: Visitors can reach each page (CV/Technologies/Contact/About) in both languages via URL (`/en/...`, `/sv/...`) with correct active-menu indication.
+- **SC-001**: Visitors can reach each page (CV/Technologies/Contact) in both languages via URL (`/en/...`, `/sv/...`) with correct active-menu indication.
+- **SC-016**: No About page, route, nav entry, source file, content field, or UI string remains anywhere in the repository — `/en/about` and `/sv/about` are absent from the static export and `site-content.json` contains no `about` key.
 - **SC-007**: On the Technologies page, all technologies used in at least one CV entry are visible in a chart showing technology name, progress bar, and years of experience. Category filter buttons allow filtering by category, and a sort toggle switches between time-descending and alphabetical order.
 - **SC-002**: Opening a route without language prefix redirects to the default-language equivalent 100% of the time.
 - **SC-003**: On the CV page, lists are newest-first and show only 5 items by default when more exist, with “Show all” available.

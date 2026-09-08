@@ -5,4 +5,4 @@ Period: 201407-201407
 Role: Fullstack Developer
 Location: Malmö
 LocationType: Hybrid
-Technologies: Javascript, Linux, SVN, Chrome, Safari
+Technologies: JavaScript, Linux, SVN, Chrome, Safari

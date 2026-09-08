@@ -4,4 +4,4 @@ Period: 200609-200704
 Role: Software Developer
 Location: Malmö
 LocationType: Onsite
-Technologies: 
+Technologies:

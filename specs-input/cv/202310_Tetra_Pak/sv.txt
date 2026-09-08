@@ -1,8 +1,7 @@
-
 Title: ErrorPrediction
 
 C++-applikation för Tetra Pak som kör maskininlärningsalgoritmer på data inläst från Allen-Bradley PLCs för att förutsäga fel i tillverkningsutrustning.
 
 Baserat på en befintlig prototyp utvecklade jag applikationen så att datainsamling och algoritmbearbetning körs parallellt i separata trådar, med händelsebaserad kommunikation och synkronisering däremellan.
 
-Applikationen är implementerad i standard C++ byggt som C++20 (huvudsakligen C++11-syntax), med Nlohmann/json för konfiguration, paketerad som en Debian-systemtjänst för enkel distribution och installation. 
+Applikationen är implementerad i standard C++ byggt som C++20 (huvudsakligen C++11-syntax), med Nlohmann/json för konfiguration, paketerad som en Debian-systemtjänst för enkel distribution och installation.

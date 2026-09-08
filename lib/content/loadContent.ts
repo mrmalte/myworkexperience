@@ -36,9 +36,6 @@ export interface SiteContent {
     name: string;
     role: string;
   };
-  about: {
-    text: LocalizedText;
-  };
   notFound: {
     title: LocalizedText;
     text: LocalizedText;
@@ -54,9 +51,10 @@ export interface SiteContent {
     nav: {
       cv: LocalizedText;
       technologies: LocalizedText;
-      about: LocalizedText;
       contact: LocalizedText;
       pdf: LocalizedText;
+      download: LocalizedText;
+      word: LocalizedText;
     };
     pdf: {
       date: string;

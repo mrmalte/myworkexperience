@@ -1,0 +1,4 @@
+# Root redirect: send the bare domain to the CV subdirectory.
+# Anchored to the exact root path only — an unanchored `Redirect / /cv/`
+# would also match `/cv/` itself and loop forever (/cv/ -> /cv//cv/ -> ...).
+RedirectMatch 301 ^/$ /cv/

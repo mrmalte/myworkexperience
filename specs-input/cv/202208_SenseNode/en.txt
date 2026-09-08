@@ -4,4 +4,4 @@ SenseNode's EnergyAnalytics platform helps companies and factories gather sensor
 
 Working as a fullstack developer I maintained and added new features to the cloud service and developed new software for the gateway.
 
-The cloud service is built in TypeScript with a NestJS/TypeORM backend (PostgreSQL) and a NextJS/React frontend using TailwindUI, communicating via REST. The gateway is an embedded TypeScript application using XState to collect readings from Z-Wave sensors and forward them via MQTT to InfluxDB. Services are hosted on GCP with source in GitHub.
+The cloud service is built in TypeScript with a NestJS/TypeORM backend (PostgreSQL) and a Next.js/React frontend using TailwindUI, communicating via REST. The gateway is an embedded TypeScript application using XState to collect readings from Z-Wave sensors and forward them via MQTT to InfluxDB. Services are hosted on GCP with source in GitHub.

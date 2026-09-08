@@ -190,3 +190,44 @@
 - Container: `flex flex-wrap gap-[0.35rem] mt-3`
 - Tag pill: `text-[0.67rem] font-medium bg-off text-mid px-[0.55rem] py-[0.2rem] rounded-[3px] border border-line font-instrument-sans`
   **Rationale**: Direct translation of the mockup's `.tag` CSS rule into Tailwind utilities. Uses existing design tokens (`bg-off`, `text-mid`, `border-line`) already defined in the project's Tailwind config.
+
+---
+
+## Phase 13 Research: About Page Removal
+
+### R14a: Depth of removal
+
+**Decision**: Remove the About page end-to-end rather than only unlinking it from navigation — page, redirect route, `specs-input/about/` source, the `about` object in `site-content.json`, its schema definition, its TypeScript types, and the `ui.nav.about` strings.
+**Rationale**: The about text has exactly one consumer (`app/[lang]/about/page.tsx`). Keeping the pipeline alive for a page nobody can reach leaves dead source files, a required schema field with no reader, and an unused i18n string — all of which drift silently. Constitution III treats `specs-input/` as the source of truth, so a page that no longer exists should not have source material.
+**Alternatives considered**:
+
+- Unlink from nav only: Rejected — the route stays reachable by direct URL, and the content pipeline keeps carrying dead weight.
+- Keep `specs-input/about/` for future reuse: Rejected — the text ("This site was created with Spec Kit…" plus the GitHub link) is specific to the About page, and git history preserves it if it is ever wanted back.
+
+### R14b: No redirect stub for the removed route
+
+**Decision**: `/en/about`, `/sv/about`, and `/about` are deleted outright with no redirect to a replacement page; they fall through to the not-found page (FR-031).
+**Rationale**: A redirect exists to send a visitor to the equivalent content elsewhere. There is no equivalent — the content is gone — so redirecting to the CV page would misrepresent a 404 as a successful navigation. The static export simply stops emitting those paths.
+**Alternatives considered**:
+
+- Redirect `/about` → `/en/` : Rejected — hides a genuine 404 and confuses anyone following an old link.
+
+### R14c: Schema and build tool must change together
+
+**Decision**: Update `contracts/site-content.schema.json` and `tools/build-content.ts` in the same step, before running `npm run content:check`.
+**Rationale**: `about` is in the schema's top-level `required` array and the schema sets `additionalProperties: false`. Removing it from only one side breaks validation in one direction or the other: drop it from the builder alone and validation fails on the missing required field; drop it from the schema alone and validation fails on the unexpected extra property.
+
+### R14d: Regenerating rather than editing site-content.json
+
+**Decision**: Do not hand-edit `public/content/site-content.json`; run `npm run content:build` so the `about` and `ui.nav.about` keys disappear as a consequence of the source change.
+**Rationale**: Constitution III forbids hand-editing generated artifacts, and the file is git-ignored — a manual edit would be both non-reproducible and immediately lost on the next build.
+
+### R14e: Mockup parity
+
+**Decision**: Remove the About page from `specs-input/mockup/scandinavian.html` as well — desktop nav button, mobile drawer button, `#page-about` section, `nav_about` / `about_text` keys in both language tables, and `about` in the page-switching array.
+**Rationale**: FR-004b makes the mockup the canonical visual and structural reference for the layout. A mockup advertising a fourth nav item would contradict FR-001 and mislead any future layout work that treats the mockup as authoritative.
+
+### R14f: Pre-existing `ui.nav` schema drift (surfaced, not caused)
+
+**Decision**: Add `download` and `word` to the `ui.nav` `properties` and `required` arrays in `contracts/site-content.schema.json` as part of Phase 13.
+**Rationale**: Feature 005 (DOCX download) added `ui.nav.download` and `ui.nav.word` to `tools/build-content.ts` but never updated the 002 content contract. Because `ui.nav` sets `additionalProperties: false`, `npm run content:validate` has been failing on `main` since that feature landed (`must NOT have additional properties: download, word`). The Phase 13 validation gate (T096) cannot pass while that drift exists, and leaving the contract wrong would contradict FR-038's requirement that all UI strings are contract-described. The fix is confined to the schema — no builder or UI behavior changes.

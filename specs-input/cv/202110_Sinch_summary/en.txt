@@ -1,3 +1,5 @@
-Title: Technical lead
+Title: Technical Lead
 
-Working as technical lead at Sinch.
+Sinch Conversation API carries messages across SMS, MMS, RCS, WhatsApp, Messenger, Viber and KakaoTalk, and each of those channels has an adapter behind it.
+
+I worked as technical lead for the adapter team, responsible for planning, coordination and prioritisation across those channels while staying close enough to the code to keep an overall picture of the architecture.

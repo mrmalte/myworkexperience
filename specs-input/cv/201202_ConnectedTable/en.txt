@@ -1,4 +1,7 @@
+Title: Server-Rendered HTML5 Poker Client
 
-Title: Thinclient HTML5 Poker Client
+The first web poker client worked much like remote desktop: everything except the buttons was rendered on the server and streamed to the browser as draw commands, so the client stayed thin and the table looked identical everywhere.
 
-Development and maintenance of an HTML5 poker client operating similarly to Remote Desktop — all graphics except buttons are generated server-side and streamed as draw commands to an HTML5 canvas client-side. The server is implemented in Qt/C++ and the client in HTML/CSS/JavaScript, with audio played from audio sprites using the HTML5 Audio API. Game communication uses XMLHttpRequest.
+I developed and maintained it — the Qt/C++ rendering server and the browser client that draws the incoming commands on an HTML5 canvas and plays sound from audio sprites.
+
+Implemented in C++/Qt on Linux and in HTML, CSS and JavaScript in the browser, with game traffic over XMLHttpRequest and source in SVN.

@@ -1,3 +1,5 @@
-Title: Technical lead
+Title: Technical Lead
 
-Jag arbetade som technical lead för Symbian utveckling.
+Sony Ericsson flyttade sina smartphones till Symbian, och positionering var en av funktionerna som behövde byggas för den nya plattformen.
+
+Jag arbetade som technical lead för GPS-positionering och byggde upp både teamet och mjukvaran från grunden.

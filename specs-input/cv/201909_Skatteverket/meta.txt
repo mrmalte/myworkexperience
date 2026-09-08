@@ -5,4 +5,4 @@ Period: 201909-201911
 Role: Fullstack Developer
 Location: Malmö
 LocationType: Onsite
-Technologies: TypeScript, ReactJS, NodeJS, ExpressJS, Jasmine, Git, Jenkins, Java, OpenShift, GitHub Enterprise
+Technologies: TypeScript, React, Node.js, Express, Jasmine, Git, Jenkins, Java, OpenShift, GitHub Enterprise

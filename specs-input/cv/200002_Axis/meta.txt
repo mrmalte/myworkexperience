@@ -5,4 +5,4 @@ Period: 200002-200003
 Role: Software Developer
 Location: Lund
 LocationType: Onsite
-Technologies: C, Linux, vCalendar, vNotes, vMessages, Postscript, PCL, CVS
+Technologies: C, Linux, vCalendar, vNotes, vMessages, PostScript, PCL, CVS

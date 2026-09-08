@@ -1,4 +1,3 @@
-
 Title: Fixa
 
 Fixa är Ikeas interna system för butiksoperationer — en samling funktioner i en applikation för att hantera dagliga arbetsuppgifter i Ikeas varuhus, som att fylla på artiklar och återställa utställningsrum.

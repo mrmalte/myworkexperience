@@ -1,3 +1,5 @@
-Title: Team lead
+Title: Team Leader
 
-Working as team leader and software developer for a small team of 3 developers for Global Gaming (formerly Connected Table).
+Global Gaming was created by a merger of several companies, Connected Table among them, and ran online casino and poker sites.
+
+I worked as team leader and fullstack developer for a small team of three, building the casino site on top of the group's internal platform for accounts, payments and games.

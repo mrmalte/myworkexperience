@@ -1,3 +1,5 @@
-Title: Team manager
+Title: Team Manager
 
-Working 1/3 of the time as team-leader and manager for a team of 7 developers and 3 testers. Working 1/3 of the time as product owner and the last 1/3 as software developer. Working for Global Gaming (formerly Connected Table).
+As the casino product grew, so did the team around it — to seven developers and three testers.
+
+I split my time three ways: a third as team leader and line manager for that team, a third as product owner, and a third writing code. The management part was new to me; the code was what I kept coming back to.

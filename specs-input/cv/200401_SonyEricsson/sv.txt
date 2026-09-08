@@ -1,0 +1,7 @@
+Title: MMS
+
+Samma MMS-modul, fortsatt som anställd efter två år som konsult på den genom Maltetech.
+
+Jag var kvar som modularkitekt, med ansvar för design, implementation och underhåll, fram till att arbetet gick vidare till VideoShare-prototypen.
+
+Implementerad i C på telefonplattformen, med källkod i ClearCase.

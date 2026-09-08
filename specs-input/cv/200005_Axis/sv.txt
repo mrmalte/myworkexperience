@@ -1,4 +1,7 @@
+Title: Trådlös utskrift över Bluetooth
 
-Title: Bluetooth trådlös utskrift
+En trådlös utskriftslösning som låter en mobiltelefon skicka ett utskriftsjobb direkt till en skrivare över Bluetooth, utan kabel och utan drivrutin i telefonen.
 
-Utvecklade en trådlös Bluetooth-utskriftslösning. Jag skrev protokollspecifikationen och implementerade en inbyggd utskriftsapplikation som tar emot utskriftsdata och vidarebefordrar den till en skrivare, med C, OBEX, SDP och RFCOMM.
+Jag skrev protokollspecifikationen och implementerade den inbyggda utskriftsapplikationen som tar emot utskriftsdata och vidarebefordrar den till skrivaren.
+
+Implementerad i C över OBEX, SDP och RFCOMM på skrivarserverns inbyggda Linux, med källkod i CVS.

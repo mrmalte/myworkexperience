@@ -6,15 +6,14 @@
     "C#",
     "Java",
     "TypeScript",
-    "Javascript",
+    "JavaScript",
     "PHP",
     "Hack",
     "SQL"
   ],
   "Frontend": [
     "React",
-    "ReactJS",
-    "NextJS",
+    "Next.js",
     "BackboneJS",
     "MarionetteJS",
     "SingleSPA",
@@ -36,20 +35,19 @@
     "Context API",
     "React Query (TanStack Query)",
     "RequireJS",
-    "ContentfulCMS",
+    "Contentful",
     "Chrome",
     "Safari",
     "MVC",
     "Windows Mobile"
   ],
   "Backend": [
-    "NodeJS",
-    "ExpressJS",
+    "Node.js",
+    "Express",
     "NestJS",
     "Spring WebFlux",
     "Fastify",
     "Qt",
-    "QT4",
     "TypeORM",
     "Knex",
     "TypeBox",
@@ -58,7 +56,13 @@
     ".NET",
     "XState"
   ],
-  "Databases": ["PostgreSQL", "MySQL", "MongoDB", "InfluxDB", "Redis"],
+  "Databases": [
+    "PostgreSQL",
+    "MySQL",
+    "MongoDB",
+    "InfluxDB",
+    "Redis"
+  ],
   "Cloud & DevOps": [
     "AWS",
     "GCP",
@@ -75,7 +79,10 @@
     "Webpack",
     "Intel Atom",
     "Machine Learning",
-    "Nlohmann/json"
+    "Nlohmann/json",
+    "Terraform",
+    "Nx",
+    "OpenShift"
   ],
   "Testing": [
     "Jest",
@@ -90,14 +97,14 @@
     "GitHub",
     "GitLab",
     "SVN",
-    "Subversion",
     "Mercurial",
     "CVS",
     "ClearCase",
     "Bitbucket",
     "Jenkins",
     "Visual Studio",
-    "Copilot"
+    "Copilot",
+    "GitHub Enterprise"
   ],
   "Embedded & IoT": [
     "Bluetooth",
@@ -115,10 +122,10 @@
   "APIs & Streaming": [
     "REST",
     "HTTP",
-    "GRPC",
+    "gRPC",
     "Apollo GraphQL",
     "WebSockets",
-    "Server Sent Events",
+    "Server-Sent Events",
     "XMLHttpRequest",
     "Kafka",
     "MQTT",
@@ -126,7 +133,7 @@
     "Salesforce Marketing Cloud",
     "Google Analytics",
     "Google Tag Manager",
-    "Datalayer"
+    "Data Layer"
   ],
   "Protocols": [
     "SOAP",
@@ -139,6 +146,7 @@
     "XML",
     "OBEX",
     "SDP",
+    "MIME",
     "RFCOMM",
     "SIP",
     "RTP",
@@ -154,10 +162,16 @@
     "vProperty",
     "vObject",
     "PCL",
-    "Postscript",
+    "PostScript",
     "SIS",
     "VideoShare",
-    "H263"
+    "H.263",
+    "Unicode",
+    "ASCII"
   ],
-  "Other": ["Microservices", "Kanban", "Scrum"]
+  "Other": [
+    "Microservices",
+    "Kanban",
+    "Scrum"
+  ]
 }

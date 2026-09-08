@@ -1,3 +1,5 @@
 Title: Consultant
 
-Consultant at Maltetech.
+Maltetech was my own company, through which I consulted at Sony Ericsson in Lund for close to two years.
+
+I worked as senior staff engineer on messaging in the phones — first an SVG/SIS animation prototype, then as module architect for the MMS module, work I continued after Sony Ericsson took me on as an employee.

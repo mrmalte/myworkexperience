@@ -1,4 +1,7 @@
-
 Title: SDP Coder/Parser
 
-Extended an SDP coder/parser with additional functionality for use in the IMS framework being developed at Teleca.
+SDP describes what a media session contains — codecs, addresses and ports — and is what two endpoints exchange when setting up a call. Teleca's IMS framework needed a more capable one.
+
+I extended the existing SDP coder/parser with the functionality the framework required.
+
+Implemented in C, with source in SVN.

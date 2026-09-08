@@ -1,4 +1,7 @@
-
 Title: Chrome- och Safari-tillägg
 
-Prototyp av webbläsartillägg för Chrome och Safari för att hantera fönsterstorlek och positionering för en pokerklient.
+En seriös spelare kör flera bord samtidigt, och att ordna de fönstren för hand varje session blir tröttsamt.
+
+Jag byggde prototyper av webbläsartillägg för Chrome och Safari som hanterar pokerklientens fönsterstorlek och placering.
+
+Implementerade i JavaScript, med källkod i SVN.

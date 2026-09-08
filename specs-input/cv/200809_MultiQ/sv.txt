@@ -1,4 +1,7 @@
-
 Title: Egen Linux-distribution
 
-Byggde MultiQs egna Intel Atom Linux-distribution från källkod — ett hybridupplägg som kombinerar tekniker från "Linux From Scratch"-projektet och BSD ports-systemet.
+MultiQs skyltningsspelare kördes på Intel Atom-hårdvara och behövde ett operativsystem litet nog att starta snabbt och förutsägbart nog att kunna supportas ute hos kund i flera år.
+
+Jag byggde distributionen från källkod — ett hybridupplägg som kombinerar tekniker från Linux From Scratch med BSD:s ports-system, så att paket kunde byggas om reproducerbart.
+
+Byggd med make och automake kring en C- och C++-verktygskedja, med källkod i SVN.

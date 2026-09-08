@@ -5,4 +5,4 @@ Period: 201509-201808
 Role: Team Leader
 Location: Malmö
 LocationType: Hybrid
-Technologies: Javascript, MarionetteJS, BackboneJS, Bootstrap, Linux, SVN, ExpressJS, NodeJS, MongoDB, Mongoose, Google Analytics, Google Tag Manager, Datalayer, Webpack
+Technologies: JavaScript, MarionetteJS, BackboneJS, Bootstrap, Linux, SVN, Express, Node.js, MongoDB, Mongoose, Google Analytics, Google Tag Manager, Data Layer, Webpack

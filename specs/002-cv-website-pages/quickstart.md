@@ -5,7 +5,7 @@
 ## Prerequisites
 
 - Node.js 18+ and npm
-- Source content in `specs-input/cv/`, `specs-input/about/`, `specs-input/not-found/`
+- Source content in `specs-input/cv/`, `specs-input/not-found/`
 
 ## Setup
 
@@ -40,7 +40,6 @@ Site runs at `http://localhost:3000`. Opens to `/` which redirects to `/en/`.
 
 ```
 specs-input/cv/*/meta.txt + en.txt + sv.txt
-specs-input/about/en.txt + sv.txt
 specs-input/not-found/en.txt + sv.txt
 specs-input/tech-categories.json
         │
@@ -80,7 +79,6 @@ These are required for the contact form to send emails. If missing, the form sho
 | `/en/` | CV page (English) |
 | `/sv/` | CV page (Swedish) |
 | `/en/technologies` | Technologies page |
-| `/en/about` | About page |
 | `/en/contact` | Contact page |
-| `/about` | Redirects → `/en/about` |
+| `/contact` | Redirects → `/en/contact` |
 | `/*` (unknown) | 404 not-found page (English) |

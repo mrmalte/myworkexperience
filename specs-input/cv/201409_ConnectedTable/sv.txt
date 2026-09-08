@@ -1,4 +1,7 @@
+Title: Pokerproxy
 
-Title: Poker-proxy
+En pokerklient pratar med en server, men bolagets spelare behövde nå bord i flera pokernätverk samtidigt.
 
-Design och implementation av en C++/Qt4-proxy för kommunikation mellan en pokerklient och flera poker-servrar/nätverk.
+Jag designade och implementerade proxyn som sitter mellan klienten och de nätverken och multiplexar kommunikationen.
+
+Implementerad i C++/Qt på Linux, med källkod i SVN.

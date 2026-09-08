@@ -1,4 +1,7 @@
-
 Title: Custom Linux Distribution
 
-Built MultiQ's custom Intel Atom Linux distribution from source — a hybrid approach combining techniques from the "Linux From Scratch" project and the BSD ports system.
+MultiQ's signage players ran on Intel Atom hardware and needed an operating system small enough to boot fast and predictable enough to support in the field for years.
+
+I built the distribution from source — a hybrid approach combining techniques from the Linux From Scratch project with the BSD ports system, so that packages could be rebuilt reproducibly.
+
+Built with make and automake around a C and C++ toolchain, with source in SVN.

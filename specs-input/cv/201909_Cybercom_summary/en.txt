@@ -1,3 +1,5 @@
 Title: Consultant
 
-Working as consultant at Cybercom.
+Cybercom is a consultancy in Malmö, and my assignment there was with the Swedish Tax Agency.
+
+I worked as a fullstack developer on two prototypes used to evaluate and approve new technology for use inside the agency.

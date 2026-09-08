@@ -1,4 +1,7 @@
+Title: SDP-kodare/parser
 
-Title: SDP-coder/parser
+SDP beskriver vad en mediasession innehåller — kodekar, adresser och portar — och är det två parter utbyter när ett samtal sätts upp. Telecas IMS-ramverk behövde en mer kapabel variant.
 
-Utbyggnad av en SDP-coder/parser med ytterligare funktionalitet för användning i IMS-ramverket som utvecklades på Teleca.
+Jag utökade den befintliga SDP-kodaren/parsern med den funktionalitet ramverket krävde.
+
+Implementerad i C, med källkod i SVN.

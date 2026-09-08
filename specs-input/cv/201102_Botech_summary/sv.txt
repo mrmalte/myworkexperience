@@ -1,3 +1,5 @@
 Title: Mjukvaruutvecklare
 
-Arbetar som fullstack utvecklare med Botechs Greyhound automationssystem.
+Botechs system Greyhound automatiserar fastigheter — läser mätare och styr gemensamma funktioner i bostadsrättsföreningar.
+
+Jag arbetade som fullstackutvecklare med det, från mätarintegrationerna via kostnadsfördelningen till webbgränssnittet som boende och styrelser använder.

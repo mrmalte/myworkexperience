@@ -31,9 +31,10 @@ interface UIStrings {
   nav: {
     cv: LocalizedText;
     technologies: LocalizedText;
-    about: LocalizedText;
     contact: LocalizedText;
     pdf: LocalizedText;
+    download: LocalizedText;
+    word: LocalizedText;
   };
   pdf: {
     date: string;
@@ -96,9 +97,6 @@ interface SiteContent {
   person: {
     name: string;
     role: string;
-  };
-  about: {
-    text: LocalizedText;
   };
   notFound: {
     title: LocalizedText;
@@ -269,12 +267,6 @@ function main() {
       name: "Malte Särner",
       role: parsed.summary.meta.role,
     },
-    about: {
-      text: {
-        en: parsed.about.en,
-        sv: parsed.about.sv,
-      },
-    },
     notFound: {
       title: {
         en: "Page not found",
@@ -299,9 +291,10 @@ function main() {
       nav: {
         cv: { en: "CV", sv: "CV" },
         technologies: { en: "Technologies", sv: "Teknologier" },
-        about: { en: "About", sv: "Om" },
         contact: { en: "Contact", sv: "Kontakt" },
         pdf: { en: "Download PDF", sv: "Ladda ner PDF" },
+        download: { en: "Download", sv: "Ladda ned" },
+        word: { en: "Word", sv: "Word" },
       },
       pdf: {
         date: new Date().toISOString().slice(0, 10),

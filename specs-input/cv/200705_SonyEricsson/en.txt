@@ -1,5 +1,7 @@
-
 Title: GPS Support in Symbian
 
-Technical lead for GPS positioning software development at SonyEricsson, building the team and all software from scratch. Responsible for design, implementation and maintenance of GPS hardware integration and a GPS status application on Symbian.
+GPS positioning for Sony Ericsson's Symbian phones: the integration against the GPS hardware, and a status application showing the user what the receiver was doing.
 
+I was technical lead for the work and built the team and all of the software from scratch, responsible for design, implementation and maintenance.
+
+Implemented in C++ on Symbian, with source in ClearCase.

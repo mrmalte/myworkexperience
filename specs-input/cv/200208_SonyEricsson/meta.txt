@@ -1,7 +1,7 @@
 Type: Assignment
 Client: SonyEricsson Communications AB
 Organization: Maltetech
-Period: 200208-200502
+Period: 200208-200401
 Role: Senior Staff Engineer
 Location: Lund
 LocationType: Onsite

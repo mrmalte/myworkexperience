@@ -1,7 +1,7 @@
 Type: Education
-Organization: LTU (LuTH)
+Organization: Luleå University of Technology (LTU)
 Period: 199309-199912
 Role: Student
 Location: Luleå
 LocationType: Onsite
-Technologies: 
+Technologies:

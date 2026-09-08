@@ -1,3 +1,5 @@
 Title: Senior Staff Engineer
 
-Working as senior staff engineer and module architect at SonyEricsson.
+Sony Ericsson developed and manufactured mobile phones in Lund. I was employed there after nearly two years of consulting on the same messaging platform.
+
+As senior staff engineer I was module architect for the MMS functionality in the feature phones, responsible for its design, implementation and maintenance, and I built the VideoShare prototype that let two people share video during an ongoing call.

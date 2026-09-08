@@ -1,4 +1,7 @@
-
 Title: vObjekt-formateringsramverk
 
-Portade och anpassade ett vObjekt-formateringsramverk som översätter vCalendar, vNotes och vMessages till PostScript eller PCL, vilket möjliggör utskrift från Ericsson-mobiltelefoner.
+Axis skrivarservrar kunde skriva ut kalenderposter, anteckningar och meddelanden skickade från Ericssons mobiltelefoner. vObjekt-ramverket översätter dessa vCalendar-, vNotes- och vMessages-strukturer till PostScript eller PCL som en skrivare förstår.
+
+Jag portade ramverket till skrivarserverplattformen och anpassade det till de format telefonerna faktiskt skickade.
+
+Implementerat i C på skrivarserverns inbyggda Linux, med källkod i CVS.

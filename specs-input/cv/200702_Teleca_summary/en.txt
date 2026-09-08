@@ -1,3 +1,5 @@
-Title: Software developer
+Title: Module Owner
 
-I worked as module responsible at Teleca.
+Teleca's email client was the product I moved on to after the individual assignments.
+
+I worked as module owner for it, responsible for the design, implementation and maintenance of the module.

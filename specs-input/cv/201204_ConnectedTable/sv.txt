@@ -1,6 +1,7 @@
-
 Title: HTML5-pokerklient
 
-Design och implementation av en komplett HTML5-pokerklient som renderar spelbordet på canvas. Klienten är byggd på Backbone, RequireJS och ett eget MVC-ramverk, med modeller och controllers delade mellan flera UI och vyer implementerade i både HTML/CSS och jQuery Mobile.
+Andra generationen flyttade in renderingen i webbläsaren: i stället för att strömma pixlar från servern ritar klienten bordet själv, vilket sänker bandbredden och håller klienten följsam även på en svag uppkoppling.
 
-Pokerbordet renderas med KineticJS med cachad, förskalad vektorgrafik, text och bilder. Ljud använder Web Audio API med Soundmanager2 som fallback. Översättningar hanteras med Jed. Serverkommunikation använder två XMLHttpRequest-kanaler för duplex-meddelandehantering med long-polling för server-till-klient-events.
+Jag designade och implementerade den. Bordet renderas på canvas med KineticJS ur cachad, förskalad vektorgrafik, text och bilder, och samma modeller och controllers driver flera olika användargränssnitt.
+
+Byggd på Backbone, RequireJS och ett eget MVC-ramverk, med vyer i både HTML/CSS och jQuery Mobile, ljud via Web Audio API med Soundmanager2 som reserv, översättningar med Jed, och duplexkommunikation mot servern över två XMLHttpRequest-kanaler med long polling för händelser från servern. Källkod i SVN.

@@ -5,4 +5,4 @@ Period: 202006-202110
 Role: Fullstack Developer
 Location: Malmö
 LocationType: Hybrid
-Technologies: TypeScript, NodeJS, ReactJS, Git, GitLab, AWS, PostgreSQL, TypeORM, Bull, Redis, Kafka, NestJS, Apollo GraphQL, GRPC, ExpressJS, Playwright, Cypress, Kubernetes, CI/CD, Microservices
+Technologies: TypeScript, Node.js, React, Git, GitLab, AWS, PostgreSQL, TypeORM, Bull, Redis, Kafka, NestJS, Apollo GraphQL, gRPC, Express, Playwright, Cypress, Kubernetes, CI/CD, Microservices

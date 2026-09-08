@@ -1,4 +1,5 @@
-Title: Senior Staff Engineer
+Title: Technical Lead
 
-Technical lead for Symbian software development at SonyEricsson.
+Sony Ericsson was moving its smartphones to Symbian, and positioning was one of the functions that had to be built for the new platform.
 
+I worked as technical lead for GPS positioning software, building both the team and the software from scratch.

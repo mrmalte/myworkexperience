@@ -1,3 +1,5 @@
-Title: Module arkitekt
+Title: Senior Staff Engineer
 
-Senior staff ingenjör och module arkitekt för MMS messaging funktionalitet i SonyEricsson telefoner.
+Sony Ericsson utvecklade och tillverkade mobiltelefoner i Lund. Jag anställdes där efter nästan två år som konsult på samma meddelandeplattform.
+
+Som senior staff engineer var jag modularkitekt för MMS-funktionaliteten i feature phones, med ansvar för design, implementation och underhåll, och byggde VideoShare-prototypen som lät två personer dela video under ett pågående samtal.

@@ -1,3 +1,5 @@
 Title: Konsult
 
-Konsult på Maltetech.
+Maltetech var mitt eget bolag, och genom det konsultade jag hos Sony Ericsson i Lund i nästan två år.
+
+Jag arbetade som senior staff engineer med meddelandefunktioner i telefonerna — först en SVG/SIS-animationsprototyp, därefter som modularkitekt för MMS-modulen, ett arbete jag fortsatte med efter att Sony Ericsson anställde mig.

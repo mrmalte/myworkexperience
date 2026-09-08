@@ -1,3 +1,5 @@
 Title: Konsult
 
-Arbetar som konsult på B3Skilled
+B3Skilled är ett konsultbolag i Malmö och en del av B3-koncernen.
+
+Jag arbetade där som fullstackutvecklare i två uppdrag: SenseNodes plattform för energianalys, från molntjänsten ned till den lokala gatewayen, och underhåll av Ikeas interna säljapplikation.

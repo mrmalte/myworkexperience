@@ -1,3 +1,5 @@
 Title: Consultant
 
-Working as consultant at B3Skilled.
+B3Skilled is a consultancy in Malmö, part of the B3 group.
+
+I worked there as a fullstack developer on two assignments: SenseNode's energy analytics platform, from the cloud service down to the on-premise gateway, and maintenance of Ikea's internal sales application.

@@ -1,4 +1,5 @@
-
 Title: Teamledare
 
-Jag arbetade som team leader och software developer för ett litet team bestående av 3 utvecklare för Global Gaming (tidigare Connected Table)
+Global Gaming bildades genom en sammanslagning av flera bolag, däribland Connected Table, och drev onlinekasino och poker.
+
+Jag arbetade som teamledare och fullstackutvecklare för ett litet team på tre personer, och byggde kasinowebbplatsen ovanpå koncernens interna plattform för konton, betalningar och spel.

@@ -1,8 +1,7 @@
+Title: React-kasinowebbplats
 
-Title: ReactJS Kasinowebbplats
+Kasinowebbplatsen byggdes om på React, med innehåll och översättningar flyttade ut ur koden till ett headless CMS så att redaktionen kunde arbeta utan att invänta en release.
 
-Frontend- och testarbete på en kasinowebbplats på Global Gaming, där jag även hade rollen som Team Lead.
+Jag byggde UI-funktioner i React/Redux-frontenden och implementerade de automatiserade e2e-testerna med Webdriver.io, samtidigt som jag hade rollen som Team Lead. Systemet är enhetstestat med Jest och Enzyme rakt igenom.
 
-Som utvecklare byggde jag UI-features för ReactJS/Redux-frontend och implementerade automatiserade e2e-tester med Webdriver.io. Systemet är enhetstestat med Jest/Enzyme i alla delar.
-
-Frontend deployas till CDN och backend av en DDD-skiktad ExpressJS-cache/proxy-tjänst driftsatt via Docker. Innehåll och översättningar hanteras i Contentful headless CMS. Systemet är strukturerat i små npm-paket.
+Frontenden driftsätts till CDN och stöds av en DDD-skiktad cache- och proxytjänst i Express som körs i Docker. Innehåll och översättningar ligger i Contentful, och kodbasen är strukturerad som små npm-paket.

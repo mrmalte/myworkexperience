@@ -1,3 +1,5 @@
-Title: Consultant
+Title: Konsult
 
-Arbetar som konsult på Cybercom
+Cybercom är ett konsultbolag i Malmö, och mitt uppdrag därifrån låg hos Skatteverket.
+
+Jag arbetade som fullstackutvecklare med två prototyper som användes för att utvärdera och godkänna ny teknik för användning inom myndigheten.

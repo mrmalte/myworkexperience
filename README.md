@@ -53,7 +53,7 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 
 ### Content Generation
 
-The CV content is sourced from `specs-input/cv/` and `specs-input/about/` directories. Generate the JSON content file:
+The CV content is sourced from the `specs-input/cv/` and `specs-input/not-found/` directories. Generate the JSON content file:
 
 ```bash
 # Generate and validate content in one command
@@ -86,7 +86,6 @@ The static site will be generated in the `out/` directory, ready for deployment.
 ```
 ├── app/                      # Next.js App Router pages
 │   ├── [lang]/              # Language-specific routes
-│   │   ├── about/
 │   │   ├── contact/
 │   │   ├── technologies/
 │   │   └── page.tsx         # CV page (root for each language)
@@ -109,7 +108,7 @@ The static site will be generated in the `out/` directory, ready for deployment.
 │   └── content/             # Content parsing utilities
 ├── specs-input/             # Source data
 │   ├── cv/                  # CV entries (meta.txt + en.txt + sv.txt)
-│   └── about/               # About text (en.txt + sv.txt)
+│   └── not-found/          # 404 text (en.txt + sv.txt)
 ├── public/                  # Static assets
 │   └── content/             # Generated site-content.json
 └── specs/                   # Feature specifications and planning
@@ -125,6 +124,16 @@ CV entries in `specs-input/cv/` follow the format defined in `specs/001-cv-data-
 
 ## Deployment
 
+The site is deployed into a `/cv` subdirectory on the server (`https://malte.sarner.se/cv/`), not
+the domain root. This requires two things beyond a normal static deploy:
+
+1. `NEXT_PUBLIC_BASE_PATH=/cv` in `.env.production` (already committed — no secret) tells the Next.js
+   build to prefix every route, asset, and download link with `/cv`. It has no effect on
+   `npm run dev`, which stays unprefixed at `/` for local development.
+2. A redirect at the **domain root** sends the bare domain to `/cv/`. This is a separate Apache
+   config file, `deploy/root.htaccess`, uploaded manually to the server's document root (outside
+   `/cv/`) — see below.
+
 ### FTP Deploy
 
 The project includes a built-in FTP deploy script.
@@ -137,8 +146,28 @@ Add FTP credentials to `.env.local`:
 FTP_HOST=your-ftp-host
 FTP_USER=your-ftp-username
 FTP_PASS=your-ftp-password
-FTP_REMOTE_DIR=/
+FTP_REMOTE_DIR=/malte.sarner.se/public_html/cv
 ```
+
+**`FTP_REMOTE_DIR` is a filesystem path on the FTP server, not the site's URL path — don't assume
+they're the same string.** The site's URL base path (`/cv`, from `NEXT_PUBLIC_BASE_PATH` above) and
+the FTP remote directory are two independent settings that happen to share a name. On this Loopia
+account, the FTP session's root is the shared hosting account root (with `malte.sarner.se`,
+`gustaf.sarner.se`, etc. as siblings), not the domain's `public_html/` — so `FTP_REMOTE_DIR=/cv`
+silently uploads to a directory that Apache never serves, while `/cv` on the live site keeps showing
+stale content. Confirm the real path for your account before deploying:
+
+```bash
+curl --ftp-ssl -v -u your-ftp-username \
+  -Q "PWD" -Q "CWD /malte.sarner.se/public_html/cv" -Q "PWD" \
+  "ftp://your-ftp-host/" -o /dev/null 2>&1 | grep -E "^< 257|^> (PWD|CWD)"
+```
+
+Two `257` replies confirm the session's home directory and that the target path resolves correctly
+via the same protocol (FTPS) the deploy script uses — a working plain-FTP client (e.g. `ncftp`) can
+land in a different directory than FTPS on the same account, so don't rely on it to verify the FTPS
+path. The deploy command uploads `out/` into the configured directory and scopes its stale PDF/DOCX
+cleanup to it; it never touches the domain root.
 
 **Deploy commands:**
 
@@ -148,6 +177,15 @@ npm run deploy:full   # Build the site first, then deploy
 ```
 
 The deploy script attempts FTPS (TLS) first and falls back to plain FTP if needed.
+
+**One-time manual step — root redirect:**
+
+Upload `deploy/root.htaccess` to the domain's document root as `.htaccess` (a sibling of `/cv/`,
+not inside it). This is never done by the deploy command — see
+[specs/006-base-path-deploy/contracts/root-htaccess.md](specs/006-base-path-deploy/contracts/root-htaccess.md)
+for the exact content and verification commands. If the domain root previously hosted the site
+directly (before it moved to `/cv`), the old files there (`index.html`, `en/`, `sv/`, `_next/`,
+old `cv-*.pdf`/`.docx`) need to be migrated or removed manually as a separate one-time step.
 
 ### Other Hosting
 

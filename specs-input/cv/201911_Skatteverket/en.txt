@@ -1,4 +1,7 @@
+Title: React Prototype
 
-Title: ReactJS Prototype
+The second prototype of the same file upload service, this time to evaluate React itself: how to keep business logic separate from the interface, and how to handle state without a state management library.
 
-Prototype file upload service built to evaluate ReactJS, business logic separation, and state management using React hooks and Context API. Unit tests implemented with Jest/Enzyme. Source code stored in GitHub Enterprise, deployed to OpenShift via Jenkins CI/CD pipelines.
+I built it using React hooks and the Context API for state, with the business logic in its own layer.
+
+Unit tested with Jest and Enzyme, source in GitHub Enterprise, deployed to OpenShift through Jenkins CI/CD pipelines.

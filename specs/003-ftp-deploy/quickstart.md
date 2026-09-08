@@ -23,8 +23,16 @@ npm install --save-dev basic-ftp dotenv
 FTP_HOST=your-ftp-host
 FTP_USER=your-ftp-username
 FTP_PASS=your-ftp-password
-FTP_REMOTE_DIR=/
+FTP_REMOTE_DIR=/malte.sarner.se/public_html/cv
 ```
+
+The site is served from a `/cv` subdirectory rather than the domain root (see
+[006-base-path-deploy](../006-base-path-deploy/spec.md)), but **`FTP_REMOTE_DIR` is a filesystem
+path on the FTP server, not the site's URL path — they are not automatically the same string.** On
+this account, the FTP session's root is the shared hosting account root (domains as siblings), not
+`public_html/`, so `FTP_REMOTE_DIR=/cv` silently uploads outside the served tree. Verify the real
+path for your account/host before deploying — see the `curl --ftp-ssl -Q "PWD" -Q "CWD ..."`
+diagnostic in [006-base-path-deploy/research.md](../006-base-path-deploy/research.md#r7-ftp_remote_dir-is-a-filesystem-path-not-the-sites-url-path).
 
 ### 3. Verify the build works
 

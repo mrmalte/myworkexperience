@@ -1,4 +1,5 @@
-
 Title: On assignment at Meta
 
-I am by contract not allowed to write much about this. The programming language used here is Hack which is a typed and compiled version of PHP. Also asynchronous programming with async and await is added to PHP. 
+An assignment at Meta through Sigma Connectivity. The contract does not allow me to write about the work itself.
+
+What I can say is that the development was done in Hack — Meta's typed, compiled dialect of PHP, which also adds asynchronous programming with async and await — with Mercurial for source control.

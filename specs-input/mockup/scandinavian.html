@@ -26,6 +26,21 @@
   .nav-links a:hover, .nav-btn:hover { color: var(--text); background: var(--off); }
   .nav-links a.active, .nav-btn.active { color: var(--accent); background: var(--accent-light); }
 
+  /* Download dropdown */
+  .download-dropdown { position: relative; display: inline-block; }
+  .download-toggle { font-size: 0.78rem; font-weight: 500; color: var(--mid); padding: 0.35rem 0.7rem; border-radius: 4px; transition: all 0.15s; cursor: pointer; background: none; border: none; font-family: 'Instrument Sans', sans-serif; }
+  .download-toggle:hover { color: var(--text); background: var(--off); }
+  .download-toggle .chevron-down { display: inline-block; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); margin-left: 0.3rem; }
+  .download-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 4px; background: var(--white); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); min-width: 120px; z-index: 200; overflow: hidden; }
+  .download-dropdown.open .download-menu { display: block; }
+  .download-menu a { display: block; padding: 0.5rem 0.9rem; font-size: 0.78rem; font-weight: 500; color: var(--text); text-decoration: none; transition: background 0.1s; }
+  .download-menu a:hover { background: var(--off); }
+  .download-menu a .dl-icon { color: var(--mid); margin-right: 0.4rem; }
+  /* Mobile drawer download links */
+  .nav-drawer-inner .download-group { display: flex; flex-direction: column; gap: 0.15rem; margin-top: 0.25rem; border-top: 1px solid var(--line); padding-top: 0.5rem; }
+  .nav-drawer-inner .download-group a { font-size: 0.9rem; padding: 0.65rem 0.75rem; border-radius: 6px; text-align: left; min-height: 44px; color: var(--mid); text-decoration: none; font-weight: 500; font-family: 'Instrument Sans', sans-serif; }
+  .nav-drawer-inner .download-group a:hover { color: var(--text); background: var(--off); }
+
 
   .lang-toggle { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; flex-shrink: 0; }
   .lang-btn { font-size: 0.7rem; font-weight: 600; padding: 0.28rem 0.6rem; cursor: pointer; border: none; background: transparent; color: var(--mid); transition: all 0.15s; font-family: 'Instrument Sans', sans-serif; letter-spacing: 0.04em; }
@@ -218,9 +233,14 @@
     <div class="nav-links">
       <button class="nav-btn active" data-key="nav_cv" onclick="setPage('cv')"></button>
       <button class="nav-btn" data-key="nav_technology" onclick="setPage('technology')"></button>
-      <button class="nav-btn" data-key="nav_about" onclick="setPage('about')"></button>
       <button class="nav-btn" data-key="nav_contact" onclick="setPage('contact')"></button>
-      <a class="nav-btn pdf-link" href="/cv-en.pdf" download>↓ PDF</a>
+      <div class="download-dropdown" id="dl-dropdown">
+        <button class="download-toggle" onclick="toggleDownloadMenu()">↓ Download <span class="chevron-down"></span></button>
+        <div class="download-menu">
+          <a class="dl-pdf-link" href="/cv-en.pdf" download>PDF</a>
+          <a class="dl-docx-link" href="/cv-en.docx" download>Word</a>
+        </div>
+      </div>
     </div>
     <div class="lang-toggle">
       <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
@@ -239,9 +259,11 @@
       </div>
       <button class="nav-btn active" data-key="nav_cv" onclick="setPage('cv');closeDrawer()"></button>
       <button class="nav-btn" data-key="nav_technology" onclick="setPage('technology');closeDrawer()"></button>
-      <button class="nav-btn" data-key="nav_about" onclick="setPage('about');closeDrawer()"></button>
       <button class="nav-btn" data-key="nav_contact" onclick="setPage('contact');closeDrawer()"></button>
-      <a class="nav-btn pdf-link" href="/cv-en.pdf" download>↓ PDF</a>
+      <div class="download-group">
+        <a class="dl-pdf-link" href="/cv-en.pdf" download onclick="closeDrawer()">↓ PDF</a>
+        <a class="dl-docx-link" href="/cv-en.docx" download onclick="closeDrawer()">↓ Word</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -538,20 +560,12 @@
   </div>
 </div>
 
-<div id="page-about" style="display:none">
-  <section class="hero">
-    <h1 class="sr-only" id="about-title">About</h1>
-    <p class="hero-summary" id="about-body">This site was created with Spec Kit from cv text files.</p>
-  </section>
-</div>
-
 
 
 <script>
 const T = {
   en: {
-    nav_cv:"CV", nav_technology:"Technology", nav_about:"About", nav_contact:"Contact",
-    about_text:"This site was created with Spec Kit from cv text files.",
+    nav_cv:"CV", nav_technology:"Technology", nav_contact:"Contact",
     contact_intro:"Send me a message using the form below.",
     contact_name:"Name", contact_email:"Email", contact_subject:"Subject", contact_message:"Message",
     contact_send:"Send Message",
@@ -604,8 +618,7 @@ const T = {
     no_results:"No results found.",
   },
   sv: {
-    nav_cv:"CV", nav_technology:"Teknologi", nav_about:"Om", nav_contact:"Kontakt",
-    about_text:"Denna sida skapades från text-filer med cv-texter med hjälp av Spec Kit.",
+    nav_cv:"CV", nav_technology:"Teknologi", nav_contact:"Kontakt",
     contact_intro:"Skicka ett meddelande via formuläret nedan.",
     contact_name:"Namn", contact_email:"E-post", contact_subject:"Ämne", contact_message:"Meddelande",
     contact_send:"Skicka meddelande",
@@ -671,8 +684,6 @@ function setLang(l) {
     const v = T[l][el.dataset.key];
     if (v !== undefined) el.textContent = v;
   });
-  document.getElementById('about-title').textContent = T[l].nav_about;
-  document.getElementById('about-body').textContent = T[l].about_text;
   const labelEl = document.getElementById('nav-active-label');
   if (labelEl) labelEl.textContent = T[l]['nav_' + (currentPage || 'cv')] || '';
   const summaryBtn = document.getElementById('summaryToggle');
@@ -688,8 +699,19 @@ function setLang(l) {
     searchInput.placeholder = T[l].search_placeholder || 'Search ...';
     onSearch(searchInput.value);
   }
-  document.querySelectorAll('.pdf-link').forEach(a => { a.href = '/cv-' + l + '.pdf'; });
+  document.querySelectorAll('.dl-pdf-link').forEach(a => { a.href = '/cv-' + l + '.pdf'; });
+  document.querySelectorAll('.dl-docx-link').forEach(a => { a.href = '/cv-' + l + '.docx'; });
 }
+
+function toggleDownloadMenu() {
+  const dd = document.getElementById('dl-dropdown');
+  dd.classList.toggle('open');
+}
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('dl-dropdown');
+  if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+});
 
 let currentPage = 'cv';
 
@@ -859,7 +881,7 @@ function renderTechChart() {
 
 function setPage(page) {
   currentPage = page;
-  ['cv', 'technology', 'about', 'contact'].forEach(p => {
+  ['cv', 'technology', 'contact'].forEach(p => {
     const el = document.getElementById('page-' + p);
     if (el) el.style.display = p === page ? '' : 'none';
   });

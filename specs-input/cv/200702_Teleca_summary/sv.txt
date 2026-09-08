@@ -1,4 +1,5 @@
-
 Title: Modulansvarig
 
-Jag arbetade som modulansvarig för Telecas email applikation
+Telecas e-postklient var produkten jag gick vidare till efter de enskilda uppdragen.
+
+Jag arbetade som modulansvarig för den, med ansvar för modulens design, implementation och underhåll.

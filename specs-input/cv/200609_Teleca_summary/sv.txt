@@ -1,5 +1,5 @@
+Title: Konsult
 
-Title: Messaging
+Teleca byggde mjukvara åt mobiltelefontillverkare — meddelandeklienter, applikationssviter och ramverken under dem.
 
-Jag arbetade med underhåll av Telecas epost klient, integration av Telecas paket med applikationer till mobiltelefoner till Windows Mobile, funktionalitet för SMS push i Telecas testverktyg Proteller och implementation av en SDP codec för ett IMS system.
-Tekniker som användes var C, C#, MIME, SMS, SDP.
+Jag arbetade som konsult med enskilda uppdrag i den portföljen: en SDP-kodare/parser till IMS-ramverket, en SMS Push-integration till det egna testverktyget, och releasekoordinering för applikationssviten på Windows Mobile.

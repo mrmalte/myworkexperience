@@ -1,7 +1,7 @@
 Type: Employee
 Organization: Visionite
-Period: 202309-
+Period: 202309-202608
 Role: Consultant
 Location: Malmö
 LocationType: Remote
-Technologies: 
+Technologies:

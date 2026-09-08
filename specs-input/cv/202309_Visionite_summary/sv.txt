@@ -1,3 +1,5 @@
 Title: Konsult
 
-Arbetar som konsult på Visionite (tidigare Onegroup)
+Visionite (tidigare Onegroup) är ett konsultbolag i Malmö.
+
+Jag arbetade där som konsult, och uppdragen spände från industriell C++ mot PLC:er på Tetra Pak, via Hack hos Meta genom Sigma, till TypeScript, React och Google Cloud på Ikea.

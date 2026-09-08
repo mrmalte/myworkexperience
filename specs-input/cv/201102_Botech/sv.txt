@@ -1,7 +1,7 @@
-Title: Vatten/el-kostnadsfördelningssystem
+Title: Kostnadsfördelning av vatten och el
 
-Design, utveckling och underhåll av ett system för fördelning av kall- och varmvattens- samt elkostnader i en bostadsrättsförening, baserat på individuella mätaravläsningar i lägenheter och delade tvättstugor. Jag implementerade även stöd för krypterad kommunikation med Bewators passersystem som hanterade de delade tvättstugorna.
+I en bostadsrättsförening betalar alla för kallvatten, varmvatten och el genom avgiften, vilket innebär att sparsamma hushåll subventionerar slösaktiga. Individuell mätning låter kostnaden följa den faktiska förbrukningen, även i de gemensamma tvättstugorna.
 
-Systemet integrerar med vatten-, el- och passerkontrollmätare och är implementerat i C++/PHP på en Linux/Apache/MySQL-stack, med källkod i Subversion driftsatt manuellt på Linux-servern.
+Jag designade, utvecklade och underhöll systemet som läser mätarna och fördelar kostnaderna mellan lägenheter och tvättstugor. Jag lade också till krypterad kommunikation för integrationen mot Bewators passersystem, som styr vem som får använda tvättstugorna och när.
 
-Planering skedde enligt Kanban.
+Implementerat i C++ och PHP på en Linux/Apache/MySQL-stack, med källkod i SVN driftsatt manuellt på Linuxservern. Planeringen följde Kanban.

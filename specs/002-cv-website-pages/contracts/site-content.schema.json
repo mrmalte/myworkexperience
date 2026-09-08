@@ -8,7 +8,6 @@
     "schemaVersion",
     "generatedAt",
     "person",
-    "about",
     "notFound",
     "technologies",
     "cv",
@@ -35,16 +34,6 @@
         "role": {
           "type": "string",
           "minLength": 1
-        }
-      }
-    },
-    "about": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["text"],
-      "properties": {
-        "text": {
-          "$ref": "#/$defs/LocalizedText"
         }
       }
     },
@@ -122,13 +111,21 @@
         "nav": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["cv", "technologies", "about", "contact", "pdf"],
+          "required": [
+            "cv",
+            "technologies",
+            "contact",
+            "pdf",
+            "download",
+            "word"
+          ],
           "properties": {
             "cv": { "$ref": "#/$defs/LocalizedText" },
             "technologies": { "$ref": "#/$defs/LocalizedText" },
-            "about": { "$ref": "#/$defs/LocalizedText" },
             "contact": { "$ref": "#/$defs/LocalizedText" },
-            "pdf": { "$ref": "#/$defs/LocalizedText" }
+            "pdf": { "$ref": "#/$defs/LocalizedText" },
+            "download": { "$ref": "#/$defs/LocalizedText" },
+            "word": { "$ref": "#/$defs/LocalizedText" }
           }
         },
         "cv": {

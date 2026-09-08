@@ -1,4 +1,7 @@
-
 Title: vObject Formatting Framework
 
-Ported and adapted a vObject formatting framework that translates vCalendar, vNotes and vMessages to PostScript or PCL, enabling printing from Ericsson mobile phones.
+Axis print servers could print calendar entries, notes and messages sent from Ericsson mobile phones. The vObject formatting framework translates those vCalendar, vNotes and vMessages structures into PostScript or PCL that a printer understands.
+
+I ported the framework to the print server platform and adapted it to the formats the phones actually sent.
+
+Implemented in C on the print server's embedded Linux, with source in CVS.

@@ -1,6 +1,9 @@
-
 Title: Canon BMLinkS Prototype
 
-Prototype print application for Canon printers implementing BMLinkS — a Japanese industry consortium network standard for office equipment similar to UPnP. I designed and developed the print application using XML, SOAP, SSDP and GENA.
+BMLinkS is a Japanese industry consortium standard for finding and using office equipment on a network, similar in purpose to UPnP. Canon needed a print application that spoke it.
 
-Development followed an iterative process inspired by Extreme Programming (XP), similar to what is now called Kanban.
+I designed and developed the prototype print application.
+
+Implemented in C with XML, SOAP, SSDP and GENA on embedded Linux, with source in CVS.
+
+Development followed an iterative process inspired by Extreme Programming (XP), close to what is now called Kanban.

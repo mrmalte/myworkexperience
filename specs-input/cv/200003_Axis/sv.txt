@@ -1,4 +1,7 @@
+Title: vProperty-lågnivåparser
 
-Title: vProperty lågnivåparser
+Ett vObjekt är uppbyggt av vProperties — formatets minsta strukturella enhet, en egenskap med sina parametrar och sitt värde.
 
-Designade och implementerade en lågnivå-vProperty-parser — som tolkar den minsta strukturella enheten i vObjekt — använd som grund i vObjekt-formateringsramverket från föregående projekt.
+Jag designade och implementerade lågnivåparsern för dem, som blev grunden för vObjekt-formateringsramverket i föregående projekt.
+
+Implementerad i C på skrivarserverns inbyggda Linux, med källkod i CVS.
