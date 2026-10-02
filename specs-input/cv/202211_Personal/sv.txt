@@ -1,0 +1,7 @@
+Title: EnergyControl
+
+Styr husets värmepump och varmvattenberedare utifrån elpriset: den läser Nord Pools day-ahead-priser och blockerar förbrukarna under de dyraste kvartarna, via REST-API:t i en Husdata H66-gateway kopplad till en IVT Rego 1000. I drift sedan 2022 och driftsätts numera automatiskt från Forgejo CI till en privat Unix-server.
+
+Exekveringen är cyklisk, ungefär som i en PLC: schemalägg och exekvera. Går något fel görs ett nytt försök efter ungefär en minut, vilket också hanterar tillfälliga problem; går allt bra körs den igen när det är meningsfullt, minst varje gång elpriset ändras, alltså var 15:e minut. Det intressanta är att hitta när värmen ska blockeras: den ska hållas tillbaka under de dyraste timmarna utan att blockeras för länge i sträck, så planeringen söker efter lagom långa sammanhängande följder av de högsta priserna. En av algoritmerna är en heuristik av run-theory-typ som söker över tröskelnivåer för prisbaserad lastförskjutning.
+
+Styrningen tar också hänsyn till den prognosticerade utetemperaturen när den avgör hur hårt värmen får hållas tillbaka, så att huset inte stryps i januari på samma sätt som i september.

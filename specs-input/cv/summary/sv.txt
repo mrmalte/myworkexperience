@@ -6,4 +6,4 @@ Jag har arbetat med mjukvaruutveckling sedan år 2000. Från början inbyggda sy
 
 Uppdragen har spänt över skrivarservrar, mobiltelefoni, digital skyltning, spel, offentlig sektor, telekom, energi- och mätsystem, industriell tillverkning och retail. Bredden gör att jag snabbt hittar in i en ny domän. Jag har även arbetat som arkitekt, team lead och tech lead, men det är teknik jag söker mig tillbaka till. Jag arbetar obehindrat på svenska och engelska.
 
-Jag trivs bättre i mindre sammanhang med duktiga kollegor omkring mig och numera med AI som stöd i utvecklingen. På fritiden lägger jag tid på hemautomation och styrning efter energiförbrukning och kostnad.
+Jag trivs bättre i mindre sammanhang med duktiga kollegor omkring mig och numera med AI-agenter som stöd i utvecklingen: jag planerar och granskar själv och låter agenterna implementera. På fritiden lägger jag tid på hemautomation och styrning efter energiförbrukning och kostnad.

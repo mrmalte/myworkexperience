@@ -1,0 +1,7 @@
+Title: Carpool
+
+A web application for families who take turns driving their children to recurring activities: who drives there, who drives home, and how many seats are free. It replaces the group chat where these questions scroll away.
+
+The application is built for code generation with agents and starts from the specification: a vision, functional and non-functional requirements, a data model and architecture decision records (ADRs). Data is stored in an SQL database. Sign-in is passwordless: a one-time code or link by e-mail, with passkeys planned. Recurring events follow the RFC 5545 calendar model, and schedules are generated with a balanced random allocation of drivers.
+
+It is built agent-first: AGENTS.md and the specification are written for coding agents to read. I plan with an agent and let it implement locally. For larger changes, a leading agent writes the plan and hands the steps over to a cheaper model, and I review each result before the next step. A second, non-developer contributor makes changes with Codex, and every pull request, including my own, is reviewed by Claude before merge. I also review myself through pull requests in Forgejo, even though I cannot read all the code that is generated. The application is not yet public: it runs on my own Unix server behind Caddy, with real DNS records and certificates, and is deployed from Forgejo Actions. A move to AWS is next.

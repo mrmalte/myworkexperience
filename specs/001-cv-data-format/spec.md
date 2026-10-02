@@ -5,6 +5,13 @@
 **Status**: Draft  
 **Input**: Define the on-disk input format for CV content in `specs-input/cv/`.
 
+## Clarifications
+
+### Session 2026-10-02
+
+- Q: Where do personal (self-initiated) projects fit in the data model? → A: A new `Type` value `project`, used for the employment-like umbrella entry (`YYYYMM_Personal_summary/`, `Organization: Personal`) that sits in the Positions list. It is role-like (like `employee`, `voluntary`, `national`): no `Client`, `Location` and `LocationType` remain required, and `Period` may be ongoing (`YYYYMM-`), which the format already allowed. The individual projects are ordinary `assignment` entries with `Client` equal to `Organization` (`Personal`), the same in-house pattern as Connected Table, so they list under Assignments and fold into the umbrella position in the LinkedIn export.
+- Q: The tooling already accepts `Type: consultant`, which this spec never listed. → A: Document it. The allowed set is now `education`, `employee`, `consultant`, `voluntary`, `national`, `project`, `assignment` (FR-013).
+
 ## User Scenarios & Testing _(mandatory)_
 
 <!--
@@ -116,7 +123,7 @@ As a CV maintainer, I want each CV unit (summary/experience) to have English and
 #### Experience Metadata (directory: `YYYYMM_<ExperienceName>/`)
 
 - **FR-013**: Each experience directory MUST define:
-  - `Type` (one of: `education`, `employee`, `voluntary`, `national`, `assignment`)
+  - `Type` (one of: `education`, `employee`, `consultant`, `voluntary`, `national`, `project`, `assignment`)
   - `Organization` (non-empty string)
   - `Period` in one of these formats:
     - `YYYYMM-YYYYMM` (bounded period)

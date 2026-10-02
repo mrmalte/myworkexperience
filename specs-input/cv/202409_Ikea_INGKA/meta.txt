@@ -5,4 +5,4 @@ Period: 202409-202608
 Role: Software Developer
 Location: Malmö
 LocationType: Hybrid
-Technologies: TypeScript, React, Styled Components, CSS Modules, REST, React Query (TanStack Query), Fastify, Node.js, TypeBox, Knex, PostgreSQL, Git, GitHub, GCP, CI/CD, Copilot, Server-Sent Events, WebSockets, Kanban, Scrum, Terraform, Nx
+Technologies: TypeScript, React, Styled Components, CSS Modules, Figma, REST, Entra ID, MSAL, JWT, React Query (TanStack Query), Fastify, Node.js, TypeBox, Knex, PostgreSQL, Git, GitHub, GCP, CI/CD, Copilot, Server-Sent Events, WebSockets, Kanban, Scrum, Terraform, Nx

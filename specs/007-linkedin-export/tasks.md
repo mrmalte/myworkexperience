@@ -205,3 +205,9 @@ references.
 - [X] T030 Rewrite the Experience section to render `Block`s instead of `cv.roles`, carrying the umbrella marker line and per-block skills.
 - [X] T031 Cascade the change through `spec.md` (Clarifications 2026-09-07 second session, FR-003, FR-004, new FR-017), `research.md` (R10), `data-model.md` (`Block`), `contracts/cli-and-output.md` and `quickstart.md`.
 - [X] T032 Verify: 23 positions, 0 unmatched, every block within the 2 000-character limit, and the Swedish file structurally identical to the English one.
+
+## Phase 9: Represent a position with five skills that fit it (2026-09-08)
+
+- [X] T033 Add `pickPositionSkills()` and `SKILL_CATEGORY_ORDER` to `tools/build-linkedin.ts`, taking one technology per category and cycling until five are found; restore the `technologies` map to the local `SiteContent` interface to index name → category.
+- [X] T034 Move `Chrome` and `Safari` from `Frontend` to `Other` and `Windows Mobile` to `Embedded & IoT` in `specs-input/tech-categories.json`, and reorder `202310_Tetra_Pak`'s `Technologies:` line so Linux represents Cloud & DevOps ahead of CMake.
+- [X] T035 Cascade to `spec.md` (FR-009), `research.md` (R11), `data-model.md` and the CLI contract.

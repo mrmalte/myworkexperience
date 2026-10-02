@@ -7,6 +7,10 @@
 
 ## Clarifications
 
+### Session 2026-10-02
+
+- Q: Where do entries of the new `Type: project` (feature 001) appear? → A: In the Positions (roles) list, alongside `employee`/`consultant`/`voluntary`/`national`, as the umbrella entry for personal projects; the individual projects are `assignment` entries under Assignments. No new section; `site-content.json` shape is unchanged except the `type` enum gains `project`.
+
 ### Session 2026-03-09
 
 - Q: CV page layout — where does the Summary appear and how does it relate to the mockup hero section? → A: Follow the mockup layout: Summary goes in the full-width hero section (below the search bar); Education, Roles, and Assignments appear as list sections inside the content area below the hero.
@@ -235,7 +239,7 @@ _FR-012c: reserved (removed — stats strip design)._
 
 - **FR-013**: Summary text MUST come from the description body of `specs-input/cv/summary/<lang>.txt` (active language). It is rendered as a plain text block — there is no hero section wrapping it.
 - **FR-014**: Education list items MUST be sourced from CV entries where `Type` is `education`.
-- **FR-015**: Roles list items MUST be sourced from CV entries where `Type` is one of: `employee`, `consultant`, `voluntary`, `national`.
+- **FR-015**: Roles list items MUST be sourced from CV entries where `Type` is one of: `employee`, `consultant`, `voluntary`, `national`, `project`.
 - **FR-016**: Assignments list items MUST be sourced from CV entries where `Type` is `assignment`.
 - **FR-017**: All CV lists MUST be sorted newest-first using the entry sort key defined by the CV data format.
 

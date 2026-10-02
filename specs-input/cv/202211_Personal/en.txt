@@ -1,0 +1,7 @@
+Title: EnergyControl
+
+Controls the house's heat pump and hot-water heater from the electricity price: it reads Nord Pool day-ahead prices and blocks the consumers during the most expensive quarter hours, through the REST API of a Husdata H66 gateway connected to an IVT Rego 1000. In production since 2022 and now deployed automatically from Forgejo CI to a private Unix server.
+
+Execution is cyclic, much like a PLC: schedule and execute. If something goes wrong, it retries after about a minute, which also absorbs temporary problems; if all goes well, it runs again when that is meaningful, at the latest whenever the electricity price changes, every 15 minutes. Finding when to block is the interesting part: heating must be held back during the most expensive hours without being blocked for too long at a stretch, so the planner searches for suitably long consecutive runs of the highest prices. One of the algorithms is a run-theory-style heuristic that searches across threshold levels for price-based load shifting.
+
+The control also takes the forecast outdoor temperature into account when deciding how hard heating may be held back, so the house is not throttled in January as it is in September.

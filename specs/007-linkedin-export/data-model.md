@@ -107,7 +107,11 @@ Ordering follows the CV's own priority rather than any computed weight — see
   entry's `technologies` in authored order, de-duplicated; take the first 50. The
   `technologies` map in `site-content.json` (the chart's `{ name, years }`) is deliberately **not**
   used — ranking by years surfaces SVN and ClearCase ahead of Terraform.
-- Per position: the same walk restricted to that employment's assignments, capped at 5.
+- Per position: at most five, picked one per technology category — `Languages`, `Frontend`,
+  `Backend`, `Databases`, `Cloud & DevOps`, `APIs & Streaming`, `Embedded & IoT`, `Protocols`,
+  `Testing`, `Version Control & CI`, `Other` — cycling through the categories until five are found.
+  Within a category the first technology authored in `Technologies:` represents it. See
+  [R11](research.md#r11-picking-the-five-skills-attached-to-a-position).
 - A technology with no assignments (an employment entry's own empty list) contributes nothing and
   emits no `Tech:` line.
 

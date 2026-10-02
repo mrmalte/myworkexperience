@@ -175,7 +175,7 @@ function main() {
   // Partition by type
   const education = cvEntries.filter((e) => e.type === "education");
   const roles = cvEntries.filter((e) =>
-    ["employee", "consultant", "voluntary", "national"].includes(e.type),
+    ["employee", "consultant", "voluntary", "national", "project"].includes(e.type),
   );
   const assignments = cvEntries.filter((e) => e.type === "assignment");
 

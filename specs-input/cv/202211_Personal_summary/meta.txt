@@ -1,0 +1,7 @@
+Type: Project
+Organization: Personal
+Period: 202211-
+Role: Developer
+Location: Klagshamn
+LocationType: Onsite
+Technologies:

@@ -97,7 +97,7 @@ I enjoy solving problems …
 ### 1. Fixa - Software Developer — Ikea INGKA
 
 Title: Fixa - Software Developer · Company: Ikea INGKA · Period: 2024-09 – 2026-08 · Location: Malmö · Hybrid
-Skills to attach: TypeScript, React, Styled Components, CSS Modules, REST
+Skills to attach: TypeScript, React, Fastify, PostgreSQL, GCP
 
 Description — 1528 / 2000
 

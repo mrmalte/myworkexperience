@@ -1,0 +1,3 @@
+Title: Egna projekt
+
+Vid sidan av uppdragen bygger och driver jag egna system, främst kring hemautomation och energianvändning. De körs på min egen Unix-server och driftsätts via CI. Två av dem beskrivs här: EnergyControl, som styr husets värmepump efter elpriset, och Carpool, en webbapplikation för familjer som delar skjuts till barnens aktiviteter.

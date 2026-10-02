@@ -33,6 +33,11 @@ interface CVEntry {
   technologies: string[];
 }
 
+interface TechItem {
+  name: string;
+  years: number;
+}
+
 interface SiteContent {
   person: { name: string; role: string };
   cv: {
@@ -41,6 +46,7 @@ interface SiteContent {
     roles: CVEntry[];
     assignments: CVEntry[];
   };
+  technologies: Record<string, TechItem[]>;
   ui: {
     pdf: { date: string };
     cv: {
@@ -253,6 +259,80 @@ function matchAssignments(
 // --- Skills ----------------------------------------------------------------
 
 /**
+ * The five skills LinkedIn lets you attach to a position have to stand for the
+ * whole job, so they are picked one per category rather than by list order: a
+ * fullstack assignment whose `Technologies:` line happens to open with two
+ * styling libraries would otherwise be represented as frontend-only work.
+ *
+ * Categories are tried in this order, one pick each, then round again until
+ * five are found; within a category the first one authored in `Technologies:`
+ * wins. Version control and process labels come last — everyone uses git, so it
+ * differentiates nothing. To change which technology speaks for a category in a
+ * given position, reorder that entry's `Technologies:` line.
+ */
+const SKILL_CATEGORY_ORDER = [
+  "Languages",
+  "Frontend",
+  "Backend",
+  "Databases",
+  "Cloud & DevOps",
+  "APIs & Streaming",
+  "Embedded & IoT",
+  "Protocols",
+  "Testing",
+  "Version Control & CI",
+  "Other",
+];
+
+interface TechIndex {
+  category: Map<string, string>;
+}
+
+function indexTechnologies(content: SiteContent): TechIndex {
+  const category = new Map<string, string>();
+  for (const [cat, items] of Object.entries(content.technologies)) {
+    for (const item of items) {
+      category.set(item.name.toLowerCase(), cat);
+    }
+  }
+  return { category };
+}
+
+function pickPositionSkills(
+  assignments: CVEntry[],
+  index: TechIndex,
+  limit: number,
+): string[] {
+  const buckets = new Map<string, string[]>();
+  for (const tech of orderSkills(assignments)) {
+    const cat = index.category.get(tech.toLowerCase()) ?? "Other";
+    if (!buckets.has(cat)) buckets.set(cat, []);
+    buckets.get(cat)!.push(tech);
+  }
+  // Within a category, the order the technologies were authored in decides which
+  // one represents it — sorting by `years` instead lifts the generic long-lived
+  // ones (CI/CD ahead of GCP, Git ahead of everything).
+
+  const order = [
+    ...SKILL_CATEGORY_ORDER.filter((c) => buckets.has(c)),
+    ...[...buckets.keys()].filter((c) => !SKILL_CATEGORY_ORDER.includes(c)),
+  ];
+  const picked: string[] = [];
+  while (picked.length < limit) {
+    let took = false;
+    for (const cat of order) {
+      const list = buckets.get(cat)!;
+      if (list.length === 0) continue;
+      picked.push(list.shift()!);
+      took = true;
+      if (picked.length === limit) break;
+    }
+    if (!took) break;
+  }
+  return picked;
+}
+
+/**
  * Skills in the order the CV itself implies: newest entry first, and within an
  * entry the order the technologies were authored in. Ranking by `technologies[].years`
  * instead puts the longest-lived tooling on top — SVN, ClearCase, CVS — which is
@@ -438,6 +518,7 @@ function renderDocument(
   unmatched: CVEntry[],
 ): { text: string; reports: LimitReport[] } {
   const presentLabel = content.ui.cv.present[lang];
+  const techIndex = indexTechnologies(content);
   const reports: LimitReport[] = [];
 
   const record = (label: string, text: string, limit: number): LimitReport => {
@@ -491,8 +572,9 @@ function renderDocument(
       block.description,
       LIMITS.position,
     );
-    const skills = orderSkills(block.assignments).slice(
-      0,
+    const skills = pickPositionSkills(
+      block.assignments,
+      techIndex,
       LIMITS.skillsPerPosition,
     );
 

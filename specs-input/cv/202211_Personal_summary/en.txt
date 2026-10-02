@@ -1,0 +1,3 @@
+Title: Personal projects
+
+Alongside my assignments I build and run my own systems, mostly around home automation and energy use. They run on my own Unix server and are deployed through CI. Two of them are described here: EnergyControl, which controls the house's heat pump from the electricity price, and Carpool, a web application for families who share rides to children's activities.

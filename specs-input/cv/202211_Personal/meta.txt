@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Personal
+Client: Personal
+Period: 202211-
+Role: Developer
+Location: Klagshamn
+LocationType: Onsite
+Technologies: TypeScript, Node.js, REST, Jest, Unix, Forgejo Actions, CI/CD, Claude Code

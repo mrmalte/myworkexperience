@@ -30,7 +30,7 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete.
 
-- [x] T005 Ensure build tool tools/build-content.ts parses specs-input/cv/ entries, partitions by type (education, employee/consultant/voluntary/national → roles, assignment → assignments), sorts newest-first by sortKey, and outputs public/content/site-content.json per FR-014/FR-015/FR-016/FR-017
+- [x] T005 Ensure build tool tools/build-content.ts parses specs-input/cv/ entries, partitions by type (education, employee/consultant/voluntary/national/project → roles, assignment → assignments), sorts newest-first by sortKey, and outputs public/content/site-content.json per FR-014/FR-015/FR-016/FR-017
 - [x] T006 [P] Ensure build tool generates ui section in site-content.json with all required i18n keys: ui.nav.{cv,technologies,about,contact}, ui.cv.{sections.{education,roles,assignments}, searchPlaceholder, clearSearch, showAll, noResults, present}, ui.contact.{intro,fields.{name,email,subject,message},submit,success,error} per FR-003/FR-011a/FR-011b/FR-018a/FR-018b/FR-018c/FR-024a/FR-026
 - [x] T007 [P] Ensure build tool generates about.text from specs-input/about/{en,sv}.txt per FR-025
 - [x] T008 [P] Ensure build tool generates notFound.title and notFound.text from specs-input/not-found/{en,sv}.txt per FR-031
@@ -473,3 +473,14 @@ T091 + T092 must both land before T096 (schema/builder lockstep, R14c).
 - **Parallel opportunities**: T089, T090, T093, T095 touch disjoint files and can run together
 - **Independent test**: Load the site in both languages — nav shows three links; visiting `/en/about` yields the not-found page
 - **Scope note**: This is a pure subtraction — no new UI, data, or dependencies
+
+---
+
+## Phase 14: Project Entry Type (FR-015; feature 001 FR-013)
+
+**Purpose**: Personal projects (Carpool, EnergyControl) render under Positions via the new `project` Type.
+
+- [x] T099 Add `"project"` to `ALLOWED_TYPES` in `tools/content/parseSource.ts` per feature 001 FR-013.
+- [x] T100 Add `"project"` to the roles partition in `tools/build-content.ts` (otherwise the entry is silently dropped) per FR-015.
+- [x] T101 Add `project` to the `type` enum in `contracts/site-content.schema.json` (schema/builder lockstep).
+- [x] T102 Add `specs-input/cv/202211_Personal_summary/` (`Type: Project`, umbrella position) and the assignments `202211_Personal/` (EnergyControl) and `202608_Personal/` (Carpool), `Client: Personal` (meta, en, sv), extend `specs-input/tech-categories.json`, then run `npm run content:check` and `npm run linkedin:build` (projects become in-house positions, no unmatched).

@@ -21,6 +21,7 @@
     "TailwindUI",
     "Styled Components",
     "CSS Modules",
+    "Figma",
     "HTML",
     "CSS",
     "HTML5 Canvas",
@@ -36,10 +37,9 @@
     "React Query (TanStack Query)",
     "RequireJS",
     "Contentful",
-    "Chrome",
-    "Safari",
     "MVC",
-    "Windows Mobile"
+    "React Aria",
+    "TanStack Router"
   ],
   "Backend": [
     "Node.js",
@@ -54,7 +54,11 @@
     "Mongoose",
     "Bull",
     ".NET",
-    "XState"
+    "XState",
+    "Drizzle",
+    "Zod",
+    "Entra ID",
+    "MSAL"
   ],
   "Databases": [
     "PostgreSQL",
@@ -82,7 +86,10 @@
     "Nlohmann/json",
     "Terraform",
     "Nx",
-    "OpenShift"
+    "OpenShift",
+    "Vite",
+    "Unix",
+    "Forgejo Actions"
   ],
   "Testing": [
     "Jest",
@@ -104,7 +111,9 @@
     "Jenkins",
     "Visual Studio",
     "Copilot",
-    "GitHub Enterprise"
+    "GitHub Enterprise",
+    "Claude Code",
+    "Codex"
   ],
   "Embedded & IoT": [
     "Bluetooth",
@@ -117,7 +126,8 @@
     "Allen-Bradley PLC",
     "Multithreading",
     "mplayer",
-    "Windows"
+    "Windows",
+    "Windows Mobile"
   ],
   "APIs & Streaming": [
     "REST",
@@ -133,7 +143,9 @@
     "Salesforce Marketing Cloud",
     "Google Analytics",
     "Google Tag Manager",
-    "Data Layer"
+    "Data Layer",
+    "Passkeys",
+    "JWT"
   ],
   "Protocols": [
     "SOAP",
@@ -172,6 +184,8 @@
   "Other": [
     "Microservices",
     "Kanban",
-    "Scrum"
+    "Scrum",
+    "Chrome",
+    "Safari"
   ]
 }

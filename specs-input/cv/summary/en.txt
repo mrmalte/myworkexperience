@@ -6,4 +6,4 @@ I have worked with software development since 2000. Embedded systems in C and C+
 
 The assignments have spanned print servers, mobile phones, digital signage, gaming, the public sector, telecom, energy and metering systems, industrial manufacturing and retail. That breadth means I find my way into a new domain quickly. I have also worked as architect, team lead and tech lead, but it is the technology I keep coming back to. I work fluently in Swedish and English.
 
-I am more at home in smaller settings, with skilled colleagues around me and these days with AI as support in development. Outside work I spend time on home automation and on controlling it by energy consumption and cost.
+I am more at home in smaller settings, with skilled colleagues around me and these days with AI agents as support in development: I plan and review myself, and let the agents implement. Outside work I spend time on home automation and on controlling it by energy consumption and cost.

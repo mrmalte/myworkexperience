@@ -1,0 +1,8 @@
+Type: Assignment
+Organization: Personal
+Client: Personal
+Period: 202608-
+Role: Developer and architect
+Location: Klagshamn
+LocationType: Onsite
+Technologies: TypeScript, React, React Aria, React Query (TanStack Query), TanStack Router, Vite, NestJS, Node.js, Drizzle, PostgreSQL, Zod, Passkeys, Docker, Forgejo Actions, CI/CD, Unix, Claude Code, Codex

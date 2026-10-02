@@ -23,6 +23,7 @@ const ALLOWED_TYPES = [
   "consultant",
   "voluntary",
   "national",
+  "project",
   "assignment",
 ];
 const ALLOWED_LOCATION_TYPES = ["onsite", "hybrid", "remote"];

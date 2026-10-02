@@ -238,3 +238,30 @@ the better job title too — Teleca's `Module Owner` against Role `Software Deve
 always: MultiQ's Role is `Software Architect` while its title is `Software Developer`. Showing the
 title and naming the alternative costs one short parenthetical and leaves the choice where it
 belongs, with the maintainer at paste time.
+
+## R11: Picking the five skills attached to a position
+
+**Decision**: Take one technology per category, cycling through the categories in a fixed order
+until five are found; within a category, the first one authored in that entry's `Technologies:` line
+represents it.
+
+**Rationale**: LinkedIn allows five skills per position, and those five have to stand for the whole
+job. Taking the first five in list order gave the Ikea `Fixa` position
+`TypeScript, React, Styled Components, CSS Modules, REST` — two styling libraries and no backend at
+all, for an assignment that was as much Fastify, PostgreSQL and Terraform as it was React. The
+category order (`Languages`, `Frontend`, `Backend`, `Databases`, `Cloud & DevOps`, …) yields
+`TypeScript, React, Fastify, PostgreSQL, GCP`, which is the job.
+
+Version control and process labels sit last in that order: everyone uses git, so it differentiates
+nothing, and it should only occupy one of the five when nothing else can fill it.
+
+**Why authored order within a category, not `years`**: sorting the category's members by the years
+the technology chart computes lifts the generic long-lived ones — `CI/CD` ahead of `GCP`, `Git`
+ahead of everything. The order the technologies were written in is the author's own ranking for that
+assignment, and reordering a `Technologies:` line is how you change which technology speaks for its
+category.
+
+**Taxonomy fix this exposed**: `Chrome` and `Safari` sat under `Frontend` in
+`specs-input/tech-categories.json`, so a browser extension prototype made `Chrome` the frontend
+representative for all five Connected Table assignments. Browsers moved to `Other` and
+`Windows Mobile` to `Embedded & IoT`, which is where they belong in the technology chart too.
