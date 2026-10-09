@@ -4,4 +4,4 @@ A wireless print solution letting a mobile phone send a print job straight to a 
 
 I wrote the protocol specification and implemented the embedded print application that receives the print data and forwards it to the printer.
 
-Implemented in C over OBEX, SDP and RFCOMM on the print server's embedded Linux, with source in CVS.
+Implemented in C over OBEX, SDP and RFCOMM on OSYS, Axis's own print server operating system, with source in CVS.

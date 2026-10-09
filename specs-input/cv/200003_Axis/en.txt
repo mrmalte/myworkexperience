@@ -4,4 +4,4 @@ A vObject is built from vProperties — the smallest structural unit of the form
 
 I designed and implemented the low-level parser for them, which became the foundation of the vObject formatting framework in the preceding project.
 
-Implemented in C on the print server's embedded Linux, with source in CVS.
+Implemented in C on OSYS, Axis's own print server operating system, with source in CVS.

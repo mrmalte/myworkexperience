@@ -4,4 +4,4 @@ MMS is how Sony Ericsson's feature phones sent and received picture and multimed
 
 I was module architect for the MMS module, responsible for its design, implementation and maintenance. I stayed on the same module when Sony Ericsson took me on as an employee in January 2004.
 
-Implemented in C on the phone platform, with source in ClearCase. Planning followed a waterfall process.
+Implemented in C on the phone platform's OSE real-time operating system, with source in ClearCase. Planning followed a waterfall process.

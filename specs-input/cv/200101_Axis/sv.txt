@@ -4,6 +4,6 @@ BMLinkS är en japansk branschstandard för att hitta och använda kontorsutrust
 
 Jag designade och utvecklade prototypen av utskriftsapplikationen.
 
-Implementerad i C med XML, SOAP, SSDP och GENA på inbyggt Linux, med källkod i CVS.
+Implementerad i C med XML, SOAP, SSDP och GENA på OSYS, Axis eget operativsystem för skrivarservrarna, med källkod i CVS.
 
 Utvecklingen följde en iterativ process inspirerad av Extreme Programming (XP), nära det som idag kallas Kanban.

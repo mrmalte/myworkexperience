@@ -4,4 +4,4 @@ Ericsson ville att telefonerna skulle kunna spela upp animationer skapade som SV
 
 Jag designade och implementerade spelaren, inklusive integrationen av tredjepartskodekar, och applikationen ovanpå den.
 
-Implementerad i C för telefonplattformen, med källkod i ClearCase.
+Implementerad i C på telefonplattformens realtidsoperativsystem OSE, med källkod i ClearCase.

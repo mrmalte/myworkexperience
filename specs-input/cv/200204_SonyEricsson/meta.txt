@@ -5,4 +5,4 @@ Period: 200204-200208
 Role: Senior Staff Engineer
 Location: Lund
 LocationType: Onsite
-Technologies: C, SVG, SIS, ClearCase
+Technologies: C, OSE, SVG, SIS, ClearCase

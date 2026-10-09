@@ -4,4 +4,4 @@ Ericsson wanted its phones to play animations authored as SVG and SIS. The proto
 
 I designed and implemented the player, including the integration of third-party codecs, and the application on top of it.
 
-Implemented in C for the phone platform, with source in ClearCase.
+Implemented in C on the phone platform's OSE real-time operating system, with source in ClearCase.

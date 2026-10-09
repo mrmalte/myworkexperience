@@ -4,4 +4,4 @@ Ett vObjekt är uppbyggt av vProperties — formatets minsta strukturella enhet,
 
 Jag designade och implementerade lågnivåparsern för dem, som blev grunden för vObjekt-formateringsramverket i föregående projekt.
 
-Implementerad i C på skrivarserverns inbyggda Linux, med källkod i CVS.
+Implementerad i C på OSYS, Axis eget operativsystem för skrivarservrarna, med källkod i CVS.

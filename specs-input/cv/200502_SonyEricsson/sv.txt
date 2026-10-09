@@ -4,4 +4,4 @@ VideoShare är en IMS-tjänst som låter två personer dela livevideo under ett 
 
 Jag designade och implementerade Sony Ericssons prototyp: själva applikationen, hanteringen av H.263 över RTP och uppsättningen av SIP-sessionen.
 
-Implementerad i C på telefonplattformen, med källkod i ClearCase.
+Implementerad i C på telefonplattformens realtidsoperativsystem OSE, med källkod i ClearCase.

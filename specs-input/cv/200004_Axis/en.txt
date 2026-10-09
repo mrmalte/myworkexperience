@@ -4,4 +4,4 @@ A print server receives text in one character encoding and has to hand the print
 
 I designed and implemented a code generation tool that produces a C translation module mapping Unicode character codes to single-byte encodings such as ASCII.
 
-Both the generator and the generated module are C, built for the print server's embedded Linux, with source in CVS.
+Both the generator and the generated module are C, built for OSYS, Axis's own print server operating system, with source in CVS.

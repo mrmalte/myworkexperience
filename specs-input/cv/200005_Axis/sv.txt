@@ -4,4 +4,4 @@ En trådlös utskriftslösning som låter en mobiltelefon skicka ett utskriftsjo
 
 Jag skrev protokollspecifikationen och implementerade den inbyggda utskriftsapplikationen som tar emot utskriftsdata och vidarebefordrar den till skrivaren.
 
-Implementerad i C över OBEX, SDP och RFCOMM på skrivarserverns inbyggda Linux, med källkod i CVS.
+Implementerad i C över OBEX, SDP och RFCOMM på OSYS, Axis eget operativsystem för skrivarservrarna, med källkod i CVS.

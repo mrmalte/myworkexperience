@@ -5,4 +5,4 @@ Period: 200208-200401
 Role: Senior Staff Engineer
 Location: Lund
 LocationType: Onsite
-Technologies: C, MMS, WAP, ClearCase
+Technologies: C, OSE, MMS, WAP, ClearCase

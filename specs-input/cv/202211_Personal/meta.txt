@@ -5,4 +5,4 @@ Period: 202211-
 Role: Developer
 Location: Klagshamn
 LocationType: Onsite
-Technologies: TypeScript, Node.js, REST, Jest, Unix, Forgejo Actions, CI/CD, Claude Code
+Technologies: TypeScript, Node.js, REST, Jest, Unix, CI/CD

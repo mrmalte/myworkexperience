@@ -4,4 +4,4 @@ En skrivarserver tar emot text i en teckenkodning och måste lämna över text i
 
 Jag designade och implementerade ett kodgenereringsverktyg som producerar en C-modul för översättning från Unicode-teckenkoder till enbytekodningar som ASCII.
 
-Både generatorn och den genererade modulen är skrivna i C för skrivarserverns inbyggda Linux, med källkod i CVS.
+Både generatorn och den genererade modulen är skrivna i C för OSYS, Axis eget operativsystem för skrivarservrarna, med källkod i CVS.

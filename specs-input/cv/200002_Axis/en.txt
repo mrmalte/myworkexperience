@@ -4,4 +4,4 @@ Axis print servers could print calendar entries, notes and messages sent from Er
 
 I ported the framework to the print server platform and adapted it to the formats the phones actually sent.
 
-Implemented in C on the print server's embedded Linux, with source in CVS.
+Implemented in C on OSYS, Axis's own print server operating system, with source in CVS.

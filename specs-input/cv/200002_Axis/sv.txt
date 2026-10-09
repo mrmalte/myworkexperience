@@ -4,4 +4,4 @@ Axis skrivarservrar kunde skriva ut kalenderposter, anteckningar och meddelanden
 
 Jag portade ramverket till skrivarserverplattformen och anpassade det till de format telefonerna faktiskt skickade.
 
-Implementerat i C på skrivarserverns inbyggda Linux, med källkod i CVS.
+Implementerat i C på OSYS, Axis eget operativsystem för skrivarservrarna, med källkod i CVS.

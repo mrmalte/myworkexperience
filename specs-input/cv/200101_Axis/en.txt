@@ -4,6 +4,6 @@ BMLinkS is a Japanese industry consortium standard for finding and using office 
 
 I designed and developed the prototype print application.
 
-Implemented in C with XML, SOAP, SSDP and GENA on embedded Linux, with source in CVS.
+Implemented in C with XML, SOAP, SSDP and GENA on OSYS, Axis's own print server operating system, with source in CVS.
 
 Development followed an iterative process inspired by Extreme Programming (XP), close to what is now called Kanban.

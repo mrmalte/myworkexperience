@@ -119,6 +119,8 @@
     "Bluetooth",
     "Z-Wave",
     "Symbian",
+    "OSE",
+    "OSYS",
     "GPS",
     "VAAPI",
     "OpenGL",
